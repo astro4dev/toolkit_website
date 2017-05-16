@@ -61,12 +61,14 @@
 						          ?>
 
 
+
+
 <form action=""> 
-<select name="customers" onchange="showCustomer(this.value)">
-<option value="">Select a customer:</option>
+<select name="customers" onchange="showCustomer(this.value)" width="300" style="width: 300px">
+<option value='NoVal' selected disabled>Select a customer:</option>
 <?php
 while($row = mysqli_fetch_assoc($result)) {
-  echo "<option value=''>".$row["topics_astr"]."</option>";
+  echo "<option value='ALFKI'>".$row["topics_astr"]."</option>";
 }
 ?>
 </select>
