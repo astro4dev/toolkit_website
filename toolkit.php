@@ -43,6 +43,7 @@
 										# Connect to database
 										$db = mysqli_connect('dbint.astro4dev.org',$mysqlConfig['client']['user'],$mysqlConfig['client']['password'],'toolkit_db');
 
+										# Print error if problems connecting to database
 										if (!$db) {
 										    echo "Error: Unable to connect to MySQL." . PHP_EOL;
 										    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
@@ -56,12 +57,41 @@
 
 						                $query = "SELECT * FROM topics_astr;";
 						                $result = mysqli_query($db, $query);
-						                while($row = mysqli_fetch_assoc($result)) {
-						                      // Display your datas on the page
-						                  echo "<br>";
-						                  echo $row["topics_astr"];
-						                }
+
 						          ?>
+
+
+<form action=""> 
+<select name="customers" onchange="showCustomer(this.value)">
+<option value="">Select a customer:</option>
+<?php
+while($row = mysqli_fetch_assoc($result)) {
+  echo "<option value=''>".$row["topics_astr"]."</option>";
+}
+?>
+</select>
+</form>
+<br>
+<div id="txtHint">Customer info will be listed here...</div>
+
+
+<script>
+function showCustomer(str) {
+  var xhttp;    
+  if (str == "") {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  }
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("txtHint").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "test.php", true);
+  xhttp.send();
+}
+</script>
 
 							</section>
 
