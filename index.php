@@ -21,7 +21,7 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<span class="logo"><img src="images/logo.svg" alt="" /></span>
+						<span class="logo"><img src="images/DST_logo_250px.png" alt="" /></span>
 						<h1>OAD Data Science Toolkit</h1>
 						<p>Toolkit under development</p>
 					</header>
@@ -43,39 +43,37 @@
 								<div class="spotlight">
 									<div class="content">
 										<header class="major">
-											<h2>Ipsum sed adipiscing</h2>
+											<h2>Overall objective</h2>
 										</header>
-										<p>Sed lorem ipsum dolor sit amet nullam consequat feugiat consequat magna
-										adipiscing magna etiam amet veroeros. Lorem ipsum dolor tempus sit cursus.
-										Tempus nisl et nullam lorem ipsum dolor sit amet aliquam.</p>
+										<p>The overall objective of this toolkit is to provide a foundation for a “common language” between the data science and astronomy communities. The toolkit should help astronomers get a sense of the breadth of data science (as a field and in its applications) and see where their skills and knowledge fit into this wider view; and should help data scientists and those in need of data scientists (e.g. companies, NGOs) see what astronomers can contribute.</p>
 										<ul class="actions">
 											<li><a href="generic.html" class="button">Learn More</a></li>
 										</ul>
 									</div>
-									<span class="image"><img src="images/pic01.jpg" alt="" /></span>
+									<span class="image"><img src="images/OAD_logo.png" alt="" /></span>
 								</div>
 							</section>
 
 						<!-- First Section -->
 							<section id="first" class="main special">
 								<header class="major">
-									<h2>Magna veroeros</h2>
+									<h2>Explore!</h2>
 								</header>
 								<ul class="features">
 									<li>
 										<span class="icon major style1 fa-code"></span>
-										<h3>Ipsum consequat</h3>
+										<h3>Contribute</h3>
 										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
 									</li>
 									<li>
-										<span class="icon major style3 fa-copy"></span>
-										<h3>Amed sed feugiat</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
+										<span class="icon major style3 fa-database"></span>
+										<h3>Check out the toolkit</h3>
+										<p>The toolkit is in active development. Comments welcome!</p>
 									</li>
 									<li>
-										<span class="icon major style5 fa-diamond"></span>
-										<h3>Dolor nullam</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
+										<span class="icon major style5 fa-github"></span>
+										<h3>Help contribute</h3>
+										<p>We are looking for contributors who are willing to share their teaching materials. Simply fork <a href="https://github.com/astro4dev/OAD-Data-Science-Toolkit" target="_blank">the repository</a>, add your content and create a pull request.</p>
 									</li>
 								</ul>
 								<footer class="major">
@@ -105,31 +103,30 @@
 				<!-- Footer -->
 					<footer id="footer">
 						<section>
-							<h2>Aliquam sed mauris</h2>
-							<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
+							<h2>Get involved with the OAD</h2>
+							<p>There are several ways to work with the OAD, including <a title="Volunteers" href="http://www.astro4dev.org/volunteers/" target="_blank">volunteers</a>, interns, <a title="OAD Visiting Fellowships" href="http://www.astro4dev.org/work-with-the-oad/opportunities-oad/oad-visiting-fellowships/" target="_blank">visiting fellowships</a>, organisational partners, even becoming OAD staff when the occasional <a href="http://www.astro4dev.org/vacancies/" target="_blank">vacancy</a> opens up.</p>
 							<ul class="actions">
-								<li><a href="generic.html" class="button">Learn More</a></li>
+								<li><a href="http://www.astro4dev.org/" class="button" target="_blank">Learn More</a></li>
 							</ul>
 						</section>
 						<section>
-							<h2>Etiam feugiat</h2>
+							<h2>Contact</h2>
 							<dl class="alt">
 								<dt>Address</dt>
-								<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
+								<dd>P.O. Box 9, Observatory, South Africa, 7935</dd>
 								<dt>Phone</dt>
-								<dd>(000) 000-0000 x 0000</dd>
+								<dd>+27 (0) 21 460 6297</dd>
 								<dt>Email</dt>
-								<dd><a href="#">information@untitled.tld</a></dd>
+								<dd>info_at_astro4dev.org</dd>
 							</dl>
 							<ul class="icons">
-								<li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+								<li><a href="#https://www.twitter.com/astro4dev" class="icon fa-twitter alt" target="_blank"><span class="label">Twitter</span></a></li>
+								<li><a href="https://www.facebook.com/astro4dev/" class="icon fa-facebook alt" target="_blank"><span class="label">Facebook</span></a></li>
+								<li><a href="https://www.youtube.com/channel/UCoRFDfXOPticDidg_-d0jWQ" class="icon fa-youtube alt" target="_blank"><span class="label">YouTube</span></a></li>
+								<li><a href="https://github.com/astro4dev" class="icon fa-github alt" target="_blank"><span class="label">GitHub</span></a></li>
 							</ul>
 						</section>
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+						<p class="copyright">An Astronomy for Development Project: <a href="http://www.astro4dev.org/" target="_blank">astro4dev.org</a>.</p>
 					</footer>
 
 			</div>
