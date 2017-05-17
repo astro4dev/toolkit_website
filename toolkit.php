@@ -35,74 +35,77 @@
 
 
 						          <?php
-						          		# Load user credentials
-						          		$iniData = file_get_contents('/etc/mysql/user.cnf');
-										$iniData = preg_replace('/#.*$/m', '', $iniData);
-										$mysqlConfig = parse_ini_string($iniData, true);
+					          		# Load user credentials
+					          		$iniData = file_get_contents('/etc/mysql/user.cnf');
+									$iniData = preg_replace('/#.*$/m', '', $iniData);
+									$mysqlConfig = parse_ini_string($iniData, true);
 
-										# Connect to database
-										$db = mysqli_connect('dbint.astro4dev.org',$mysqlConfig['client']['user'],$mysqlConfig['client']['password'],'toolkit_db');
+									# Connect to database
+									$db = mysqli_connect('dbint.astro4dev.org',$mysqlConfig['client']['user'],$mysqlConfig['client']['password'],'toolkit_db');
 
-										# Print error if problems connecting to database
-										if (!$db) {
-										    echo "Error: Unable to connect to MySQL." . PHP_EOL;
-										    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-										    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-										    exit;
-										}
+									# Print error if problems connecting to database
+									if (!$db) {
+									    echo "Error: Unable to connect to MySQL." . PHP_EOL;
+									    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+									    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+									    exit;
+									}
 
-										if ($db->connect_errno) {
-										echo "Failed to connect to MySQL: (" . $db->connect_errno . ") " . $db->connect_error;
-										}
+									if ($db->connect_errno) {
+									echo "Failed to connect to MySQL: (" . $db->connect_errno . ") " . $db->connect_error;
+									}
 
-						                $query = "SELECT * FROM topics_astr;";
-						                $result = mysqli_query($db, $query);
-
+									# Read the contents of a table in the database
+					                $query = "SELECT * FROM topics_astr;";
+					                $result = mysqli_query($db, $query);
 						          ?>
 
+						          	<form action=""> 
+									<select name="customers" onchange="showContent(this.value)" width="300" style="width: 300px">
+									<option value='NoVal' selected disabled>Select a customer:</option>
+									<?php
+									while($row = mysqli_fetch_assoc($result)) {
+									  echo "<option value='".$row["Id"]."'>".$row["topics_astr"]."</option>";
+									}
+									?>
+									</select>
+									</form>
+									<br>
+									<div id="txtHint">Customer info will be listed here...</div>
 
-
-
-<form action=""> 
-<select name="customers" onchange="showCustomer(this.value)" width="300" style="width: 300px">
-<option value='NoVal' selected disabled>Select a customer:</option>
-<?php
-while($row = mysqli_fetch_assoc($result)) {
-  echo "<option value='ALFKI'>".$row["topics_astr"]."</option>";
-}
-?>
-</select>
-</form>
-<br>
-<div id="txtHint">Customer info will be listed here...</div>
-
-
-<script>
-function showCustomer(str) {
-  var xhttp;    
-  if (str == "") {
-    document.getElementById("txtHint").innerHTML = "";
-    return;
-  }
-  xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("txtHint").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "test.php", true);
-  xhttp.send();
-}
-</script>
+						          	<!-- Drop down menu showing the content of the table -->
+						          	<script>
+									function showContent(str) {
+									    if (str == "") {
+									        document.getElementById("txtHint").innerHTML = "";
+									        return;
+									    } else {
+									        if (window.XMLHttpRequest) {
+									            // code for IE7+, Firefox, Chrome, Opera, Safari
+									            xmlhttp = new XMLHttpRequest();
+									        } else {
+									            // code for IE6, IE5
+									            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+									        }
+									        xmlhttp.onreadystatechange = function() {
+									            if (this.readyState == 4 && this.status == 200) {
+									                document.getElementById("txtHint").innerHTML = this.responseText;
+									            }
+									        };
+									        xmlhttp.open("GET","getTopic.php?q="+str,true);
+									        xmlhttp.send();
+									    }
+									}
+									</script>
 
 							</section>
 
-					</div>
+			</div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<?php include 'footer.php';?>
-					</footer>
+			<!-- Footer -->
+			<footer id="footer">
+			<?php include 'footer.php';?>
+			</footer>
 
 			</div>
 
