@@ -31,11 +31,12 @@
 						<!-- Content -->
 							<section id="content" class="main">
 								
-								<h2>Test</h2>
+								<h2>Testing</h2>
 
 
 						          <?php
 					          		# Load user credentials
+						          	#phpinfo();
 					          		$iniData = file_get_contents('/etc/mysql/user.cnf');
 									$iniData = preg_replace('/#.*$/m', '', $iniData);
 									$mysqlConfig = parse_ini_string($iniData, true);
@@ -43,7 +44,6 @@
 									# Connect to database
 									$db = mysqli_connect('dbint.astro4dev.org',$mysqlConfig['client']['user'],$mysqlConfig['client']['password'],'toolkit_db');
 
-									# Print error if problems connecting to database
 									if (!$db) {
 									    echo "Error: Unable to connect to MySQL." . PHP_EOL;
 									    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
