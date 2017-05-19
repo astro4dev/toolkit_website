@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+}
+
+.column {
+    flex: 1;
+    /* border: 1px solid #e6e6e6; */
+    box-sizing: border-box;
+}
+
+.column-one {
+    order: 1;
+}
+.column-two {
+    order: 2;
+}
+.column-three {
+    order: 3;
+    background: #E3E4FA;
+    border-radius: 25px;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.topic-header{
+	text-align: center;
+	font-size: 24px;
+	padding-bottom: 10px;
+}
+
+.table-headers{
+	font-size: 24px;
+	margin-top: 5px;
+	margin-bottom: -10px;
+}

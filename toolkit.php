@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/custom.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
@@ -31,78 +32,116 @@
 						<!-- Content -->
 							<section id="content" class="main">
 								
-								<h2>Test</h2>
-
+								<!-- <h2>Testing</h2> -->
 
 						          <?php
-						          		# Load user credentials
-						          		$iniData = file_get_contents('/etc/mysql/user.cnf');
-										$iniData = preg_replace('/#.*$/m', '', $iniData);
-										$mysqlConfig = parse_ini_string($iniData, true);
+					          		# Load user credentials
+						          	#phpinfo();
+					          		$iniData = file_get_contents('/etc/mysql/user.cnf');
+									$iniData = preg_replace('/#.*$/m', '', $iniData);
+									$mysqlConfig = parse_ini_string($iniData, true);
 
-										# Connect to database
-										$db = mysqli_connect('dbint.astro4dev.org',$mysqlConfig['client']['user'],$mysqlConfig['client']['password'],'toolkit_db');
+									# Connect to database
+									$db = mysqli_connect('dbint.astro4dev.org',$mysqlConfig['client']['user'],$mysqlConfig['client']['password'],'toolkit_db');
 
-										# Print error if problems connecting to database
-										if (!$db) {
-										    echo "Error: Unable to connect to MySQL." . PHP_EOL;
-										    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-										    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-										    exit;
-										}
+									if (!$db) {
+									    echo "Error: Unable to connect to MySQL." . PHP_EOL;
+									    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+									    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+									    exit;
+									}
 
-										if ($db->connect_errno) {
-										echo "Failed to connect to MySQL: (" . $db->connect_errno . ") " . $db->connect_error;
-										}
+									if ($db->connect_errno) {
+									echo "Failed to connect to MySQL: (" . $db->connect_errno . ") " . $db->connect_error;
+									}
 
-						                $query = "SELECT * FROM topics_astr;";
-						                $result = mysqli_query($db, $query);
+									# Read the contents of a table in the database
+					                $query_topics_astr 	= "SELECT * FROM topics_astr;";
+					                $topics_astr 		= mysqli_query($db, $query_topics_astr);
+					                
+					                $query_skills 	= "SELECT * FROM skills;";
+					                $skills			= mysqli_query($db, $query_skills);
 
+					                $query_subtopics_astr 	= "SELECT * FROM subtopics_astr;";
+					                $subtopics_astr 		= mysqli_query($db, $query_subtopics_astr);
 						          ?>
 
+									<div class="container">
+									   <div class="column column-one">
+									   	
+									   	<!-- <div class="topic-header">Astronomy Topics:</div> -->
+									   	<form action=""> 
+										<select name="customers" onchange="showContent(this.value)" style="width: 90%;" autocomplete="off">
+										<option selected disabled>Select a Astronomy Topic:</option>
+										<?php
+										while($row = mysqli_fetch_assoc($topics_astr)) {
+										  echo "<option value='".$row["Id"]."'>".$row["topics_astr"]."</option>";
+										}
+										?>
+										</select>
+										</form>
+									   
+									   </div>
+									   <div class="column column-two">
+									   
+									   	<!-- <div class="topic-header">Data Science Topics:</div> -->
+									   	<form action=""> 
+										<select name="customers" onchange="showContent(this.value)" style="width: 90%" autocomplete="off">
+										<option selected disabled>Select a Data Sciene Topic:</option>
+										<?php
+										while($row = mysqli_fetch_assoc($skills)) {
+										  echo "<option value='".$row["Id"]."'>".$row["skills"]."</option>";
+										}
+										?>
+										</select>
+										</form>
 
+									   </div>
+									   <div class="column column-three">
 
+									   	<h2>How it works:</h2>
 
-<form action=""> 
-<select name="customers" onchange="showCustomer(this.value)" width="300" style="width: 300px">
-<option value='NoVal' selected disabled>Select a customer:</option>
-<?php
-while($row = mysqli_fetch_assoc($result)) {
-  echo "<option value='ALFKI'>".$row["topics_astr"]."</option>";
-}
-?>
-</select>
-</form>
-<br>
-<div id="txtHint">Customer info will be listed here...</div>
+									   	<p>Select from the drop down menus on the left.</p>
 
+									   </div>
+									</div>
 
-<script>
-function showCustomer(str) {
-  var xhttp;    
-  if (str == "") {
-    document.getElementById("txtHint").innerHTML = "";
-    return;
-  }
-  xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("txtHint").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "test.php", true);
-  xhttp.send();
-}
-</script>
+									<br>
+									<div id="txtHint">Results will be listed here...</div>
+
+						          	<!-- Drop down menu showing the content of the table -->
+						          	<script>
+									function showContent(str) {
+									    if (str == "") {
+									        document.getElementById("txtHint").innerHTML = "";
+									        return;
+									    } else {
+									        if (window.XMLHttpRequest) {
+									            // code for IE7+, Firefox, Chrome, Opera, Safari
+									            xmlhttp = new XMLHttpRequest();
+									        } else {
+									            // code for IE6, IE5
+									            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+									        }
+									        xmlhttp.onreadystatechange = function() {
+									            if (this.readyState == 4 && this.status == 200) {
+									                document.getElementById("txtHint").innerHTML = this.responseText;
+									            }
+									        };
+									        xmlhttp.open("GET","getTopic.php?q="+str,true);
+									        xmlhttp.send();
+									    }
+									}
+									</script>
 
 							</section>
 
-					</div>
+			</div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<?php include 'footer.php';?>
-					</footer>
+			<!-- Footer -->
+			<footer id="footer">
+			<?php include 'footer.php';?>
+			</footer>
 
 			</div>
 
