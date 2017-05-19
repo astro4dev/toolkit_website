@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/custom.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
@@ -31,8 +32,7 @@
 						<!-- Content -->
 							<section id="content" class="main">
 								
-								<h2>Testing</h2>
-
+								<!-- <h2>Testing</h2> -->
 
 						          <?php
 					          		# Load user credentials
@@ -56,22 +56,58 @@
 									}
 
 									# Read the contents of a table in the database
-					                $query = "SELECT * FROM topics_astr;";
-					                $result = mysqli_query($db, $query);
+					                $query_topics_astr 	= "SELECT * FROM topics_astr;";
+					                $topics_astr 		= mysqli_query($db, $query_topics_astr);
+					                
+					                $query_skills 	= "SELECT * FROM skills;";
+					                $skills			= mysqli_query($db, $query_skills);
+
+					                $query_subtopics_astr 	= "SELECT * FROM subtopics_astr;";
+					                $subtopics_astr 		= mysqli_query($db, $query_subtopics_astr);
 						          ?>
 
-						          	<form action=""> 
-									<select name="customers" onchange="showContent(this.value)" width="300" style="width: 300px">
-									<option value='NoVal' selected disabled>Select a customer:</option>
-									<?php
-									while($row = mysqli_fetch_assoc($result)) {
-									  echo "<option value='".$row["Id"]."'>".$row["topics_astr"]."</option>";
-									}
-									?>
-									</select>
-									</form>
+									<div class="container">
+									   <div class="column column-one">
+									   	
+									   	<!-- <div class="topic-header">Astronomy Topics:</div> -->
+									   	<form action=""> 
+										<select name="customers" onchange="showContent(this.value)" style="width: 90%;" autocomplete="off">
+										<option selected disabled>Select a Astronomy Topic:</option>
+										<?php
+										while($row = mysqli_fetch_assoc($topics_astr)) {
+										  echo "<option value='".$row["Id"]."'>".$row["topics_astr"]."</option>";
+										}
+										?>
+										</select>
+										</form>
+									   
+									   </div>
+									   <div class="column column-two">
+									   
+									   	<!-- <div class="topic-header">Data Science Topics:</div> -->
+									   	<form action=""> 
+										<select name="customers" onchange="showContent(this.value)" style="width: 90%" autocomplete="off">
+										<option selected disabled>Select a Data Sciene Topic:</option>
+										<?php
+										while($row = mysqli_fetch_assoc($skills)) {
+										  echo "<option value='".$row["Id"]."'>".$row["skills"]."</option>";
+										}
+										?>
+										</select>
+										</form>
+
+									   </div>
+									   <div class="column column-three">
+
+									   	<h2>How it works:</h2>
+
+									   	<p>Select from the drop down menus on the left.</p>
+
+									   </div>
+									</div>
+
 									<br>
-									<div id="txtHint">Customer info will be listed here...</div>
+									<div id="txtHint">Results will be listed here...</div>
 
 						          	<!-- Drop down menu showing the content of the table -->
 						          	<script>

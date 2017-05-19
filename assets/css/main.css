@@ -1,5 +1,4 @@
 @import url(font-awesome.min.css);
-@import "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400";
 
 /*
 	Stellar by HTML5 UP
@@ -1649,8 +1648,8 @@
 	}
 
 	body, input, select, textarea {
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
-		font-size: 17pt;
+		font-family: "Open Sans", Helvetica, sans-serif;
+		font-size: 16pt;
 		font-weight: 300;
 		line-height: 1.65;
 	}

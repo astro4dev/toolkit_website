@@ -38,14 +38,25 @@ $sql="SELECT * FROM topics_astr WHERE id = '".$q."'";
 $result = mysqli_query($con,$sql);
 
 echo "<table>
+
 <tr>
-<th>Topics</th>
+<th><div class='table-headers'>Examples</div></th>
 </tr>";
 while($row = mysqli_fetch_array($result)) {
     echo "<tr>";
     echo "<td>" . $row['topics_astr'] . "</td>";
     echo "</tr>";
 }
+
+echo "<tr>
+<th><div class='table-headers'>Courses</div></th>
+</tr>";
+while($row = mysqli_fetch_array($result)) {
+    echo "<tr>";
+    echo "<td>" . $row['topics_astr'] . "</td>";
+    echo "</tr>";
+}
+
 echo "</table>";
 mysqli_close($con);
 ?>
