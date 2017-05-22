@@ -71,11 +71,11 @@
 									   	
 									   	<!-- <div class="topic-header">Astronomy Topics:</div> -->
 									   	<form action=""> 
-										<select name="customers" onchange="showContent(this.value)" style="width: 90%;" autocomplete="off">
+										<select name="astr_topics" onchange="astr_topic(this.value)" style="width: 90%;" autocomplete="off">
 										<option selected disabled>Select a Astronomy Topic:</option>
 										<?php
-										while($row = mysqli_fetch_assoc($topics_astr)) {
-										  echo "<option value='".$row["Id"]."'>".$row["topics_astr"]."</option>";
+										while($row_topics_astr = mysqli_fetch_assoc($topics_astr)) {
+										  echo "<option value='".$row_topics_astr["Id"]."'>".$row_topics_astr["topics_astr"]."</option>";
 										}
 										?>
 										</select>
@@ -86,11 +86,11 @@
 									   
 									   	<!-- <div class="topic-header">Data Science Topics:</div> -->
 									   	<form action=""> 
-										<select name="customers" onchange="showContent(this.value)" style="width: 90%" autocomplete="off">
+										<select name="ds_topics" onchange="ds_topic(this.value)" style="width: 90%" autocomplete="off">
 										<option selected disabled>Select a Data Sciene Topic:</option>
 										<?php
-										while($row = mysqli_fetch_assoc($skills)) {
-										  echo "<option value='".$row["Id"]."'>".$row["skills"]."</option>";
+										while($row_skills = mysqli_fetch_assoc($skills)) {
+										  echo "<option value='".$row_skills["Id"]."'>".$row_skills["skills"]."</option>";
 										}
 										?>
 										</select>
@@ -111,8 +111,29 @@
 
 						          	<!-- Drop down menu showing the content of the table -->
 						          	<script>
-									function showContent(str) {
-									    if (str == "") {
+
+						          	var astr_choice;
+						          	var ds_choice;
+
+						          	function astr_topic(x) {
+						          		astr_choice = x;
+										showContent(astr_choice, ds_choice);
+										//if (typeof ds_choice != 'undefined') {
+										// showContent(astr_choice, ds_choice);
+										//}
+						          	}
+
+						          	function ds_topic(x) {
+						          		ds_choice 	= x;
+						          		showContent(astr_choice, ds_choice);
+										//if (typeof astr_choice != 'undefined') {
+										// showContent(astr_choice, ds_choice);
+										//}						          	
+						          	}
+
+									function showContent(astr_choice, ds_choice) {
+
+									    if (astr_choice == "" && ds_choice == "") {
 									        document.getElementById("txtHint").innerHTML = "";
 									        return;
 									    } else {
@@ -128,7 +149,10 @@
 									                document.getElementById("txtHint").innerHTML = this.responseText;
 									            }
 									        };
-									        xmlhttp.open("GET","getTopic.php?q="+str,true);
+
+									        //xmlhttp.open("GET","getTopic.php?q="+value1+"&t="+value2,true);
+									        xmlhttp.open("GET","getTopic.php?astr_choice="+astr_choice+"&ds_choice="+ds_choice,true);
+
 									        xmlhttp.send();
 									    }
 									}
