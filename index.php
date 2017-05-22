@@ -23,7 +23,7 @@
 					<header id="header" class="alt">
 						<span class="logo"><img src="images/DST_logo_250px.png" alt="" /></span>
 						<h1>OAD Data Science Toolkit</h1>
-						<p>Toolkit under development</p>
+						<p>Connecting Astronomy and Data Science</p>
 					</header>
 
 				<!-- Nav -->
@@ -31,7 +31,8 @@
 						<ul>
 							<li><a href="#intro" class="active">Introduction</a></li>
 							<li><a href="#first">Toolkit</a></li>
-							<li><a href="#cta">Contact</a></li>
+							<li><a href="#contribute">Contribute</a></li>
+							<li><a href="#footer">Contact</a></li>
 						</ul>
 					</nav>
 
@@ -46,11 +47,14 @@
 											<h2>Overall objective</h2>
 										</header>
 										<p>The overall objective of this toolkit is to provide a foundation for a “common language” between the data science and astronomy communities. The toolkit should help astronomers get a sense of the breadth of data science (as a field and in its applications) and see where their skills and knowledge fit into this wider view; and should help data scientists and those in need of data scientists (e.g. companies, NGOs) see what astronomers can contribute.</p>
+										<!--
 										<ul class="actions">
 											<li><a href="generic.html" class="button">Learn More</a></li>
 										</ul>
+										-->
 									</div>
-									<span class="image"><img src="images/OAD_logo.png" alt="" /></span>
+
+									<span class="image"><img src="images/horsehead_920px.jpg" alt="" /></span>
 								</div>
 							</section>
 
@@ -62,20 +66,26 @@
 								<ul class="features">
 									<li>
 										<span class="icon major style1 fa-code"></span>
-										<h3>Contribute</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
+										<h3>Open Source</h3>
+										<p>The entire toolkit is Open Source. This includes the content, the tools for updating it and this website.</p>
 									</li>
 									<li>
-										<span class="icon major style3 fa-database"></span>
-										<h3>Check out the toolkit</h3>
-										<p>The toolkit is in active development. Comments welcome!</p>
+										<span class="icon major style3 fa-users"></span>
+										<h3>Community driven</h3>
+										<p>The toolkit is maintained by volunteers from the astronomy and data science communities.</p>
 									</li>
 									<li>
 										<span class="icon major style5 fa-github"></span>
 										<h3>Help contribute</h3>
-										<p>We are looking for contributors who are willing to share their teaching materials. Simply fork <a href="https://github.com/astro4dev/OAD-Data-Science-Toolkit" target="_blank">the repository</a>, add your content and create a pull request.</p>
+										<p>Help us by creating and sharing your content. We are always looking for people keen on contributing.</p>
 									</li>
 								</ul>
+								
+
+
+
+
+
 								<footer class="major">
 									<ul class="actions">
 										<li><a href="generic.html" class="button">Learn More</a></li>
@@ -84,11 +94,50 @@
 							</section>
 
 						<!-- Get Started -->
-							<section id="cta" class="main special">
+							<section id="contribute" class="main special">
 								<header class="major">
-									<h2>Congue imperdiet</h2>
-									<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
-									posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
+									<h2>Help contribute</h2>
+									
+									
+									
+									<p>The toolkit is in it's infancy and for it to be a success we need people to help us create and share content. We are always looking for people keen on contributing.</p>
+
+
+								<ul class="statistics">
+									<li class="style1">
+										<span class="icon fa-file-code-o"></span>
+										<strong>4</strong> Examples
+									</li>
+									<li class="style2">
+										<span class="icon fa-pencil-square-o"></span>
+										<strong>2</strong> Assessments
+									</li>
+									<li class="style3">
+										<span class="icon fa-graduation-cap"></span>
+										<strong>2</strong> Courses
+									</li>
+									<li class="style4">
+										<span class="icon fa-code-fork"></span>
+										<strong>5</strong> Forks
+									</li>
+									<li class="style5">
+										<span class="icon fa-user"></span>
+										<strong>8</strong> Contributors
+									</li>
+								</ul>
+
+								<h3>Teaching materials</h3>
+								<!-- <img src="images/logo.svg" alt="" /> -->
+								<p class="content">If you have ever tought astronomy using data science techniques or you are a data scientist who has used astronomy examples to teach data science, please consider sharing your teaching materials.</p>
+
+								<h3>Assessments</h3>
+								<!-- <img src="images/logo.svg" alt="" /> -->
+								<p class="content">Few Astronomy summer schools and extra-curricular programmes use any form of assessment. This deprives students of the opportunity to both experience and demonstrate their achievements; and projects of the ability to show others that they achieved what they intended. The toolkit strives towards providing high quality pre- and post-assessments.</p>
+
+								<h3>Coding and Content</h3>
+								<!-- <img src="images/logo.svg" alt="" /> -->
+								<p class="content">The website toolkit is made up of a lot of different tools: HTML5, CSS3, PHP, MySQL, AJAX, jQuery, Shell, JavaScript and Python. If you have exeperience in any of these tools or perhaps just want to improve the content on this website please help contribute.</p>
+
 								</header>
 								<footer class="major">
 									<ul class="actions">
@@ -126,7 +175,10 @@
 								<li><a href="https://github.com/astro4dev" class="icon fa-github alt" target="_blank"><span class="label">GitHub</span></a></li>
 							</ul>
 						</section>
-						<p class="copyright">An Astronomy for Development Project: <a href="http://www.astro4dev.org/" target="_blank">astro4dev.org</a>.</p>
+						<p class="copyright">An Astronomy for Development Project: <a href="http://www.astro4dev.org/" target="_blank">astro4dev.org</a>
+						<br>
+						Horsehead Nebula photo by <a href="http://imgsrc.hubblesite.org/hu/db/images/hs-2013-12-a-print.jpg" target="_blank">NASA, ESA, and the Hubble Heritage Team (STScI/AURA)</a>
+						</p>
 					</footer>
 
 			</div>
