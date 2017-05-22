@@ -61,7 +61,7 @@
 						<!-- First Section -->
 							<section id="first" class="main special">
 								<header class="major">
-									<h2>Explore!</h2>
+									<h2>About the toolkit</h2>
 								</header>
 								<ul class="features">
 									<li>
@@ -75,9 +75,9 @@
 										<p>The toolkit is maintained by volunteers from the astronomy and data science communities.</p>
 									</li>
 									<li>
-										<span class="icon major style5 fa-github"></span>
-										<h3>Help contribute</h3>
-										<p>Help us by creating and sharing your content. We are always looking for people keen on contributing.</p>
+										<span class="icon major style5 fa-universal-access"></span>
+										<h3>Accessible and Secure</h3>
+										<p>The toolkit is accessible in every country. We adopt secure pracitces....</p>
 									</li>
 								</ul>
 								
@@ -85,10 +85,9 @@
 
 
 
-
 								<footer class="major">
 									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn More</a></li>
+										<li><a href="toolkit.php" class="button special">View toolkit</a></li>
 									</ul>
 								</footer>
 							</section>
