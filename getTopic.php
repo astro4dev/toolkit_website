@@ -32,10 +32,18 @@ if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
 }
 
-mysqli_select_db($con,"topics_astr");
-
 $sql="SELECT * FROM topics_astr WHERE id = '".$q."'";
-$result = mysqli_query($con,$sql);
+#$result = mysqli_query($con,$sql);
+
+$query_topics_astr__examples = "\n
+SELECT topics_astr.topics_astr,examples.last_updated,examples.title,examples.links\n
+FROM topics_astr,examples,topics_astr__examples\n
+WHERE topics_astr__examples.topic_id = topics_astr.id\n
+AND topics_astr__examples.example_id = examples.id\n
+AND topics_astr.id = '".$q."';";
+
+
+$result = mysqli_query($con, $query_topics_astr__examples);
 
 echo "<table>
 
@@ -44,7 +52,8 @@ echo "<table>
 </tr>";
 while($row = mysqli_fetch_array($result)) {
     echo "<tr>";
-    echo "<td>" . $row['topics_astr'] . "</td>";
+    echo "<td> <a href=\"" . $row['links'] . "\" target=\"_blank\">" . $row['title'] . "</a> - Updated on: ". $row['last_updated'] ."</td>";
+    #echo "<td onclick='window.location.href = \"http://google.com\";'>" . $row['title'] . "</td>";
     echo "</tr>";
 }
 
@@ -53,7 +62,8 @@ echo "<tr>
 </tr>";
 while($row = mysqli_fetch_array($result)) {
     echo "<tr>";
-    echo "<td>" . $row['topics_astr'] . "</td>";
+    #echo "<td> <a href=\"" . $row['link'] . "\">" . $row['topics_astr'] . "</a></td>";
+    #echo "<td onclick='window.location.href = \"http://google.com\";'>";
     echo "</tr>";
 }
 
