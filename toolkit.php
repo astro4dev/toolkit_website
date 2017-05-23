@@ -71,8 +71,8 @@
 									   	
 									   	<!-- <div class="topic-header">Astronomy Topics:</div> -->
 									   	<form action=""> 
-										<select name="astr_topics" onchange="astr_topic(this.value)" style="width: 90%;" autocomplete="off">
-										<option selected disabled>Select a Astronomy Topic:</option>
+										<select name="astr_topics" onchange="astr_topic(this.value)" style="width: 90%;" autocomplete="off"">
+										<option selected>Select a Astronomy Topic:</option>
 										<?php
 										while($row_topics_astr = mysqli_fetch_assoc($topics_astr)) {
 										  echo "<option value='".$row_topics_astr["Id"]."'>".$row_topics_astr["topics_astr"]."</option>";
@@ -87,7 +87,7 @@
 									   	<!-- <div class="topic-header">Data Science Topics:</div> -->
 									   	<form action=""> 
 										<select name="ds_topics" onchange="ds_topic(this.value)" style="width: 90%" autocomplete="off">
-										<option selected disabled>Select a Data Sciene Topic:</option>
+										<option selected>Select a Data Sciene Topic:</option>
 										<?php
 										while($row_skills = mysqli_fetch_assoc($skills)) {
 										  echo "<option value='".$row_skills["Id"]."'>".$row_skills["skills"]."</option>";

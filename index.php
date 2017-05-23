@@ -105,15 +105,15 @@
 								<ul class="statistics">
 									<li class="style1">
 										<span class="icon fa-file-code-o"></span>
-										<strong>4</strong> Examples
+										<strong>3</strong> Examples
 									</li>
 									<li class="style2">
 										<span class="icon fa-pencil-square-o"></span>
-										<strong>2</strong> Assessments
+										<strong>1</strong> Assessment
 									</li>
 									<li class="style3">
 										<span class="icon fa-graduation-cap"></span>
-										<strong>2</strong> Courses
+										<strong>3</strong> Courses
 									</li>
 									<li class="style4">
 										<span class="icon fa-code-fork"></span>
@@ -168,7 +168,7 @@
 								<dd>info_at_astro4dev.org</dd>
 							</dl>
 							<ul class="icons">
-								<li><a href="#https://www.twitter.com/astro4dev" class="icon fa-twitter alt" target="_blank"><span class="label">Twitter</span></a></li>
+								<li><a href="https://www.twitter.com/astro4dev" class="icon fa-twitter alt" target="_blank"><span class="label">Twitter</span></a></li>
 								<li><a href="https://www.facebook.com/astro4dev/" class="icon fa-facebook alt" target="_blank"><span class="label">Facebook</span></a></li>
 								<li><a href="https://www.youtube.com/channel/UCoRFDfXOPticDidg_-d0jWQ" class="icon fa-youtube alt" target="_blank"><span class="label">YouTube</span></a></li>
 								<li><a href="https://github.com/astro4dev" class="icon fa-github alt" target="_blank"><span class="label">GitHub</span></a></li>
