@@ -23,7 +23,7 @@
 				<!-- Header -->
 					<header id="header">
 						<h1>OAD Data Science Toolkit</h1>
-						<p>Work in progress!</p>
+						<p>v.0.1.0</p>
 					</header>
 
 				<!-- Main -->
@@ -72,7 +72,7 @@
 									   	<!-- <div class="topic-header">Astronomy Topics:</div> -->
 									   	<form action=""> 
 										<select name="astr_topics" onchange="astr_topic(this.value)" style="width: 90%;" autocomplete="off"">
-										<option selected>Select a Astronomy Topic:</option>
+										<option selected>Select an Astronomy Topic:</option>
 										<?php
 										while($row_topics_astr = mysqli_fetch_assoc($topics_astr)) {
 										  echo "<option value='".$row_topics_astr["Id"]."'>".$row_topics_astr["topics_astr"]."</option>";
@@ -80,14 +80,14 @@
 										?>
 										</select>
 										</form>
-									   
+
 									   </div>
 									   <div class="column column-two">
 									   
 									   	<!-- <div class="topic-header">Data Science Topics:</div> -->
 									   	<form action=""> 
 										<select name="ds_topics" onchange="ds_topic(this.value)" style="width: 90%" autocomplete="off">
-										<option selected>Select a Data Sciene Topic:</option>
+										<option selected>Select a Data Science Topic:</option>
 										<?php
 										while($row_skills = mysqli_fetch_assoc($skills)) {
 										  echo "<option value='".$row_skills["Id"]."'>".$row_skills["skills"]."</option>";
@@ -101,39 +101,39 @@
 
 									   	<h2>How it works:</h2>
 
-									   	<p>Select from the drop down menus on the left.</p>
+									   	<p>Select from one of the drop down menus on the left so see the content of the toolkit. We are working on connecting the two.</p>
 
 									   </div>
 									</div>
 
 									<br>
-									<div id="txtHint">Results will be listed here...</div>
+									<!-- <div id="txtHint">Results will be listed here...</div> -->
 
 						          	<!-- Drop down menu showing the content of the table -->
 						          	<script>
 
 						          	var astr_choice;
-						          	var ds_choice;
+						          	var skill_choice;
 
 						          	function astr_topic(x) {
 						          		astr_choice = x;
-										showContent(astr_choice, ds_choice);
-										//if (typeof ds_choice != 'undefined') {
-										// showContent(astr_choice, ds_choice);
+										showContent(astr_choice, skill_choice);
+										//if (typeof skill_choice != 'undefined') {
+										// showContent(astr_choice, skill_choice);
 										//}
 						          	}
 
 						          	function ds_topic(x) {
-						          		ds_choice 	= x;
-						          		showContent(astr_choice, ds_choice);
+						          		skill_choice 	= x;
+						          		showContent(astr_choice, skill_choice);
 										//if (typeof astr_choice != 'undefined') {
-										// showContent(astr_choice, ds_choice);
+										// showContent(astr_choice, skill_choice);
 										//}						          	
 						          	}
 
-									function showContent(astr_choice, ds_choice) {
+									function showContent(astr_choice, skill_choice) {
 
-									    if (astr_choice == "" && ds_choice == "") {
+									    if (astr_choice == "" && skill_choice == "") {
 									        document.getElementById("txtHint").innerHTML = "";
 									        return;
 									    } else {
@@ -151,7 +151,7 @@
 									        };
 
 									        //xmlhttp.open("GET","getTopic.php?q="+value1+"&t="+value2,true);
-									        xmlhttp.open("GET","getTopic.php?astr_choice="+astr_choice+"&ds_choice="+ds_choice,true);
+									        xmlhttp.open("GET","getTopic.php?astr_choice="+astr_choice+"&skill_choice="+skill_choice,true);
 
 									        xmlhttp.send();
 									    }

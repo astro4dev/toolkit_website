@@ -30,7 +30,6 @@
 
 .table-headers{
 	font-size: 24px;
-	margin-top: 5px;
-	margin-bottom: -10px;
     font-weight: bold;
+    background-color:#d4e3e5;
 }
