@@ -2746,7 +2746,7 @@
 	}
 
 		table tbody tr {
-			border: solid 1px;
+			border: solid 0px;
 			border-left: 0;
 			border-right: 0;
 		}
@@ -2756,9 +2756,15 @@
 		}
 
 		table th {
-			font-size: 0.9em;
-			font-weight: 400;
-			padding: 0 0.75em 0.75em 0.75em;
+			font-size: 1.25em;
+			padding: 0.25em 0em 0.25em 0.75em;
+			border-radius: 5px;
+			font-weight: bold;
+			background: purple; /* For browsers that do not support gradients */
+			background: -webkit-linear-gradient(left top, purple, pink); /* For Safari 5.1 to 6.0 */
+			background: -o-linear-gradient(bottom right, purple, pink); /* For Opera 11.1 to 12.0 */
+			background: -moz-linear-gradient(bottom right, purple, pink); /* For Firefox 3.6 to 15 */
+			background: linear-gradient(to right, #615295, #df7984); /* Standard syntax */
 			text-align: left;
 		}
 
@@ -3576,7 +3582,7 @@
 			}
 
 		#main table th {
-			color: #636363;
+			color: #f9f9f9;
 		}
 
 		#main table thead {
