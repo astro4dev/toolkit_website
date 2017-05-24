@@ -72,7 +72,7 @@
 									   	<!-- <div class="topic-header">Astronomy Topics:</div> -->
 									   	<form action=""> 
 										<select name="astr_topics" onchange="astr_topic(this.value)" style="width: 90%;" autocomplete="off"">
-										<option selected>Select an Astronomy Topic:</option>
+										<option selected>Select a Astronomy Topic:</option>
 										<?php
 										while($row_topics_astr = mysqli_fetch_assoc($topics_astr)) {
 										  echo "<option value='".$row_topics_astr["Id"]."'>".$row_topics_astr["topics_astr"]."</option>";
@@ -87,7 +87,7 @@
 									   	<!-- <div class="topic-header">Data Science Topics:</div> -->
 									   	<form action=""> 
 										<select name="ds_topics" onchange="ds_topic(this.value)" style="width: 90%" autocomplete="off">
-										<option selected>Select a Data Science Topic:</option>
+										<option selected>Select a Data Sciene Topic:</option>
 										<?php
 										while($row_skills = mysqli_fetch_assoc($skills)) {
 										  echo "<option value='".$row_skills["Id"]."'>".$row_skills["skills"]."</option>";
@@ -101,13 +101,14 @@
 
 									   	<h2>How it works:</h2>
 
-									   	<p>Select from one of the drop down menus on the left so see the content of the toolkit. We are working on connecting the two.</p>
+									   	Use either of the drop down menus on the left to see the toolkit content.
 
 									   </div>
 									</div>
 
 									<br>
 									<!-- <div id="txtHint">Results will be listed here...</div> -->
+									<div id="txtHint"></div>
 
 						          	<!-- Drop down menu showing the content of the table -->
 						          	<script>

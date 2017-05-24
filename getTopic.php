@@ -87,8 +87,8 @@ $title_course       = array();
 
 
 
-if ($astr_choice == 0 && $skill_choice == 0){
-    echo "whooo";
+if ($astr_choice == 0 && $skill_choice == 3){
+    echo "Sorry, no material for R yet.";
 }
 
 
