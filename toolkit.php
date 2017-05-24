@@ -72,7 +72,7 @@
 									   	<!-- <div class="topic-header">Astronomy Topics:</div> -->
 									   	<form action=""> 
 										<select name="astr_topics" onchange="astr_topic(this.value)" style="width: 90%;" autocomplete="off"">
-										<option selected>Select a Astronomy Topic:</option>
+										<option selected>Select an Astronomy Topic:</option>
 										<?php
 										while($row_topics_astr = mysqli_fetch_assoc($topics_astr)) {
 										  echo "<option value='".$row_topics_astr["Id"]."'>".$row_topics_astr["topics_astr"]."</option>";

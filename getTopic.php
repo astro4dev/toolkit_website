@@ -99,7 +99,7 @@ if( mysqli_num_rows($example_astr) ) {
     <th colspan='3'>" . $astr_topic . " Examples</th>
     </tr><tr>";
     while($row_example_astr = mysqli_fetch_array($example_astr)) {
-        echo "<td  width='60%'> <a href=\"" . $row_example_astr['links'] . "\" target=\"_blank\"><i>" . $row_example_astr['title'] . "</td></i></a><td width='20%'>" . $row_example_astr['name'] . "</td> <td width='20%'><font size=4>". $row_example_astr['last_updated'] . "</font></td>";
+        echo "<td  width='60%'> <a href=\"" . $row_example_astr['links'] . "\" target=\"_blank\"><i>" . $row_example_astr['title'] . "</td></i></a><td width='30%'>" . $row_example_astr['name'] . "</td> <td width='10%'>". $row_example_astr['last_updated'] . "</td>";
         echo "</tr>";
         $title_skill[] = $row_example_astr['title'];
     } 
@@ -112,7 +112,7 @@ if( mysqli_num_rows($example_skill) ) {
     while($row_example_skill = mysqli_fetch_array($example_skill)) {
         if ($title_skill[0] != $row_example_skill['title']) {
         echo "<tr>";
-        echo "<td width='60%'> <a href=\"" . $row_example_skill['links'] . "\" target=\"_blank\"><i>" . $row_example_skill['title'] . "</td></i></a><td width='20%'>" . $row_example_skill['name'] . "</td> <td width='20%'><font size=4>". $row_example_skill['last_updated'] . "</font></td>";
+        echo "<td width='60%'> <a href=\"" . $row_example_skill['links'] . "\" target=\"_blank\"><i>" . $row_example_skill['title'] . "</td></i></a><td width='30%'>" . $row_example_skill['name'] . "</td> <td width='10%'>". $row_example_skill['last_updated'] . "</td>";
         echo "</tr>";
         }
     }
@@ -126,7 +126,7 @@ if( mysqli_num_rows($course_astr) ) {
     </tr><tr>";
     while($row_course_astr = mysqli_fetch_array($course_astr)) {
         echo "<tr>";
-        echo "<td width='60%'> <a href=\"" . $row_course_astr['links'] . "\" target=\"_blank\"><i>" . $row_course_astr['title'] . "</td></i></a><td width='20%'>" . $row_course_astr['name'] . "</td> <td width='20%'><font size=4>". $row_course_astr['last_updated'] . "</font></td>";
+        echo "<td width='60%'> <a href=\"" . $row_course_astr['links'] . "\" target=\"_blank\"><i>" . $row_course_astr['title'] . "</td></i></a><td width='30%'>" . $row_course_astr['name'] . "</td> <td width='10%'>". $row_course_astr['last_updated'] . "</td>";
         echo "</tr>";
         $title_course[] = $row_course_astr['title'];
     }
@@ -140,7 +140,7 @@ if( mysqli_num_rows($course_skill) ) {
     while($row_course_skill = mysqli_fetch_array($course_skill)) {
         if ($title_course[0] != $row_course_skill['title']) {
         echo "<tr>";
-        echo "<td width='60%'> <a href=\"" . $row_course_skill['links'] . "\" target=\"_blank\"><i>" . $row_course_skill['title'] . "</td></i></a><td width='20%'>" . $row_course_skill['name'] . "</td> <td width='20%'><font size=4>". $row_course_skill['last_updated'] . "</font></td>";
+        echo "<td width='60%'> <a href=\"" . $row_course_skill['links'] . "\" target=\"_blank\"><i>" . $row_course_skill['title'] . "</td></i></a><td width='30%'>" . $row_course_skill['name'] . "</td> <td width='10%'>". $row_course_skill['last_updated'] . "</td>";
         echo "</tr>";
         }
     }
@@ -153,7 +153,7 @@ if( mysqli_num_rows($assessment_skill) ) {
     </tr><tr>";
     while($row_assessment_skill = mysqli_fetch_array($assessment_skill)) {
         echo "<tr>";
-        echo "<td> <a href=\"" . $row_assessment_skill['links'] . "\" target=\"_blank\"><i>" . $row_assessment_skill['title'] . "</td></i></a><td width='20%'>" . $row_assessment_skill['name'] . "</td> <td width='20%'><font size=4>". $row_assessment_skill['last_updated'] . "</font></td>";
+        echo "<td> <a href=\"" . $row_assessment_skill['links'] . "\" target=\"_blank\"><i>" . $row_assessment_skill['title'] . "</td></i></a><td width='30%'>" . $row_assessment_skill['name'] . "</td> <td width='10%'>". $row_assessment_skill['last_updated'] . "</td>";
         echo "</tr>";
         }
 }
