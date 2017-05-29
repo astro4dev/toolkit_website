@@ -46,7 +46,7 @@
 										<header class="major">
 											<h2>Overall objective</h2>
 										</header>
-										<p>The overall objective of this toolkit is to provide a foundation for a “common language” between the data science and astronomy communities. The toolkit should help astronomers get a sense of the breadth of data science (as a field and in its applications) and see where their skills and knowledge fit into this wider view; and should help data scientists and those in need of data scientists (e.g. companies, NGOs) see what astronomers can contribute.</p>
+										<p>The overall objective of this toolkit is to provide a foundation for a <i>“common language”</i> between the data science and astronomy communities. The toolkit should help astronomers get a sense of the breadth of data science (as a field and in its applications) and see where their skills and knowledge fit into this wider view; and should help data scientists and those in need of data scientists (e.g. companies, NGOs) see what astronomers can contribute.</p>
 										<!--
 										<ul class="actions">
 											<li><a href="generic.html" class="button">Learn More</a></li>
@@ -81,10 +81,14 @@
 									</li>
 								</ul>
 								
+								<p>
+								The focus of the toolkit is to provide high quality teaching materials in the form of examples, courses and assessments which you are welcome to use for your teaching or perhaps when organising a workshop or a summer school.</p>
+
+								<p>
+								The toolkit is aimed at specifically connecting the fields of astronomy and data science and is not meant to compete with massive open online courses such as edX or Coursera.</p>
 
 
-
-
+								You are free to use all the toolkit materials in accordance with the <a href="https://github.com/paultheastronomer/OAD-Data-Science-Toolkit/blob/master/LICENSE.txt" target="_blank">GNU General Public License v3.0.
 								<footer class="major">
 									<ul class="actions">
 										<li><a href="toolkit.php" class="button special">View toolkit</a></li>
@@ -92,7 +96,6 @@
 								</footer>
 							</section>
 
-						<!-- Get Started -->
 							<section id="contribute" class="main special">
 								<header class="major">
 									<h2>Help contribute</h2>
@@ -138,12 +141,15 @@
 								<p class="content">This website has been created using a lot of different tools: HTML5, CSS3, PHP, MySQL, AJAX, jQuery, Shell, JavaScript and Python. If you have exeperience in any of these tools or perhaps would like to improve the content on this website please help contribute. The entire website can be found <a href="https://github.com/astro4dev/toolkit_website" target="_blank">here</a>.</p>
 
 								</header>
+
+								<!-- Get Started
 								<footer class="major">
 									<ul class="actions">
 										<li><a href="generic.html" class="button special">Get Started</a></li>
 										<li><a href="generic.html" class="button">Learn More</a></li>
 									</ul>
 								</footer>
+								-->
 							</section>
 
 					</div>
@@ -175,7 +181,7 @@
 							</ul>
 						</section>
 						<p class="copyright">An Astronomy for Development Project: <a href="http://www.astro4dev.org/" target="_blank">astro4dev.org</a>
-						<br>
+						<br/>
 						Horsehead Nebula photo by <a href="http://imgsrc.hubblesite.org/hu/db/images/hs-2013-12-a-print.jpg" target="_blank">NASA, ESA, and the Hubble Heritage Team (STScI/AURA)</a>
 						</p>
 					</footer>
