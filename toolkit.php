@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>OAD Data Science Toolkit</title>
+		<title>Astronomy & Data Science Toolkit</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -22,7 +22,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1>OAD Data Science Toolkit</h1>
+						<h1>Astronomy & Data Science Toolkit</h1>
 						<p>v.0.1.0</p>
 					</header>
 
@@ -87,7 +87,7 @@
 									   	<!-- <div class="topic-header">Data Science Topics:</div> -->
 									   	<form action=""> 
 										<select name="ds_topics" onchange="ds_topic(this.value)" style="width: 90%" autocomplete="off">
-										<option selected>Select a Data Sciene Topic:</option>
+										<option selected>Select a Data Science Topic:</option>
 										<?php
 										while($row_skills = mysqli_fetch_assoc($skills)) {
 										  echo "<option value='".$row_skills["Id"]."'>".$row_skills["skills"]."</option>";
