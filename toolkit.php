@@ -30,177 +30,98 @@
 					<div id="main">
 
 						<!-- Content -->
-							<section id="content" class="main">
-								
-								<!-- <h2>Testing</h2> -->
+						<section id="content" class="main">
+							
+							<!-- <h2>Testing</h2> -->
 
-						          <?php
-					          		# Load user credentials
-						          	#phpinfo();
-					          		$iniData 		= file_get_contents('/etc/mysql/user.cnf');
-									$iniData 		= preg_replace('/#.*$/m', '', $iniData);
-									$mysqlConfig 	= parse_ini_string($iniData, true);
+					        <?php
+							# Connect to database
+							include 'connect_db.php';
 
-									# Connect to database
-									$db = mysqli_connect('dbint.astro4dev.org',$mysqlConfig['client']['user'],$mysqlConfig['client']['password'],'toolkit_db');
+							# Read the contents of a table in the database
+			                $query_topics_astr 		= "SELECT * FROM topics_astr;";
+			                $topics_astr 			= mysqli_query($db, $query_topics_astr);
+			                
+			                $query_skills 			= "SELECT * FROM skills;";
+			                $skills					= mysqli_query($db, $query_skills);
 
-									if (!$db) {
-									    echo "Error: Unable to connect to MySQL." . PHP_EOL;
-									    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-									    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-									    exit;
+			                $query_subtopics_astr 	= "SELECT * FROM subtopics_astr;";
+			                $subtopics_astr 		= mysqli_query($db, $query_subtopics_astr);
+					        ?>
+
+							<div class="search">
+							<input type="text" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Type your Query">
+							<!-- <form>
+							 <input id="search" type="search" placeholder="Search the toolkit" name="typeahead" autofocus>
+							<input type="text" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Type your Query">
+							<<button type="submit" class="button special">Search</button>
+							</form> -->
+							</div>
+
+								<!--
+								<div class="container">
+
+								   <div class="column column-one">
+								   I'm an Astronomer interested in...
+
+								   	<form action=""> 
+									<select name="astr_topics" onchange="astr_topic(this.value)" style="width: 90%;" autocomplete="off"">
+									<option selected></option>
+									<?php
+									while($row_topics_astr = mysqli_fetch_assoc($topics_astr)) {
+									  echo "<option value='".$row_topics_astr["Id"]."'>".$row_topics_astr["topics_astr"]."</option>";
 									}
-
-									if ($db->connect_errno) {
-									echo "Failed to connect to MySQL: (" . $db->connect_errno . ") " . $db->connect_error;
-									}
-
-									# Read the contents of a table in the database
-					                $query_topics_astr 		= "SELECT * FROM topics_astr;";
-					                $topics_astr 			= mysqli_query($db, $query_topics_astr);
-					                
-					                $query_skills 			= "SELECT * FROM skills;";
-					                $skills					= mysqli_query($db, $query_skills);
-
-					                $query_subtopics_astr 	= "SELECT * FROM subtopics_astr;";
-					                $subtopics_astr 		= mysqli_query($db, $query_subtopics_astr);
-						          ?>
-
-
-
-
-									<div class="search">
-									<form>
-									<input id="search" type="search" placeholder="Search the toolkit" name="typeahead" autofocus>
-									<button type="submit" class="button special">Search</button>
+									?>
+									</select>
 									</form>
-									</div>
 
-								
+								   </div>
+								   <div class="column column-two">
+								   I'm a Data Scientist interested in...
 
-
-
-
-
-
-									<div class="container">
-
-									   <div class="column column-one">
-									   I'm an Astronomer interested in...
-									   	<!-- <div class="topic-header">Astronomy Topics:</div> -->
-									   	<form action=""> 
-										<select name="astr_topics" onchange="astr_topic(this.value)" style="width: 90%;" autocomplete="off"">
-										<option selected></option>
-										<?php
-										while($row_topics_astr = mysqli_fetch_assoc($topics_astr)) {
-										  echo "<option value='".$row_topics_astr["Id"]."'>".$row_topics_astr["topics_astr"]."</option>";
-										}
-										?>
-										</select>
-										</form>
-
-									   </div>
-									   <div class="column column-two">
-									   I'm a Data Scientist interested in...
-									   	<!-- <div class="topic-header">Data Science Topics:</div> -->
-									   	<form action=""> 
-										<select name="ds_topics" onchange="ds_topic(this.value)" style="width: 90%" autocomplete="off">
-										<option selected></option>
-										<?php
-										while($row_skills = mysqli_fetch_assoc($skills)) {
-										  echo "<option value='".$row_skills["Id"]."'>".$row_skills["skills"]."</option>";
-										}
-										?>
-										</select>
-										</form>
-
-									   </div>
-									   <div class="column column-three">
-									   
-
-									   <input type="checkbox" name="Courses" value="courses" id="courses"><label for="courses">Courses</label><br />
-									   <input type="checkbox" name="Examples" value="examples" id="examples"><label for="examples">Examples</label><br />
-									   <input type="checkbox" name="Assessments" value="assessments" id="assessments"><label for="assessments">Assessments</label><br />
-
-
-
-									   </div>									   
-
-									   <!--
-									   <div class="column column-four">
-
-									   	<h2>How it works:</h2>
-
-									   	Use either of the drop down menus on the left to see the toolkit content.
-
-									   </div>
-									   -->
-									</div>
-
-									<br>
-									<!-- <div id="txtHint">Results will be listed here...</div> -->
-									<div id="txtHint"></div>
-
-						          	<!-- Drop down menu showing the content of the table -->
-						          	<script>
-
-						          	var astr_choice;
-						          	var skill_choice;
-
-						          	function astr_topic(x) {
-						          		astr_choice = x;
-										showContent(astr_choice, skill_choice);
-										//if (typeof skill_choice != 'undefined') {
-										// showContent(astr_choice, skill_choice);
-										//}
-						          	}
-
-						          	function ds_topic(x) {
-						          		skill_choice 	= x;
-						          		showContent(astr_choice, skill_choice);
-										//if (typeof astr_choice != 'undefined') {
-										// showContent(astr_choice, skill_choice);
-										//}						          	
-						          	}
-
-									function showContent(astr_choice, skill_choice) {
-
-									    if (astr_choice == "" && skill_choice == "") {
-									        document.getElementById("txtHint").innerHTML = "";
-									        return;
-									    } else {
-									        if (window.XMLHttpRequest) {
-									            // code for IE7+, Firefox, Chrome, Opera, Safari
-									            xmlhttp = new XMLHttpRequest();
-									        } else {
-									            // code for IE6, IE5
-									            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-									        }
-									        xmlhttp.onreadystatechange = function() {
-									            if (this.readyState == 4 && this.status == 200) {
-									                document.getElementById("txtHint").innerHTML = this.responseText;
-									            }
-									        };
-
-									        //xmlhttp.open("GET","getTopic.php?q="+value1+"&t="+value2,true);
-									        xmlhttp.open("GET","getTopic.php?astr_choice="+astr_choice+"&skill_choice="+skill_choice,true);
-
-									        xmlhttp.send();
-									    }
+								   	<form action=""> 
+									<select name="ds_topics" onchange="ds_topic(this.value)" style="width: 90%" autocomplete="off">
+									<option selected></option>
+									<?php
+									while($row_skills = mysqli_fetch_assoc($skills)) {
+									  echo "<option value='".$row_skills["Id"]."'>".$row_skills["skills"]."</option>";
 									}
-									
-									$(document).ready(function(){
-									$(document).ready(function(){
-									    $('input.typeahead').typeahead({
-									        name: 'typeahead',
-									        remote:'search.php?key=%QUERY',
-									        limit : 10
-									    });
-									});
+									?>
+									</select>
+									</form>
 
-									</script>
+								   </div>
+								   <div class="column column-three">
+								   
 
-							</section>
+								   <input type="checkbox" name="Courses" value="courses" id="courses"><label for="courses">Courses</label><br />
+								   <input type="checkbox" name="Examples" value="examples" id="examples"><label for="examples">Examples</label><br />
+								   <input type="checkbox" name="Assessments" value="assessments" id="assessments"><label for="assessments">Assessments</label><br />
+
+
+
+								   </div>									   
+
+								   <!--
+								   <div class="column column-four">
+
+								   	<h2>How it works:</h2>
+
+								   	Use either of the drop down menus on the left to see the toolkit content.
+
+								   </div>
+								   
+								</div>
+								-->
+
+								<br>
+								<!-- <div id="txtHint">Results will be listed here...</div> -->
+								<div id="txtHint"></div>
+
+					          	
+
+
+						</section>
 
 			</div>
 
@@ -212,14 +133,67 @@
 			</div>
 
 		<!-- Scripts -->
+
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<script src="assets/js/typeahead.bundle.min.js"></script>
+			<script src="assets/js/typeahead.min.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+
+		    <script>
+
+		    // Drop down menu showing the content of the table
+			var astr_choice;
+			var skill_choice;
+
+			function astr_topic(x) {
+				astr_choice = x;
+			showContent(astr_choice, skill_choice);
+			}
+
+			function ds_topic(x) {
+				skill_choice 	= x;
+				showContent(astr_choice, skill_choice);					          	
+			}
+
+			function showContent(astr_choice, skill_choice) {
+
+			if (astr_choice == "" && skill_choice == "") {
+			    document.getElementById("txtHint").innerHTML = "";
+			    return;
+			} else {
+			    if (window.XMLHttpRequest) {
+			        // code for IE7+, Firefox, Chrome, Opera, Safari
+			        xmlhttp = new XMLHttpRequest();
+			    } else {
+			        // code for IE6, IE5
+			        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			    }
+			    xmlhttp.onreadystatechange = function() {
+			        if (this.readyState == 4 && this.status == 200) {
+			            document.getElementById("txtHint").innerHTML = this.responseText;
+			        }
+			    };
+
+			    xmlhttp.open("GET","getTopic.php?astr_choice="+astr_choice+"&skill_choice="+skill_choice,true);
+
+			    xmlhttp.send();
+			}
+			}
+
+			// Autocomplete box
+		    $(document).ready(function(){
+			    $('input.typeahead').typeahead({
+			        name: 'typeahead',
+			        remote:'search.php?key=%QUERY',
+			        limit : 10
+			    });
+			});
+		    </script>
+
 
 	</body>
 </html>

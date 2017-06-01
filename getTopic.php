@@ -6,9 +6,13 @@
 <body>
 
 <?php
+$key            = $_GET['key'];
+
 $astr_choice    = intval($_GET['astr_choice']);
 $skill_choice   = intval($_GET['skill_choice']);
 $type_choice    = intval($_GET['type_choice']);
+
+
 
 
 # Load user credentials
@@ -22,6 +26,12 @@ $con = mysqli_connect('dbint.astro4dev.org',$mysqlConfig['client']['user'],$mysq
 if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
 }
+
+$query_search           = "SELECT * FROM examples WHERE title LIKE '".$key."';";
+
+echo $skill_choice;
+echo $key;
+echo $query_search;
 
 $query_astr_category    = "SELECT * FROM topics_astr WHERE Id='".$astr_choice."';";
 $query_skill_category   = "SELECT * FROM skills WHERE Id='".$skill_choice."';";
@@ -43,7 +53,6 @@ AND topics_astr__courses.course_id = courses.id\n
 AND authors__courses.author_id = authors.id\n
 AND authors__courses.course_id = courses.id\n
 AND topics_astr.id = '".$astr_choice."';";
-
 
 $query_skills__examples = "\n
 SELECT skills.skills,examples.last_updated,examples.title,examples.links,authors.name,authors.author_img\n
@@ -72,6 +81,8 @@ AND authors__assessments.author_id = authors.id\n
 AND authors__assessments.assessment_id = assessments.id\n
 AND skills.id = '".$skill_choice."';";
 
+$search_query       = mysqli_query($con, $query_search);
+
 $astr_topic         = mysqli_fetch_array(mysqli_query($con, $query_astr_category))['topics_astr'];
 $skill_topic        = mysqli_fetch_array(mysqli_query($con, $query_skill_category))['skills'];
 
@@ -85,6 +96,17 @@ $assessment_skill   = mysqli_query($con, $query_skills__assessments);
 
 $title_skill        = array();
 $title_course       = array();
+
+
+    $array = array();
+    while($row=mysql_fetch_assoc($search_query))
+    {
+      $array[] = $row['title'];
+    }
+    echo json_encode($array);
+
+
+
 
 
 
