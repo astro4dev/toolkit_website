@@ -8,7 +8,8 @@
 <?php
 $astr_choice    = intval($_GET['astr_choice']);
 $skill_choice   = intval($_GET['skill_choice']);
-#$q = intval($_GET['q']);
+$type_choice    = intval($_GET['type_choice']);
+
 
 # Load user credentials
 $iniData        = file_get_contents('/etc/mysql/user.cnf');

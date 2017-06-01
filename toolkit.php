@@ -37,9 +37,9 @@
 						          <?php
 					          		# Load user credentials
 						          	#phpinfo();
-					          		$iniData = file_get_contents('/etc/mysql/user.cnf');
-									$iniData = preg_replace('/#.*$/m', '', $iniData);
-									$mysqlConfig = parse_ini_string($iniData, true);
+					          		$iniData 		= file_get_contents('/etc/mysql/user.cnf');
+									$iniData 		= preg_replace('/#.*$/m', '', $iniData);
+									$mysqlConfig 	= parse_ini_string($iniData, true);
 
 									# Connect to database
 									$db = mysqli_connect('dbint.astro4dev.org',$mysqlConfig['client']['user'],$mysqlConfig['client']['password'],'toolkit_db');
@@ -56,11 +56,11 @@
 									}
 
 									# Read the contents of a table in the database
-					                $query_topics_astr 	= "SELECT * FROM topics_astr;";
-					                $topics_astr 		= mysqli_query($db, $query_topics_astr);
+					                $query_topics_astr 		= "SELECT * FROM topics_astr;";
+					                $topics_astr 			= mysqli_query($db, $query_topics_astr);
 					                
-					                $query_skills 	= "SELECT * FROM skills;";
-					                $skills			= mysqli_query($db, $query_skills);
+					                $query_skills 			= "SELECT * FROM skills;";
+					                $skills					= mysqli_query($db, $query_skills);
 
 					                $query_subtopics_astr 	= "SELECT * FROM subtopics_astr;";
 					                $subtopics_astr 		= mysqli_query($db, $query_subtopics_astr);
