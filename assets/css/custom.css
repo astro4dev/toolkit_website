@@ -1,3 +1,9 @@
+.search {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
 .container {
     display: flex;
 }
@@ -15,13 +21,17 @@
     order: 2;
 }
 .column-three {
+    order: 3;
+    padding-top: 1.65em;
+}
+.column-four {
 
     -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 3s; /* Firefox < 16 */
         -ms-animation: fadein 3s; /* Internet Explorer */
          -o-animation: fadein 3s; /* Opera < 12.1 */
             animation: fadein 3s;
-    order: 3;
+    order: 4;
     background: #E3E4FA;
     border-radius: 0.25em;
     border: solid #000;

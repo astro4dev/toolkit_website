@@ -23,7 +23,7 @@
 				<!-- Header -->
 					<header id="header">
 						<h1>Astronomy & Data Science Toolkit</h1>
-						<p>v.0.1.0</p>
+						<p>v.0.1.1</p>
 					</header>
 
 				<!-- Main -->
@@ -66,13 +66,31 @@
 					                $subtopics_astr 		= mysqli_query($db, $query_subtopics_astr);
 						          ?>
 
+
+
+
+									<div class="search">
+									<form>
+									<input id="search" type="search" placeholder="Search the toolkit" name="typeahead" autofocus>
+									<button type="submit" class="button special">Search</button>
+									</form>
+									</div>
+
+								
+
+
+
+
+
+
 									<div class="container">
+
 									   <div class="column column-one">
-									   	
+									   I'm an Astronomer interested in...
 									   	<!-- <div class="topic-header">Astronomy Topics:</div> -->
 									   	<form action=""> 
 										<select name="astr_topics" onchange="astr_topic(this.value)" style="width: 90%;" autocomplete="off"">
-										<option selected>Select an Astronomy Topic:</option>
+										<option selected></option>
 										<?php
 										while($row_topics_astr = mysqli_fetch_assoc($topics_astr)) {
 										  echo "<option value='".$row_topics_astr["Id"]."'>".$row_topics_astr["topics_astr"]."</option>";
@@ -83,11 +101,11 @@
 
 									   </div>
 									   <div class="column column-two">
-									   
+									   I'm a Data Scientist interested in...
 									   	<!-- <div class="topic-header">Data Science Topics:</div> -->
 									   	<form action=""> 
 										<select name="ds_topics" onchange="ds_topic(this.value)" style="width: 90%" autocomplete="off">
-										<option selected>Select a Data Science Topic:</option>
+										<option selected></option>
 										<?php
 										while($row_skills = mysqli_fetch_assoc($skills)) {
 										  echo "<option value='".$row_skills["Id"]."'>".$row_skills["skills"]."</option>";
@@ -98,12 +116,25 @@
 
 									   </div>
 									   <div class="column column-three">
+									   
+
+									   <input type="checkbox" name="Courses" value="courses" id="courses"><label for="courses">Courses</label><br />
+									   <input type="checkbox" name="Examples" value="examples" id="examples"><label for="examples">Examples</label><br />
+									   <input type="checkbox" name="Assessments" value="assessments" id="assessments"><label for="assessments">Assessments</label><br />
+
+
+
+									   </div>									   
+
+									   <!--
+									   <div class="column column-four">
 
 									   	<h2>How it works:</h2>
 
 									   	Use either of the drop down menus on the left to see the toolkit content.
 
 									   </div>
+									   -->
 									</div>
 
 									<br>
@@ -157,6 +188,16 @@
 									        xmlhttp.send();
 									    }
 									}
+									
+									$(document).ready(function(){
+									$(document).ready(function(){
+									    $('input.typeahead').typeahead({
+									        name: 'typeahead',
+									        remote:'search.php?key=%QUERY',
+									        limit : 10
+									    });
+									});
+
 									</script>
 
 							</section>
@@ -176,6 +217,7 @@
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
+			<script src="assets/js/typeahead.bundle.min.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 
