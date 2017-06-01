@@ -50,12 +50,10 @@
 					        ?>
 
 							<div class="search">
-							<input type="text" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Type your Query">
-							<!-- <form>
-							 <input id="search" type="search" placeholder="Search the toolkit" name="typeahead" autofocus>
-							<input type="text" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Type your Query">
-							<<button type="submit" class="button special">Search</button>
-							</form> -->
+							<form>
+							<input type="text" name="typeahead" class="typeahead tt-query" autocomplete="on" spellcheck="false" placeholder="Search the toolkit" autofocus>
+							<button type="submit" class="button special">Go</button>
+							</form>
 							</div>
 
 								<!--
