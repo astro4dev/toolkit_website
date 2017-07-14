@@ -6,14 +6,11 @@
 <body>
 
 <?php
-$key            = $_GET['key'];
+$keyword        = $_GET['keyword'];
 
 $astr_choice    = intval($_GET['astr_choice']);
 $skill_choice   = intval($_GET['skill_choice']);
 $type_choice    = intval($_GET['type_choice']);
-
-
-
 
 # Load user credentials
 $iniData        = file_get_contents('/etc/mysql/user.cnf');
@@ -27,14 +24,15 @@ if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
 }
 
-$query_search           = "SELECT * FROM examples WHERE title LIKE '".$key."';";
-
-echo $skill_choice;
-echo $key;
-echo $query_search;
-
+//$query_search           = "SELECT * FROM examples WHERE title LIKE '".$keyword."';";
+$query_search           = "SELECT * FROM skills WHERE title LIKE '".$keyword."';";
 $query_astr_category    = "SELECT * FROM topics_astr WHERE Id='".$astr_choice."';";
 $query_skill_category   = "SELECT * FROM skills WHERE Id='".$skill_choice."';";
+
+//echo $skill_choice;
+//echo $keyword;
+//echo "<br><br>";
+echo $query_search;
 
 $query_topics_astr__examples = "\n
 SELECT topics_astr.topics_astr,examples.last_updated,examples.title,examples.links,authors.name,authors.author_img\n
@@ -83,8 +81,14 @@ AND skills.id = '".$skill_choice."';";
 
 $search_query       = mysqli_query($con, $query_search);
 
+
+
 $astr_topic         = mysqli_fetch_array(mysqli_query($con, $query_astr_category))['topics_astr'];
 $skill_topic        = mysqli_fetch_array(mysqli_query($con, $query_skill_category))['skills'];
+
+$skill_topic2        = mysqli_fetch_array(mysqli_query($con, $query_search))['skills'];
+
+
 
 $example_astr       = mysqli_query($con, $query_topics_astr__examples);
 $example_skill      = mysqli_query($con, $query_skills__examples);
@@ -104,9 +108,6 @@ $title_course       = array();
       $array[] = $row['title'];
     }
     echo json_encode($array);
-
-
-
 
 
 
@@ -180,6 +181,24 @@ if( mysqli_num_rows($assessment_skill) ) {
         echo "</tr>";
         }
 }
+
+
+
+
+if( mysqli_num_rows($search_query) ) {
+    echo "<tr>
+    <th colspan='4'>" . $skill_topic2 . " Assessments</th>
+    </tr><tr>";
+    while($row_search_query = mysqli_fetch_array($search_query)) {
+        echo "<tr>";
+        echo "<td> <a href=\"" . $row_search_query['links'] . "\" target=\"_blank\"><i>" . $row_search_query['title'] . "</td></i></a><td width='25%'>" . $row_search_query['name'] . "</td> <td><img src='" . $row_search_query['author_img'] . "' width='60'><td>". $row_search_query['last_updated'] . "</td>";
+        echo "</tr>";
+        }
+}
+
+
+
+
 
 echo "</table>";
 

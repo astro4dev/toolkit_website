@@ -31,14 +31,14 @@
 
 						<!-- Content -->
 						<section id="content" class="main">
-							
-							<!-- <h2>Testing</h2> -->
 
 					        <?php
-							# Connect to database
+							
+							# Database user configuration
 			          		$iniData 		= file_get_contents('/etc/mysql/user.cnf');
 							$iniData 		= preg_replace('/#.*$/m', '', $iniData);
 							$mysqlConfig 	= parse_ini_string($iniData, true);
+							
 							# Connect to database
 							$db = mysqli_connect('dbint.astro4dev.org',$mysqlConfig['client']['user'],$mysqlConfig['client']['password'],'toolkit_db');
 							if (!$db) {
@@ -63,14 +63,15 @@
 					        ?>
 
 							<div class="search">
-							<form method="post">
+							<!-- <form method="post"> -->
 							<input type="text" name="search" class="typeahead tt-query" autocomplete="on" id="search" spellcheck="false" placeholder="Search the toolkit" autofocus>
-							<input type="submit" class="button special" name="btnSearch" value="Search" id="btnSearch"></button>
-							</form>
+							 <input type="submit" class="button special" name="btnSearch" value="Search" id="btnSearch">
+							<!-- <button onclick="myFunction()">Click me</button> -->
+							<!-- </form> -->
 							</div>
 							
 
-
+								   <!--
 								<div class="container">
 
 								   <div class="column column-one">
@@ -114,7 +115,7 @@
 
 								   </div>									   
 
-								   <!--
+
 								   <div class="column column-four">
 
 								   	<h2>How it works:</h2>
@@ -123,14 +124,12 @@
 
 								   </div>
 								   
-								</div>
+								</div> -->
 
 
 								<br>
 								<!-- <div id="txtHint">Results will be listed here...</div> -->
 								<div id="txtHint">test</div>
-
-					          	
 
 
 						</section>
@@ -161,8 +160,12 @@
 			var astr_choice;
 			var skill_choice;
 
+			function myFunction() {
+			    document.getElementById("txtHint").innerHTML = "Hello World";
+			}
+
 			function astr_topic(astr_choice) {
-			showContent(astr_choice, skill_choice);
+				showContent(astr_choice, skill_choice);
 			}
 
 			function ds_topic(skill_choice) {
@@ -195,10 +198,15 @@
 			}
 
 			var button		= document.getElementById('btnSearch');
+			
 			button.onclick	= function(){
-    		var text 		= document.getElementById('search').value;
 
-			if (keyword == "") {
+    		var text 		= document.getElementById('search').value; // ok
+
+    		// works!
+    		// document.getElementById("txtHint").innerHTML = text;
+
+			if (text == "") {
 			    document.getElementById("txtHint").innerHTML = "";
 			    return;
 			} else {
@@ -214,6 +222,8 @@
 			            document.getElementById("txtHint").innerHTML = this.responseText;
 			        }
 			    };
+
+			    document.getElementById("txtHint").innerHTML = text;
 
 			    xmlhttp.open("GET","getTopic.php?keyword="+text,true);
 
