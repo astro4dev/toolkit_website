@@ -36,7 +36,20 @@
 
 					        <?php
 							# Connect to database
-							include 'connect_db.php';
+			          		$iniData 		= file_get_contents('/etc/mysql/user.cnf');
+							$iniData 		= preg_replace('/#.*$/m', '', $iniData);
+							$mysqlConfig 	= parse_ini_string($iniData, true);
+							# Connect to database
+							$db = mysqli_connect('dbint.astro4dev.org',$mysqlConfig['client']['user'],$mysqlConfig['client']['password'],'toolkit_db');
+							if (!$db) {
+							    echo "Error: Unable to connect to MySQL." . PHP_EOL;
+							    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+							    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+							    exit;
+							}
+							if ($db->connect_errno) {
+							echo "Failed to connect to MySQL: (" . $db->connect_errno . ") " . $db->connect_error;
+							}
 
 							# Read the contents of a table in the database
 			                $query_topics_astr 		= "SELECT * FROM topics_astr;";
@@ -50,13 +63,14 @@
 					        ?>
 
 							<div class="search">
-							<form>
-							<input type="text" name="typeahead" class="typeahead tt-query" autocomplete="on" spellcheck="false" placeholder="Search the toolkit" autofocus>
-							<button type="submit" class="button special">Go</button>
+							<form method="post">
+							<input type="text" name="search" class="typeahead tt-query" autocomplete="on" id="search" spellcheck="false" placeholder="Search the toolkit" autofocus>
+							<input type="submit" class="button special" name="btnSearch" value="Search" id="btnSearch"></button>
 							</form>
 							</div>
+							
 
-								<!--
+
 								<div class="container">
 
 								   <div class="column column-one">
@@ -110,11 +124,11 @@
 								   </div>
 								   
 								</div>
-								-->
+
 
 								<br>
 								<!-- <div id="txtHint">Results will be listed here...</div> -->
-								<div id="txtHint"></div>
+								<div id="txtHint">test</div>
 
 					          	
 
@@ -147,13 +161,11 @@
 			var astr_choice;
 			var skill_choice;
 
-			function astr_topic(x) {
-				astr_choice = x;
+			function astr_topic(astr_choice) {
 			showContent(astr_choice, skill_choice);
 			}
 
-			function ds_topic(x) {
-				skill_choice 	= x;
+			function ds_topic(skill_choice) {
 				showContent(astr_choice, skill_choice);					          	
 			}
 
@@ -179,8 +191,39 @@
 			    xmlhttp.open("GET","getTopic.php?astr_choice="+astr_choice+"&skill_choice="+skill_choice,true);
 
 			    xmlhttp.send();
+				}
 			}
+
+			var button		= document.getElementById('btnSearch');
+			button.onclick	= function(){
+    		var text 		= document.getElementById('search').value;
+
+			if (keyword == "") {
+			    document.getElementById("txtHint").innerHTML = "";
+			    return;
+			} else {
+			    if (window.XMLHttpRequest) {
+			        // code for IE7+, Firefox, Chrome, Opera, Safari
+			        xmlhttp = new XMLHttpRequest();
+			    } else {
+			        // code for IE6, IE5
+			        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			    }
+			    xmlhttp.onreadystatechange = function() {
+			        if (this.readyState == 4 && this.status == 200) {
+			            document.getElementById("txtHint").innerHTML = this.responseText;
+			        }
+			    };
+
+			    xmlhttp.open("GET","getTopic.php?keyword="+text,true);
+
+			    xmlhttp.send();
+				}
+
+
+
 			}
+
 
 			// Autocomplete box
 		    $(document).ready(function(){
