@@ -64,7 +64,7 @@
 
 							<div class="search">
 							<!-- <form method="post"> -->
-							<input type="text" name="search" class="typeahead tt-query" autocomplete="on" id="search" spellcheck="false" placeholder="Search the toolkit" autofocus>
+							<input type="text" name="search" class="typeahead" autocomplete="on" id="search" spellcheck="false" placeholder="Search the toolkit" autofocus>
 							 <input type="submit" class="button special" name="btnSearch" value="Search" id="btnSearch">
 							<!-- <button onclick="myFunction()">Click me</button> -->
 							<!-- </form> -->
@@ -165,10 +165,6 @@
 			var astr_choice;
 			var skill_choice;
 
-			function myFunction() {
-			    document.getElementById("txtHint").innerHTML = "Hello World";
-			}
-
 			function astr_topic(astr_choice) {
 				showContent(astr_choice, skill_choice);
 			}
@@ -206,10 +202,7 @@
 			
 			button.onclick	= function(){
 
-    		var text 		= document.getElementById('search').value; // ok
-
-    		// works!
-    		// document.getElementById("txtHint").innerHTML = text;
+    		var text 		= document.getElementById('search').value;
 
 			if (text == "") {
 			    document.getElementById("txtHint").innerHTML = "";
@@ -238,9 +231,38 @@
 			}
 
 
+
+var substringMatcher = function(strs) {
+  return function findMatches(q, cb) {
+    var matches, substringRegex;
+
+    // an array that will be populated with substring matches
+    matches = [];
+
+    // regex used to determine if a string contains the substring `q`
+    substrRegex = new RegExp(q, 'i');
+
+    // iterate through the pool of strings and for any string that
+    // contains the substring `q`, add it to the `matches` array
+    $.each(strs, function(i, str) {
+      if (substrRegex.test(str)) {
+        matches.push(str);
+      }
+    });
+
+    cb(matches);
+  };
+};
+
+
+
+
 			// Autocomplete box
 		    $(document).ready(function(){
 			    $('input.typeahead').typeahead({
+			        hint: true,
+			        highlight: true,
+			        minLength: 1,
 			        name: 'typeahead',
 			        remote:'search.php?key=%QUERY',
 			        limit : 10

@@ -4,9 +4,8 @@
     align-items:center;
 }
 
-
-
-.typeahead, .tt-query, .tt-hint {
+.typeahead, .tt-query {
+    display: block !important;
     border: 2px solid #CCCCCC;
     border-radius: 8px;
     font-size: 24px;
@@ -26,7 +25,13 @@
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
 }
 .tt-hint {
-    color: #999999;
+    display: block;
+    height: 30px;
+    font-size: 0px;
+    line-height: 30px;
+    border: 1px solid transparent;
+    padding: -8px -12px;
+    border-radius:4px;
 }
 .tt-dropdown-menu {
     background-color: #FFFFFF;
@@ -47,7 +52,7 @@
     color: #FFFFFF;
 }
 .tt-suggestion p {
-    margin: 0.5em;
+    margin: .5em;
 }
 
 
@@ -130,3 +135,4 @@
     from { opacity: 0; }
     to   { opacity: 1; }
 }
+

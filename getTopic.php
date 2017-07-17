@@ -6,9 +6,8 @@
 <body>
 
 <?php
+
 $keyword        = $_GET['keyword'];
-
-
 $astr_choice    = intval($_GET['astr_choice']);
 $skill_choice   = intval($_GET['skill_choice']);
 $type_choice    = intval($_GET['type_choice']);
@@ -29,7 +28,6 @@ if (!$con) {
 $query_search           = "SELECT * FROM courses WHERE (IF(LENGTH('".$keyword."') > 0, courses.title LIKE '%".$keyword."%' , 0)) UNION SELECT * FROM examples WHERE (IF(LENGTH('".$keyword."') > 0, examples.title LIKE '%".$keyword."%' , 0)) UNION SELECT * FROM assessments WHERE (IF(LENGTH('".$keyword."') > 0, assessments.title LIKE '%".$keyword."%' , 0));";
 $query_astr_category    = "SELECT * FROM topics_astr WHERE Id='".$astr_choice."';";
 $query_skill_category   = "SELECT * FROM skills WHERE Id='".$skill_choice."';";
-
 
 
 $query_topics_astr__examples = "\n
@@ -207,14 +205,12 @@ if( mysqli_num_rows($search_query) ) {
 echo "</table>";
 
 // Free results
-
-#mysqli_free_result($astr_topic);
-#mysqli_free_result($skill_topic);
 mysqli_free_result($example_astr);
 mysqli_free_result($example_skill);
-#mysqli_free_result($course_astr);
+mysqli_free_result($course_astr);
 mysqli_free_result($course_skill);
 mysqli_free_result($assessment_skill);
+mysqli_free_result($search_query);
 
 mysqli_close($con);
 ?>
