@@ -69,9 +69,12 @@
 							<!-- <button onclick="myFunction()">Click me</button> -->
 							<!-- </form> -->
 							</div>
+							<br />
+							OR
+							<br />
 							
 
-								   <!--
+
 								<div class="container">
 
 								   <div class="column column-one">
@@ -104,6 +107,7 @@
 									</form>
 
 								   </div>
+								   <!--- 
 								   <div class="column column-three">
 								   
 
@@ -113,7 +117,8 @@
 
 
 
-								   </div>									   
+								   </div>
+								   -->								   
 
 
 								   <div class="column column-four">
@@ -124,12 +129,12 @@
 
 								   </div>
 								   
-								</div> -->
+								</div>
 
 
 								<br>
-								<!-- <div id="txtHint">Results will be listed here...</div> -->
-								<div id="txtHint">test</div>
+								<div id="txtHint">Results will be listed here...</div>
+
 
 
 						</section>
@@ -229,8 +234,6 @@
 
 			    xmlhttp.send();
 				}
-
-
 
 			}
 
