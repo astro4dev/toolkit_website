@@ -23,8 +23,19 @@
 				<!-- Header -->
 					<header id="header">
 						<h1>Astronomy & Data Science Toolkit</h1>
-						<p>v.0.1.1</p>
+						<p>v.0.2.0</p>
 					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="index.php#intro" class="active">Introduction</a></li>
+							<li><a href="index.php#about">About the Toolkit</a></li>
+							<li><a href="toolkit.php">View Toolkit</a></li>
+							<li><a href="index.php#contribute">Contribute</a></li>
+							<li><a href="index.php#footer">Contact</a></li>
+						</ul>
+					</nav>
 
 				<!-- Main -->
 					<div id="main">
@@ -69,71 +80,46 @@
 							<!-- <button onclick="myFunction()">Click me</button> -->
 							<!-- </form> -->
 							</div>
-							<br />
-							OR
-							<br />
+
+							<div class="search_explanation">
+							This search box let's you search all toolkit titles.
+							</div>
+
 							
 
 
 								<div class="container">
 
-								   <div class="column column-one">
-								   I'm an Astronomer interested in...
+								<div class="column column-one">
+								I'm an Astronomer interested in learning data science skills related to
+								<select name="astr_topics" onchange="astr_topic(this.value)" style="width: 90%;" autocomplete="off"">
+								<option selected>Select topic...</option>
+								<?php
+								while($row_topics_astr = mysqli_fetch_assoc($topics_astr)) {
+								  echo "<option value='".$row_topics_astr["Id"]."'>".$row_topics_astr["topics_astr"]."</option>";
+								}
+								?>
+								</select>
+								</div>
 
-								   	<form action=""> 
-									<select name="astr_topics" onchange="astr_topic(this.value)" style="width: 90%;" autocomplete="off"">
-									<option selected></option>
-									<?php
-									while($row_topics_astr = mysqli_fetch_assoc($topics_astr)) {
-									  echo "<option value='".$row_topics_astr["Id"]."'>".$row_topics_astr["topics_astr"]."</option>";
-									}
-									?>
-									</select>
-									</form>
-
-								   </div>
-								   <div class="column column-two">
-								   I'm a Data Scientist interested in...
-
-								   	<form action=""> 
-									<select name="ds_topics" onchange="ds_topic(this.value)" style="width: 90%" autocomplete="off">
-									<option selected></option>
-									<?php
-									while($row_skills = mysqli_fetch_assoc($skills)) {
-									  echo "<option value='".$row_skills["Id"]."'>".$row_skills["skills"]."</option>";
-									}
-									?>
-									</select>
-									</form>
-
-								   </div>
-								   <!--- 
-								   <div class="column column-three">
-								   
-
-								   <input type="checkbox" name="Courses" value="courses" id="courses"><label for="courses">Courses</label><br />
-								   <input type="checkbox" name="Examples" value="examples" id="examples"><label for="examples">Examples</label><br />
-								   <input type="checkbox" name="Assessments" value="assessments" id="assessments"><label for="assessments">Assessments</label><br />
-
-
-
-								   </div>
-								   -->								   
-
-
-								   <div class="column column-four">
-
-								   	<h2>How it works:</h2>
-
-								   	Use either of the drop down menus on the left to see the toolkit content.
-
-								   </div>
+								<div class="column column-two">
+								I'm a Data Scientist interested in teaching
+								<select name="ds_topics" onchange="ds_topic(this.value)" style="width: 90%" autocomplete="off">
+								<option selected>Select topic...</option>
+								<?php
+								while($row_skills = mysqli_fetch_assoc($skills)) {
+								  echo "<option value='".$row_skills["Id"]."'>".$row_skills["skills"]."</option>";
+								}
+								?>
+								</select>
+								using examples from astronomy.
+								</div>
 								   
 								</div>
 
 
 								<br>
-								<div id="txtHint">Results will be listed here...</div>
+								<div id="txtHint"></div>
 
 
 
@@ -229,13 +215,6 @@
 				}
 
 			}
-
-
-
-
-
-
-
 
 			// Autocomplete box
 		    $(document).ready(function(){

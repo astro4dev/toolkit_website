@@ -4,6 +4,14 @@
     align-items:center;
 }
 
+.search_explanation {
+    text-align: center;
+    font-size: 18px;
+    color: #9a9a9a; 
+    padding-top: 20px;
+    padding-bottom: 80px;
+}
+
 .typeahead, .tt-query {
     display: block !important;
     border: 2px solid #CCCCCC;
@@ -71,9 +79,11 @@
 
 .column-one {
     order: 1;
+    padding-right: 60px;
 }
 .column-two {
     order: 2;
+    padding-left: 60px;
 }
 .column-three {
     order: 3;

@@ -30,7 +30,8 @@
 					<nav id="nav">
 						<ul>
 							<li><a href="#intro" class="active">Introduction</a></li>
-							<li><a href="#first">Toolkit</a></li>
+							<li><a href="#about">About the Toolkit</a></li>
+							<li><a href="toolkit.php">View Toolkit</a></li>
 							<li><a href="#contribute">Contribute</a></li>
 							<li><a href="#footer">Contact</a></li>
 						</ul>
@@ -58,8 +59,8 @@
 								</div>
 							</section>
 
-						<!-- First Section -->
-							<section id="first" class="main special">
+						<!-- About Section -->
+							<section id="about" class="main special">
 								<header class="major">
 									<h2>About the toolkit</h2>
 								</header>
