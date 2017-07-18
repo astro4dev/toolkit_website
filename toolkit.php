@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>OAD Data Science Toolkit</title>
+		<title>Astronomy & Data Science Toolkit</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -22,7 +22,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1>OAD Data Science Toolkit</h1>
+						<h1>Astronomy & Data Science Toolkit</h1>
 						<p>v.0.1.0</p>
 					</header>
 
@@ -37,9 +37,9 @@
 						          <?php
 					          		# Load user credentials
 						          	#phpinfo();
-					          		$iniData = file_get_contents('/etc/mysql/user.cnf');
-									$iniData = preg_replace('/#.*$/m', '', $iniData);
-									$mysqlConfig = parse_ini_string($iniData, true);
+					          		$iniData 		= file_get_contents('/etc/mysql/user.cnf');
+									$iniData 		= preg_replace('/#.*$/m', '', $iniData);
+									$mysqlConfig 	= parse_ini_string($iniData, true);
 
 									# Connect to database
 									$db = mysqli_connect('dbint.astro4dev.org',$mysqlConfig['client']['user'],$mysqlConfig['client']['password'],'toolkit_db');
@@ -56,11 +56,11 @@
 									}
 
 									# Read the contents of a table in the database
-					                $query_topics_astr 	= "SELECT * FROM topics_astr;";
-					                $topics_astr 		= mysqli_query($db, $query_topics_astr);
+					                $query_topics_astr 		= "SELECT * FROM topics_astr;";
+					                $topics_astr 			= mysqli_query($db, $query_topics_astr);
 					                
-					                $query_skills 	= "SELECT * FROM skills;";
-					                $skills			= mysqli_query($db, $query_skills);
+					                $query_skills 			= "SELECT * FROM skills;";
+					                $skills					= mysqli_query($db, $query_skills);
 
 					                $query_subtopics_astr 	= "SELECT * FROM subtopics_astr;";
 					                $subtopics_astr 		= mysqli_query($db, $query_subtopics_astr);
@@ -87,7 +87,7 @@
 									   	<!-- <div class="topic-header">Data Science Topics:</div> -->
 									   	<form action=""> 
 										<select name="ds_topics" onchange="ds_topic(this.value)" style="width: 90%" autocomplete="off">
-										<option selected>Select a Data Sciene Topic:</option>
+										<option selected>Select a Data Science Topic:</option>
 										<?php
 										while($row_skills = mysqli_fetch_assoc($skills)) {
 										  echo "<option value='".$row_skills["Id"]."'>".$row_skills["skills"]."</option>";

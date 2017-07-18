@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>OAD Data Science Toolkit</title>
+		<title>Astronomy & Data Science Toolkit</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -22,7 +22,7 @@
 				<!-- Header -->
 					<header id="header" class="alt">
 						<span class="logo"><img src="images/DST_logo_250px.png" alt="" /></span>
-						<h1>OAD Data Science Toolkit</h1>
+						<h1>Astronomy & Data Science Toolkit</h1>
 						<p>Connecting Astronomy and Data Science</p>
 					</header>
 
