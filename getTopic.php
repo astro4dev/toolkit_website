@@ -116,8 +116,9 @@ $assessment_skill   = mysqli_query($con, $query_skills__assessments);
 $title_skill        = array();
 $title_course       = array();
 
-if ($astr_choice == 0 && $skill_choice == 3){
-    echo "Sorry, no material for R yet.";
+
+if ($astr_choice == 6 || $skill_choice == 5){
+    echo "<div class=\"column column-four\"><h3>Help contribute to the toolkit</h3>If you have ever taught astronomy using data science techniques or you are a data scientist who has used astronomy examples to teach data science, please consider <a href=\"index.php#contribute\">contributing</a> your teaching materials to the toolkit. You can either directly contribute to <a href=\"https://github.com/astro4dev/OAD-Data-Science-Toolkit\" target=\"_blank\">github</a> or send us the materials directly via email.</div>";
 }
 
 

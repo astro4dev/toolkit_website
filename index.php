@@ -47,7 +47,7 @@
 										<header class="major">
 											<h2>Overall objective</h2>
 										</header>
-										<p>The overall objective of this toolkit is to provide a foundation for a <i>“common language”</i> between the data science and astronomy communities. The toolkit should help astronomers get a sense of the breadth of data science (as a field and in its applications) and see where their skills and knowledge fit into this wider view; and should help data scientists and those in need of data scientists (e.g. companies, NGOs) see what astronomers can contribute.</p>
+										<p>The overall objective of this toolkit is to provide a foundation for a “common language” between data science and astronomy communities. The toolkit should help astronomers get a sense of the breadth of data science (as a field and in its applications) and to see where their skills and knowledge fit into this wider view; it should help data scientists and those in need of data scientists (e.g. companies, NGOs) see what astronomers can contribute.</p>
 										<!--
 										<ul class="actions">
 											<li><a href="generic.html" class="button">Learn More</a></li>
@@ -68,17 +68,17 @@
 									<li>
 										<span class="icon major style1 fa-code"></span>
 										<h3>Open Source</h3>
-										<p>The entire toolkit is Open Source. This includes the content, the tools for updating it and this website.</p>
+										<p>The entire toolkit is Open Source. This includes: the content, the tools for updating it and this website.</p>
 									</li>
 									<li>
 										<span class="icon major style3 fa-users"></span>
 										<h3>Community driven</h3>
-										<p>The toolkit is maintained by volunteers from the astronomy and data science communities.</p>
+										<p>The toolkit is maintained by volunteers from astronomy and data science communities.</p>
 									</li>
 									<li>
 										<span class="icon major style5 fa-universal-access"></span>
-										<h3>Accessible</h3>
-										<p>The toolkit is accessible free of charge. No registration required.</p>
+										<h3>Accessibility</h3>
+										<p>The toolkit is accessible free of charge. Contact us if you have problems accessing the toolkit.</p>
 									</li>
 								</ul>
 								
@@ -86,8 +86,7 @@
 								The focus of the toolkit is to provide high quality teaching materials in the form of examples, courses and assessments which you are welcome to use for your teaching or perhaps when organising a workshop or a summer school.</p>
 
 								<p>
-								The toolkit is aimed at specifically connecting the fields of astronomy and data science and is not meant to compete with massive open online courses such as edX or Coursera.</p>
-
+								The toolkit is aimed at specifically connecting the fields of astronomy and data science and is not meant to compete with massive open online courses such as <a href="https://www.edx.org/" target="_blank">edX</a> or <a href="https://www.coursera.org/" target="_blank">Coursera</a>.</p>
 
 								You are free to use all the toolkit materials in accordance with the <a href="https://github.com/paultheastronomer/OAD-Data-Science-Toolkit/blob/master/LICENSE.txt" target="_blank">GNU General Public License v3.0.
 								<footer class="major">
@@ -103,7 +102,7 @@
 									
 									
 									
-									<p>The toolkit is in it's infancy and for it to be a success we need people to help us create and share content. We are always looking for people keen on contributing.</p>
+									<p>The toolkit is in its infancy and for it to be a success we need people to help us create and share content. We are always looking for people keen on contributing.</p>
 
 
 								<ul class="statistics">
@@ -131,15 +130,15 @@
 
 								<h3>Teaching materials</h3>
 								<!-- <img src="images/logo.svg" alt="" /> -->
-								<p class="content">If you have ever tought astronomy using data science techniques or you are a data scientist who has used astronomy examples to teach data science, please consider sharing your teaching materials. You can either directly contribute to <a href="https://github.com/astro4dev/OAD-Data-Science-Toolkit" target="_blank">github</a> or send us the materials directly via email.</p>
+								<p class="content">If you have ever taught astronomy using data science techniques or you are a data scientist who has used astronomy examples to teach data science, please consider sharing your teaching materials. You can either directly contribute to <a href="https://github.com/astro4dev/OAD-Data-Science-Toolkit" target="_blank">github</a> or send us the materials directly via email.</p>
 
 								<h3>Assessments</h3>
 								<!-- <img src="images/logo.svg" alt="" /> -->
-								<p class="content">Few Astronomy summer schools and extra-curricular programmes use any form of assessment. This deprives students of the opportunity to both experience and demonstrate their achievements; and projects of the ability to show others that they achieved what they intended. The toolkit strives towards providing high quality pre- and post-assessments.</p>
+								<p class="content">Few Astronomy summer schools and extra-curricular programmes use any form of assessment. This deprives students of the opportunity to both experience and demonstrate their achievements; and doesn't allow the ability to show others that they achieved what they intended. The toolkit strives towards providing high quality pre- and post-assessments.</p>
 
 								<h3>Coding and Content</h3>
 								<!-- <img src="images/logo.svg" alt="" /> -->
-								<p class="content">This website has been created using a lot of different tools: HTML5, CSS3, PHP, MySQL, AJAX, jQuery, Shell, JavaScript and Python. If you have exeperience in any of these tools or perhaps would like to improve the content on this website please help contribute. The entire website can be found <a href="https://github.com/astro4dev/toolkit_website" target="_blank">here</a>.</p>
+								<p class="content">This website has been created using a lot of different tools: HTML5, CSS3, PHP, MySQL, AJAX, jQuery, Shell, JavaScript and Python. If you have experience in any of these tools or perhaps would like to improve the content on this website please help contribute. The entire website can be found <a href="https://github.com/astro4dev/toolkit_website" target="_blank">here</a>.</p>
 
 								</header>
 

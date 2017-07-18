@@ -23,7 +23,7 @@
 				<!-- Header -->
 					<header id="header">
 						<h1>Astronomy & Data Science Toolkit</h1>
-						<p>v.0.2.0</p>
+						<p>v.0.2.1</p>
 					</header>
 
 				<!-- Nav -->
@@ -82,10 +82,8 @@
 							</div>
 
 							<div class="search_explanation">
-							This search box let's you search all toolkit titles.
+							This search box lets you search all toolkit titles.
 							</div>
-
-							
 
 
 								<div class="container">
@@ -119,8 +117,12 @@
 
 
 								<br>
-								<div id="txtHint"></div>
-
+								<div id="txtHint">
+								<div class="column column-four">
+								<h3>Data Science</h3>
+								Data science, also known as data-driven science, is an interdisciplinary field about scientific methods, processes, and systems to extract knowledge or insights from data in various forms, either structured or unstructured, similar to data mining. [ <a title="more" href="https://en.wikipedia.org/wiki/Data_science" target="_blank">more</a> from Wikipedia ].
+								</div>
+								</div>
 
 
 						</section>
