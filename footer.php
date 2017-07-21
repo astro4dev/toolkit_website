@@ -16,7 +16,7 @@
 		<dd>info_at_astro4dev.org</dd>
 	</dl>
 	<ul class="icons">
-		<li><a href="#https://www.twitter.com/astro4dev" class="icon fa-twitter alt" target="_blank"><span class="label">Twitter</span></a></li>
+		<li><a href="https://www.twitter.com/astro4dev" class="icon fa-twitter alt" target="_blank"><span class="label">Twitter</span></a></li>
 		<li><a href="https://www.facebook.com/astro4dev/" class="icon fa-facebook alt" target="_blank"><span class="label">Facebook</span></a></li>
 		<li><a href="https://www.youtube.com/channel/UCoRFDfXOPticDidg_-d0jWQ" class="icon fa-youtube alt" target="_blank"><span class="label">YouTube</span></a></li>
 		<li><a href="https://github.com/astro4dev" class="icon fa-github alt" target="_blank"><span class="label">GitHub</span></a></li>

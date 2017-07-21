@@ -1,3 +1,75 @@
+.search {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+margin-left: auto;
+margin-right: auto;
+width: 300px;
+}
+
+.search_explanation {
+    text-align: center;
+    font-size: 18px;
+    color: #9a9a9a; 
+    padding-top: 20px;
+    padding-bottom: 80px;
+}
+
+.typeahead, .tt-query {
+    display: block !important;
+    border: 2px solid #CCCCCC;
+    border-radius: 8px;
+    font-size: 24px;
+    height: 30px;
+    line-height: 30px;
+    outline: medium none;
+    padding: 8px 12px;
+    width: 396px;
+}
+.typeahead {
+    background-color: #FFFFFF;
+}
+.typeahead:focus {
+    border: 2px solid #0097CF;
+}
+.tt-query {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.tt-hint {
+    display: block;
+    height: 30px;
+    font-size: 0px;
+    line-height: 30px;
+    border: 1px solid transparent;
+    padding: -8px -12px;
+    border-radius:4px;
+}
+.tt-dropdown-menu {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 12px;
+    padding: 8px 0;
+    width: 422px;
+}
+.tt-suggestion {
+    font-size: 24px;
+    line-height: 24px;
+    padding: 3px 20px;
+}
+.tt-suggestion.tt-is-under-cursor {
+    background-color: #0097CF;
+    color: #FFFFFF;
+}
+.tt-suggestion p {
+    margin: .5em;
+}
+
+
+
+
+
 .container {
     display: flex;
 }
@@ -10,18 +82,24 @@
 
 .column-one {
     order: 1;
+    padding-right: 60px;
 }
 .column-two {
     order: 2;
+    padding-left: 60px;
 }
 .column-three {
+    order: 3;
+    padding-top: 1.65em;
+}
+.column-four {
 
     -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 3s; /* Firefox < 16 */
         -ms-animation: fadein 3s; /* Internet Explorer */
          -o-animation: fadein 3s; /* Opera < 12.1 */
             animation: fadein 3s;
-    order: 3;
+    order: 4;
     background: #E3E4FA;
     border-radius: 0.25em;
     border: solid #000;
@@ -70,3 +148,4 @@
     from { opacity: 0; }
     to   { opacity: 1; }
 }
+

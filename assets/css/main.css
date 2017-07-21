@@ -1879,6 +1879,19 @@
 		border-color: rgba(255, 255, 255, 0.35);
 	}
 
+/* Search */
+
+#search {
+    padding: 5px 9px;
+    height: 2.4em;
+    width: 380px;
+    border: 1px solid #a4c3ca;
+
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 1);            
+}
+
+
 /* Button */
 
 	input[type="submit"],
@@ -2049,7 +2062,7 @@
 /* Form */
 
 	form {
-		margin: 0 0 2em 0;
+		margin: 0 0 0em 0;
 	}
 
 	label {
@@ -2137,11 +2150,10 @@
 		appearance: none;
 		display: block;
 		float: left;
-		margin-right: -2em;
 		opacity: 0;
-		width: 1em;
 		z-index: -1;
 	}
+
 
 		input[type="checkbox"] + label,
 		input[type="radio"] + label {
