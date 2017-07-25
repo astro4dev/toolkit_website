@@ -27,11 +27,6 @@ $search_examples    = mysqli_query($con, $query_examples);
 
 $search_author    = mysqli_query($con, $query_author );
 
-#$title          = mysqli_fetch_array(mysqli_query($con, $query_title))['title'];
-#$example_name   = mysqli_fetch_array(mysqli_query($con, $query_examples))['links'];
-
-
-
 
     echo "<table>";
 
