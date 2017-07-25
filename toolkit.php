@@ -79,37 +79,7 @@
 							</div>
 
 
-								<div class="container">
 
-								<div class="column column-one">
-								I'm an Astronomer interested in learning data science skills related to
-								<select name="astr_topics" onchange="astr_topic(this.value)" style="width: 90%;" autocomplete="off"">
-								<option selected>Select topic...</option>
-								<?php
-								while($row_topics_astr = mysqli_fetch_assoc($topics_astr)) {
-								  echo "<option value='".$row_topics_astr["Id"]."'>".$row_topics_astr["topics_astr"]."</option>";
-								}
-								?>
-								</select>
-								</div>
-
-								<div class="column column-two">
-								I'm a Data Scientist interested in teaching
-								<select name="ds_topics" onchange="ds_topic(this.value)" style="width: 90%" autocomplete="off">
-								<option selected>Select topic...</option>
-								<?php
-								while($row_skills = mysqli_fetch_assoc($skills)) {
-								  echo "<option value='".$row_skills["Id"]."'>".$row_skills["skills"]."</option>";
-								}
-								?>
-								</select>
-								using examples from astronomy.
-								</div>
-								   
-								</div>
-
-
-								<br>
 								<div id="txtHint">
 								<div class="column column-four">
 								<h3>Data Science</h3>
