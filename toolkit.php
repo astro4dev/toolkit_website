@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Stellar by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 	<?php include 'header.php';?>
@@ -16,7 +11,7 @@
 				<!-- Header -->
 					<header id="header">
 						<h1>Astronomy & Data Science Toolkit</h1>
-						<p>v.0.2.2</p>
+						<p>v.0.2.3</p>
 					</header>
 
 				<!-- Nav -->
@@ -78,8 +73,6 @@
 							This search box lets you search all toolkit titles.
 							</div>
 
-
-
 								<div id="txtHint">
 								<div class="column column-four">
 								<h3>Data Science</h3>
@@ -112,42 +105,6 @@
 
 		    <script>
 
-		    // Drop down menu showing the content of the table
-			var astr_choice;
-			var skill_choice;
-
-			function astr_topic(astr_choice) {
-				showContent(astr_choice, skill_choice);
-			}
-
-			function ds_topic(skill_choice) {
-				showContent(astr_choice, skill_choice);					          	
-			}
-
-			function showContent(astr_choice, skill_choice) {
-
-			if (astr_choice == "" && skill_choice == "") {
-			    document.getElementById("txtHint").innerHTML = "";
-			    return;
-			} else {
-			    if (window.XMLHttpRequest) {
-			        // code for IE7+, Firefox, Chrome, Opera, Safari
-			        xmlhttp = new XMLHttpRequest();
-			    } else {
-			        // code for IE6, IE5
-			        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-			    }
-			    xmlhttp.onreadystatechange = function() {
-			        if (this.readyState == 4 && this.status == 200) {
-			            document.getElementById("txtHint").innerHTML = this.responseText;
-			        }
-			    };
-
-			    xmlhttp.open("GET","getTopic.php?astr_choice="+astr_choice+"&skill_choice="+skill_choice,true);
-
-			    xmlhttp.send();
-				}
-			}
 
 			var button		= document.getElementById('btnSearch');
 			

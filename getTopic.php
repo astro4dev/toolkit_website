@@ -1,6 +1,7 @@
 <?php
 
 $keyword        = $_GET['keyword'];
+#$show           = 'courses';#$_GET['show'];
 
 # Load user credentials
 $iniData        = file_get_contents('/etc/mysql/user.cnf');
@@ -14,39 +15,39 @@ if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
 }
 
-# Search and find anything in the database which matches the Id or the keyword
-$query_assessments  = "SELECT assessments.title, assessments.links FROM assessments WHERE (IF(LENGTH('".$keyword."') > 0, assessments.title LIKE '%".$keyword."%', 0));";
-$query_courses      = "SELECT courses.title, courses.links FROM courses WHERE (IF(LENGTH('".$keyword."') > 0, courses.title LIKE '%".$keyword."%', 0));";
-$query_examples     = "SELECT examples.title, examples.links FROM examples WHERE (IF(LENGTH('".$keyword."') > 0, examples.title LIKE '%".$keyword."%', 0));";
+$query_assessments  = "SELECT title, name, affiliation, author_link, author_img, links, author_id, assessment_id FROM authors, assessments, authors__assessments WHERE (authors.id=author_id AND assessments.Id = assessment_id) AND (IF(LENGTH('".$keyword."') > 0, assessments.title LIKE '%".$keyword."%', 0));";
+$query_courses      = "SELECT title, name, affiliation, author_link, author_img, links, author_id, course_id FROM authors, courses, authors__courses WHERE (authors.id=author_id AND courses.Id = course_id) AND (IF(LENGTH('".$keyword."') > 0, courses.title LIKE '%".$keyword."%', 0));";
+$query_examples     = "SELECT title, name, affiliation, author_link, author_img, links, author_id, example_id FROM authors, examples, authors__examples WHERE (authors.id=author_id AND examples.Id = example_id) AND (IF(LENGTH('".$keyword."') > 0, examples.title LIKE '%".$keyword."%', 0));";
 
-$query_author       = "SELECT authors.name FROM authors, authors__examples, examples WHERE authors__examples.author_id = authors.id AND authors__examples.example_id = examples.id AND examples.title LIKE '%".$keyword."%';";
+$query_all_courses = "SELECT title, name, author_link, links FROM courses, authors, authors__courses WHERE (authors.id=author_id AND courses.Id = course_id);";
 
 $search_assessments = mysqli_query($con, $query_assessments);
 $search_courses     = mysqli_query($con, $query_courses);
 $search_examples    = mysqli_query($con, $query_examples);
 
-$search_author    = mysqli_query($con, $query_author );
-
-
     echo "<table>";
 
-
-if( mysqli_num_rows($search_examples) ) {
+if( mysqli_num_rows($search_examples)) {
     echo "<tr>
-    <th colspan='2'>Examples:</th>
+    <th colspan='2'>Examples:".$show."</th>
     </tr>";
     while($row_search_query = mysqli_fetch_array($search_examples)) {
-        echo "<tr><td> <a href=\"" . $row_search_query[1] . "\" target=\"_blank\"><i>" . $row_search_query['title'] . "</i></a></td>";
+        echo "<tr><td><a href=\"" . $row_search_query['links'] . "\" target=\"_blank\"><i>" . $row_search_query['title'] . "</i></a></td>";
+        echo "<td><a href=\"" . $row_search_query['author_link'] . "\" target=\"_blank\"><i>" . $row_search_query['name'] . "</i></a></td>";
         }
     echo "</tr>";
 }
 
-if( mysqli_num_rows($search_courses) ) {
+#<img src='" . $row_search_query['author_img'] . "' width='60'>
+
+if( mysqli_num_rows($search_courses)) {
     echo "<tr>
-    <th colspan='2'>Courses:</th>
+    <th colspan='3'><a href=\"#\" onclick=\"loadXMLDoc()\">Courses:</a></th>
     </tr>";
     while($row_search_query = mysqli_fetch_array($search_courses)) {
-        echo "<tr><td> <a href=\"" . $row_search_query[1] . "\" target=\"_blank\"><i>" . $row_search_query['title'] . "</i></a></td>";
+        echo "<tr><td> <a href=\"" . $row_search_query['links'] . "\" target=\"_blank\"><i>" . $row_search_query['title'] . "</i></a></td>";
+        echo "<td><a href=\"" . $row_search_query['author_link'] . "\" target=\"_blank\"><i>" . $row_search_query['name'] . "</i></a></td>";
+        echo "<td><a href=\"" . $row_search_query['author_link'] . "\" target=\"_blank\"><i>#SQL</i></a> / <a href=\"" . $row_search_query['author_link'] . "\" target=\"_blank\"><i>#ASTR</i></a></td>";
         }
     echo "</tr>";
 }
@@ -56,7 +57,8 @@ if( mysqli_num_rows($search_assessments) ) {
     <th colspan='2'>Assessments:</th>
     </tr>";
     while($row_search_query = mysqli_fetch_array($search_assessments)) {
-        echo "<tr><td> <a href=\"" . $row_search_query[1] . "\" target=\"_blank\"><i>" . $row_search_query['title'] . "</i></a></td>";
+        echo "<tr><td> <a href=\"" . $row_search_query['links'] . "\" target=\"_blank\"><i>" . $row_search_query['title'] . "</i></a></td>";
+        echo "<td><a href=\"" . $row_search_query['author_link'] . "\" target=\"_blank\"><i>" . $row_search_query['name'] . "</i></a></td>";
         }
     echo "</tr>";
 }
@@ -64,12 +66,39 @@ if( mysqli_num_rows($search_assessments) ) {
 echo "</table>";
 
 // Free results
-/*mysqli_free_result($example_astr);
-mysqli_free_result($example_skill);
-mysqli_free_result($course_astr);
-mysqli_free_result($course_skill);
-mysqli_free_result($assessment_skill);
-mysqli_free_result($search_query);
-*/
+mysqli_free_result($search_assessments);
+mysqli_free_result($search_courses);
+mysqli_free_result($search_examples);
+
 mysqli_close($con);
 ?>
+
+
+<!-- Work in progress
+<script type="text/javascript">
+
+    var text = 'courses'
+
+    function loadXMLDoc()
+    {
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+        {
+            xmlhttp = new XMLHttpRequest();
+        }
+        else
+        {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function()
+        {
+            if(xmlhttp.readyState == 4 && xmlhttp.status == 200)
+            {
+                // do something if the page loaded successfully
+            }
+        }
+        xmlhttp.open("GET","getTopic.php?show="+text,true);
+        xmlhttp.send();
+    }
+</script>
+-->
