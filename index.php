@@ -33,6 +33,7 @@
 
 				<!-- Main -->
 					<div id="main">
+					<a href="https://github.com/astro4dev" class="ribbon bg-purple" >Alpha version</a>
 
 						<!-- Introduction -->
 							<section id="intro" class="main">

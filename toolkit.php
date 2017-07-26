@@ -27,7 +27,7 @@
 
 				<!-- Main -->
 					<div id="main">
-
+					<a href="http://wsnippets.com" class="ribbon bg-purple" >Alpha version</a>
 						<!-- Content -->
 						<section id="content" class="main">
 

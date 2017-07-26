@@ -66,9 +66,31 @@ width: 300px;
     margin: .5em;
 }
 
+.ribbon {
+    top: 3.2em;
+    right: -3.7em;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    color:#fff;
+    display: block;
+    padding: .6em 5.5em; /*Adujst width of band here 5.5em*/
+    position: fixed;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid #df7984;
+    opacity: 0.9;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
 
-
-
+.bg-purple {
+  background-color: #b10dc9; }
 
 .container {
     display: flex;

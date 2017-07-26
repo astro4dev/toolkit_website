@@ -13,7 +13,16 @@
 		<dt>Phone</dt>
 		<dd>+27 (0) 21 460 6297</dd>
 		<dt>Email</dt>
-		<dd>info_at_astro4dev.org</dd>
+		<dd>
+<script language="JavaScript">
+var username = "info";
+var hostname = "astro4dev.org";
+var linktext = username + "@" + hostname ;
+document.write("<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linktext + "</a>");
+</script>
+
+
+		</dd>
 	</dl>
 	<ul class="icons">
 		<li><a href="https://www.twitter.com/astro4dev" class="icon fa-twitter alt" target="_blank"><span class="label">Twitter</span></a></li>
