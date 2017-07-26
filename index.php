@@ -33,6 +33,7 @@
 
 				<!-- Main -->
 					<div id="main">
+					<a href="https://github.com/astro4dev" class="ribbon bg-purple" >Alpha version</a>
 
 						<!-- Introduction -->
 							<section id="intro" class="main">
@@ -92,9 +93,7 @@
 
 							<section id="contribute" class="main special">
 								<header class="major">
-									<h2>Help contribute</h2>
-									
-									
+									<h2>Help contribute</h2>								
 									
 									<p>The toolkit is in its infancy and for it to be a success we need people to help us create and share content. We are always looking for people keen on contributing.</p>
 
@@ -102,7 +101,7 @@
 								<ul class="statistics">
 									<li class="style1">
 										<span class="icon fa-file-code-o"></span>
-										<strong>3</strong> Examples
+										<strong>4</strong> Examples
 									</li>
 									<li class="style2">
 										<span class="icon fa-pencil-square-o"></span>
