@@ -63,7 +63,7 @@
 									<li>
 										<span class="icon major style1 fa-code"></span>
 										<h3>Open Source</h3>
-										<p>The entire toolkit is Open Source. This includes: the content, the tools for updating it and this website.</p>
+										<p>The entire toolkit is released as Open Source under the GPLv3 license. This includes: the content, the tools for updating it and this website.</p>
 									</li>
 									<li>
 										<span class="icon major style3 fa-users"></span>
@@ -83,7 +83,7 @@
 								<p>
 								The toolkit is aimed at specifically connecting the fields of astronomy and data science and is not meant to compete with massive open online courses such as <a href="https://www.edx.org/" target="_blank">edX</a> or <a href="https://www.coursera.org/" target="_blank">Coursera</a>.</p>
 
-								You are free to use all the toolkit materials in accordance with the <a href="https://github.com/paultheastronomer/OAD-Data-Science-Toolkit/blob/master/LICENSE.txt" target="_blank">GNU General Public License v3.0.
+							
 								<footer class="major">
 									<ul class="actions">
 										<li><a href="toolkit.php" class="button special">View toolkit</a></li>
