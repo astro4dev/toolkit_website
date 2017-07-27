@@ -42,12 +42,12 @@ if( mysqli_num_rows($search_examples)) {
 
 if( mysqli_num_rows($search_courses)) {
     echo "<tr>
-    <th colspan='3'><a href=\"#\" onclick=\"loadXMLDoc()\">Courses:</a></th>
+    <th colspan='2'>Courses:</th>
     </tr>";
     while($row_search_query = mysqli_fetch_array($search_courses)) {
         echo "<tr><td> <a href=\"" . $row_search_query['links'] . "\" target=\"_blank\"><i>" . $row_search_query['title'] . "</i></a></td>";
         echo "<td><a href=\"" . $row_search_query['author_link'] . "\" target=\"_blank\"><i>" . $row_search_query['name'] . "</i></a></td>";
-        echo "<td><a href=\"" . $row_search_query['author_link'] . "\" target=\"_blank\"><i>#SQL</i></a> / <a href=\"" . $row_search_query['author_link'] . "\" target=\"_blank\"><i>#ASTR</i></a></td>";
+        #echo "<td><a href=\"" . $row_search_query['author_link'] . "\" target=\"_blank\"><i>#SQL</i></a> / <a href=\"" . $row_search_query['author_link'] . "\" target=\"_blank\"><i>#ASTR</i></a></td>";
         }
     echo "</tr>";
 }

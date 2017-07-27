@@ -86,6 +86,7 @@ width: 300px;
     -ms-user-select: none;
     -o-user-select: none;
     user-select: none;
+    z-index: 10000;
 }
 
 .bg-purple {
