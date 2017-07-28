@@ -8,6 +8,7 @@
 	<head>
 	<?php include 'header.php';?>
 	</head>
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 	<body>
 
 		<!-- Wrapper -->
@@ -83,7 +84,6 @@
 								<p>
 								The toolkit is aimed at specifically connecting the fields of astronomy and data science and is not meant to compete with massive open online courses such as <a href="https://www.edx.org/" target="_blank">edX</a> or <a href="https://www.coursera.org/" target="_blank">Coursera</a>.</p>
 
-							
 								<footer class="major">
 									<ul class="actions">
 										<li><a href="toolkit.php" class="button special">View toolkit</a></li>
