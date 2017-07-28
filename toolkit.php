@@ -11,7 +11,7 @@
 				<!-- Header -->
 					<header id="header">
 						<h1>Astronomy & Data Science Toolkit</h1>
-						<p>v.0.2.3</p>
+						<p>v.0.2.4</p>
 					</header>
 
 				<!-- Nav -->
@@ -35,6 +35,7 @@
 							<!-- <form method="post"> -->
 							<input type="text" name="search" class="typeahead" autocomplete="on" id="search" spellcheck="false" placeholder="Search the toolkit" autofocus>
 							 <input type="submit" class="button special" name="btnSearch" value="Search" id="btnSearch">
+							 <input type="submit" class="button" name="btnAll" value="Show All" id="btnAll">
 							<!-- <button onclick="myFunction()">Click me</button> -->
 							<!-- </form> -->
 							</div>
@@ -76,11 +77,32 @@
 
 
 			var button		= document.getElementById('btnSearch');
-			
-			button.onclick	= function(){
+			var showbutton	= document.getElementById('btnAll');
 
     		var text 		= document.getElementById('search').value;
 
+			showbutton.onclick	= function(){
+			    if (window.XMLHttpRequest) {
+			        // code for IE7+, Firefox, Chrome, Opera, Safari
+			        xmlhttp = new XMLHttpRequest();
+			    } else {
+			        // code for IE6, IE5
+			        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			    }
+			    xmlhttp.onreadystatechange = function() {
+			        if (this.readyState == 4 && this.status == 200) {
+			            document.getElementById("txtHint").innerHTML = this.responseText;
+			        }
+			    };
+
+			    xmlhttp.open("GET","getTopic.php?keyword="+'',true);
+
+			    xmlhttp.send();
+
+			}
+
+			button.onclick	= function(){
+    		var text 		= document.getElementById('search').value;
 			if (text == "") {
 			    document.getElementById("txtHint").innerHTML = "";
 			    return;
@@ -97,14 +119,10 @@
 			            document.getElementById("txtHint").innerHTML = this.responseText;
 			        }
 			    };
-
 			    document.getElementById("txtHint").innerHTML = text;
-
 			    xmlhttp.open("GET","getTopic.php?keyword="+text,true);
-
 			    xmlhttp.send();
 				}
-
 			}
 
 			// Autocomplete box

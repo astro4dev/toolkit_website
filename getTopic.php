@@ -15,15 +15,22 @@ if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
 }
 
+if (empty($keyword)) {
+$query_assessments  = "SELECT title, name, affiliation, author_link, author_img, links, author_id, assessment_id FROM authors, assessments, authors__assessments WHERE (authors.id=author_id AND assessments.Id = assessment_id);";
+$query_courses      = "SELECT title, name, affiliation, author_link, author_img, links, author_id, course_id FROM authors, courses, authors__courses WHERE (authors.id=author_id AND courses.Id = course_id);";
+$query_examples     = "SELECT title, name, affiliation, author_link, author_img, links, author_id, example_id FROM authors, examples, authors__examples WHERE (authors.id=author_id AND examples.Id = example_id);";
+}
+else {
 $query_assessments  = "SELECT title, name, affiliation, author_link, author_img, links, author_id, assessment_id FROM authors, assessments, authors__assessments WHERE (authors.id=author_id AND assessments.Id = assessment_id) AND (IF(LENGTH('".$keyword."') > 0, assessments.title LIKE '%".$keyword."%', 0));";
 $query_courses      = "SELECT title, name, affiliation, author_link, author_img, links, author_id, course_id FROM authors, courses, authors__courses WHERE (authors.id=author_id AND courses.Id = course_id) AND (IF(LENGTH('".$keyword."') > 0, courses.title LIKE '%".$keyword."%', 0));";
 $query_examples     = "SELECT title, name, affiliation, author_link, author_img, links, author_id, example_id FROM authors, examples, authors__examples WHERE (authors.id=author_id AND examples.Id = example_id) AND (IF(LENGTH('".$keyword."') > 0, examples.title LIKE '%".$keyword."%', 0));";
-
-$query_all_courses = "SELECT title, name, author_link, links FROM courses, authors, authors__courses WHERE (authors.id=author_id AND courses.Id = course_id);";
+}
 
 $search_assessments = mysqli_query($con, $query_assessments);
 $search_courses     = mysqli_query($con, $query_courses);
 $search_examples    = mysqli_query($con, $query_examples);
+
+$show_all   = mysqli_query($con, $query_all_courses);
 
     echo "<table>";
 
