@@ -105,7 +105,7 @@
 									</li>
 									<li class="style2">
 										<span class="icon fa-pencil-square-o"></span>
-										<strong>1</strong> Assessment
+										<strong>1</strong><a href="https://github.com/astro4dev/OAD-Data-Science-Toolkit/blob/master/Teaching%20Materials/Programming/Python/Assessments/Pre-assessment.md" target="_blank">Assessment</a>
 									</li>
 									<li class="style3">
 										<span class="icon fa-graduation-cap"></span>
@@ -113,11 +113,11 @@
 									</li>
 									<li class="style4">
 										<span class="icon fa-code-fork"></span>
-										<strong>5</strong> Forks
+										<strong>8</strong><a href="https://github.com/astro4dev/OAD-Data-Science-Toolkit/network/members" target="_blank">Forks</a>
 									</li>
 									<li class="style5">
 										<span class="icon fa-user"></span>
-										<strong>8</strong> Contributors
+										<strong>9</strong><a href="https://github.com/astro4dev/OAD-Data-Science-Toolkit" target="_blank">Contributors</a>
 									</li>
 								</ul>
 

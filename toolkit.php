@@ -98,7 +98,6 @@
 			    xmlhttp.open("GET","getTopic.php?keyword="+'',true);
 
 			    xmlhttp.send();
-
 			}
 
 			button.onclick	= function(){
