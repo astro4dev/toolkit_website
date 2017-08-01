@@ -9,7 +9,7 @@
 	<?php include 'header.php';?>
 	</head>
 
-	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
 	<body>
 
 		<!-- Wrapper -->
@@ -39,25 +39,25 @@
 						<ul>
 
 							<!-- ENGLISH -->
-							<li><a href="#intro" class="active" lang="en">Introduction</a></li>
-							<li><a href="#about" lang="en">About the Toolkit</a></li>
-							<li><a href="toolkit.php" lang="en">View Toolkit</a></li>
-							<li><a href="#contribute" lang="en">Contribute</a></li>
-							<li><a href="#footer" lang="en">Contact</a></li>
+							<li lang="en"><a href="#intro" class="active">Introduction</a></li>
+							<li lang="en"><a href="#about">About the Toolkit</a></li>
+							<li lang="en"><a href="toolkit.php">View Toolkit</a></li>
+							<li lang="en"><a href="#contribute">Contribute</a></li>
+							<li lang="en"><a href="#footer">Contact</a></li>
 
 							<!-- SPANISH -->
-							<li><a href="#intro" class="active" lang="es">Introducción</a></li>
-							<li><a href="#about" lang="es">Sobre el Toolkit</a></li>
-							<li><a href="toolkit.php" lang="es">Ver Toolkit</a></li>
-							<li><a href="#contribute" lang="es">Contribuir</a></li>
-							<li><a href="#footer" lang="es">Contáctenos</a></li>
+							<li lang="es"><a href="#intro" class="active">Introducción</a></li>
+							<li lang="es"><a href="#about">Sobre el Toolkit</a></li>
+							<li lang="es"><a href="toolkit.php">Ver Toolkit</a></li>
+							<li lang="es"><a href="#contribute">Contribuir</a></li>
+							<li lang="es"><a href="#footer">Contáctenos</a></li>
 
 							<!-- FRENCH -->
-							<li><a href="#intro" class="active" lang="fr">Introduction</a></li>
-							<li><a href="#about" lang="fr">À propos du toolkit</a></li>
-							<li><a href="toolkit.php" lang="fr">Voir le Toolkit</a></li>
-							<li><a href="#contribute" lang="fr">Contribuer</a></li>
-							<li><a href="#footer" lang="fr">Contactez nous</a></li>
+							<li lang="fr"><a href="#intro" class="active">Introduction</a></li>
+							<li lang="fr"><a href="#about">À propos du toolkit</a></li>
+							<li lang="fr"><a href="toolkit.php">Voir le Toolkit</a></li>
+							<li lang="fr"><a href="#contribute">Contribuer</a></li>
+							<li lang="fr"><a href="#footer">Contactez nous</a></li>
 
 							<li>
 							<select id="lang-switch" class="fa-select">

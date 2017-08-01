@@ -176,11 +176,6 @@ width: 300px;
 
 .footer { padding-top: 100px;  margin: 50px; }
 
-[lang="es"], 
-[lang="fr"] {
-  display: none;
-} 
-
 .fa-select {
     font-family: 'FontAwesome', 'Open Sans', Helvetica, sans-serif;;
 }

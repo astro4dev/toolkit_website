@@ -19,6 +19,8 @@
 		<meta name="keywords" content="data science, astronomy, toolkit, oad, Office of Astronomy for Development">
 		<meta name="author" content="OAD">
 
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.scrollex.min.js"></script>
