@@ -48,7 +48,7 @@
 		<dt>Email</dt>
 		<dd>
 
-<script language="JavaScript">
+<script type="text/javascript">
 var username = "info";
 var hostname = "astro4dev.org";
 var linktext = username + "@" + hostname ;

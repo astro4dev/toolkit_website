@@ -1,10 +1,5 @@
 		<!-- ENGLISH -->
 		<title lang="en">Astronomy & Data Science Toolkit</title>
-		<!-- SPANISH -->
-		<title lang="es">Toolkit de Astronomía y Ciencia de Datos</title>
-		<!-- FRENCH -->
-		<title lang="fr">Astronomy & Data Science Toolkit</title>
-
 
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
