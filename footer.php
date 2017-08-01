@@ -32,3 +32,33 @@ document.write("<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" +
 	</ul>
 </section>
 <p class="copyright">An Astronomy for Development Project: <a href="http://www.astro4dev.org/" target="_blank">astro4dev.org</a>.</p>
+
+
+		<!-- Language Script -->
+		<script type="text/javascript">
+
+		$('[lang="es"]').hide();
+		$('[lang="zh"]').hide();
+
+		$('#lang-switch').change(function () {
+		  var lang = $(this).val();
+		  switch (lang) {
+		    case 'en': 
+		      $('[lang]').hide();
+		      $('[lang="en"]').show();
+		      break;
+		    case 'es':
+		      $('[lang]').hide();
+		      $('[lang="es"]').show();
+		      break;
+		    case 'zh':
+		      $('[lang]').hide();
+		      $('[lang="zh"]').show();
+		      break;
+		    default:
+		      $('[lang]').hide();
+		      $('[lang="en"]').show();
+		  }
+		});
+
+		</script>
