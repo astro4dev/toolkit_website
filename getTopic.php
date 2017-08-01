@@ -32,7 +32,7 @@ $search_examples    = mysqli_query($con, $query_examples);
 
 $show_all   = mysqli_query($con, $query_all_courses);
 
-    echo "<table>";
+    echo "<table class='alt'>";
 
 if( mysqli_num_rows($search_examples)) {
     echo "<tr>
@@ -99,7 +99,7 @@ $("#idOfElement").on('click', function(){
        }
     });
 )};
-    
+
 </script>
 
 

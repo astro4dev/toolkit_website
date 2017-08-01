@@ -11,7 +11,7 @@
 				<!-- Header -->
 					<header id="header">
 						<h1>Astronomy & Data Science Toolkit</h1>
-						<p>v.0.2.4</p>
+						<p>v.0.2.5</p>
 					</header>
 
 				<!-- Nav -->
