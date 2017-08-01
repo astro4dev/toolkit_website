@@ -17,7 +17,7 @@ Here is an example:
 <h1 lang="es">Toolkit de Astronomía y Ciencia de Datos</h1>
 <p lang="es">Conexión de la astronomía y la ciencia de los datos</p>
 ```
- Should you not find your desired language, then please copy and paste the English entry and edit this one. Remember to add the correct country code to the language tag. For instance if you wish to contribute in French make sure you change ```lang="en"``` to ```lang="fr"```. You can at any point contact us if you need help by sending an email to: info@astro4dev.org.
+ Should you not find your desired language, then please copy and paste the English entry and edit this one. Remember to add the correct country code to the language tag. For instance if you wish to contribute in French make sure you change the ISO language code from ```lang="en"``` to ```lang="fr"```. For a list of ISO language codes see [here](https://www.w3schools.com/tags/ref_language_codes.asp). You can at any point contact us if you need help by sending an email to: info@astro4dev.org.
 
 ## Privacy
 We track the visitors to the website using <a href="https://piwik.org/" target="_blank">Piwik</a>, which is an open-source analytics platform.
