@@ -10,7 +10,14 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1>Astronomy & Data Science Toolkit</h1>
+
+						<!-- ENGLISH -->
+						<h1 lang="en">Astronomy & Data Science Toolkit</h1>
+						<!-- SPANISH -->
+						<h1 lang="es">Toolkit de Astronomía y Ciencia de Datos</h1>
+						<!-- FRENCH -->
+						<h1 lang="fr">Astronomy & Data Science Toolkit</h1>
+
 						<p>v.0.2.5</p>
 					</header>
 
@@ -32,10 +39,18 @@
 							<li><a href="#contribute" lang="es">Contribuir</a></li>
 							<li><a href="#footer" lang="es">Contáctenos</a></li>
 
+							<!-- FRENCH -->
+							<li><a href="#intro" class="active" lang="fr">Introduction</a></li>
+							<li><a href="#about" lang="fr">About the Toolkit</a></li>
+							<li><a href="toolkit.php" lang="fr">View Toolkit</a></li>
+							<li><a href="#contribute" lang="fr">Contribute</a></li>
+							<li><a href="#footer" lang="fr">Contact</a></li>
+
 							<li>
 							<select id="lang-switch" class="fa-select">
 							  <option value="en" selected>&#xf1ab; English</option>
 							  <option value="es" >&#xf1ab; Espanol</option>
+							  <option value="fr" >&#xf1ab; Français</option>
 							</select>
 							</li>
 
@@ -57,16 +72,42 @@
 							<!-- </form> -->
 							</div>
 
-							<div class="search_explanation">
+
+							<!-- ENGLISH -->
+							<div class="search_explanation" lang="en">
 							This search box lets you search all toolkit titles.
 							</div>
 
-								<div id="txtHint">
-								<div class="column column-four">
-								<h3>Data Science</h3>
-								Data science, also known as data-driven science, is an interdisciplinary field about scientific methods, processes, and systems to extract knowledge or insights from data in various forms, either structured or unstructured, similar to data mining. [ <a title="more" href="https://en.wikipedia.org/wiki/Data_science" target="_blank">more</a> from Wikipedia ].
-								</div>
-								</div>
+							<!-- SPANISH -->
+							<div class="search_explanation" lang="es">
+							This search box lets you search all toolkit titles.
+							</div>
+
+							<!-- FRENCH -->
+							<div class="search_explanation" lang="fr">
+							This search box lets you search all toolkit titles.
+							</div>
+
+
+							<div id="txtHint">
+							<div class="column column-four">
+
+
+							<!-- ENGLISH -->
+							<h3 lang="en">Data Science</h3>
+							<p lang="en">Data science, also known as data-driven science, is an interdisciplinary field about scientific methods, processes, and systems to extract knowledge or insights from data in various forms, either structured or unstructured, similar to data mining. [ <a title="more" href="https://en.wikipedia.org/wiki/Data_science" target="_blank">more</a> from Wikipedia ].</p>
+
+							<!-- SPANISH -->
+							<h3 lang="es">Data Science</h3>
+							<p lang="es">Data science, also known as data-driven science, is an interdisciplinary field about scientific methods, processes, and systems to extract knowledge or insights from data in various forms, either structured or unstructured, similar to data mining. [ <a title="more" href="https://en.wikipedia.org/wiki/Data_science" target="_blank">more</a> from Wikipedia ].</p>
+
+							<!-- FRENCH -->
+							<h3 lang="fr">Data Science</h3>
+							<p lang="fr">Data science, also known as data-driven science, is an interdisciplinary field about scientific methods, processes, and systems to extract knowledge or insights from data in various forms, either structured or unstructured, similar to data mining. [ <a title="more" href="https://en.wikipedia.org/wiki/Data_science" target="_blank">more</a> from Wikipedia ].</p>							
+
+
+							</div>
+							</div>
 
 						</section>
 
