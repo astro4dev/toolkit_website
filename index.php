@@ -27,6 +27,11 @@
 						<h1 lang="es">Toolkit de Astronomía y Ciencia de Datos</h1>
 						<p lang="es">Conexión de la astronomía y la ciencia de los datos</p>
 
+						<!-- FRENCH -->
+						<h1 lang="fr">Astronomy & Data Science Toolkit</h1>
+						<p lang="fr">Connecting Astronomy and Data Science</p>
+
+
 					</header>
 
 				<!-- Nav -->
