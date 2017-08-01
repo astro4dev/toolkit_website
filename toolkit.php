@@ -10,7 +10,14 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1>Astronomy & Data Science Toolkit</h1>
+
+						<!-- ENGLISH -->
+						<h1 lang="en">Astronomy & Data Science Toolkit</h1>
+						<!-- SPANISH -->
+						<h1 lang="es">Toolkit de Astronomía y Ciencia de Datos</h1>
+						<!-- FRENCH -->
+						<h1 lang="fr">Astronomy & Data Science Toolkit</h1>
+
 						<p>v.0.2.5</p>
 					</header>
 
@@ -19,23 +26,31 @@
 						<ul>
 
 							<!-- ENGLISH -->
-							<li><a href="#intro" class="active" lang="en">Introduction</a></li>
-							<li><a href="#about" lang="en">About the Toolkit</a></li>
-							<li><a href="toolkit.php" lang="en">View Toolkit</a></li>
-							<li><a href="#contribute" lang="en">Contribute</a></li>
-							<li><a href="#footer" lang="en">Contact</a></li>
+							<li lang="en"><a href="index.php#intro" class="active">Introduction</a></li>
+							<li lang="en"><a href="index.php#about">About the Toolkit</a></li>
+							<li lang="en"><a href="toolkit.php">View Toolkit</a></li>
+							<li lang="en"><a href="index.php#contribute">Contribute</a></li>
+							<li lang="en"><a href="index.php#footer">Contact</a></li>
 
 							<!-- SPANISH -->
-							<li><a href="#intro" class="active" lang="es">Introducción</a></li>
-							<li><a href="#about" lang="es">Sobre el Toolkit</a></li>
-							<li><a href="toolkit.php" lang="es">Ver Toolkit</a></li>
-							<li><a href="#contribute" lang="es">Contribuir</a></li>
-							<li><a href="#footer" lang="es">Contáctenos</a></li>
+							<li lang="es"><a href="index.php#intro" class="active">Introducción</a></li>
+							<li lang="es"><a href="index.php#about">Sobre el Toolkit</a></li>
+							<li lang="es"><a href="toolkit.php">Ver Toolkit</a></li>
+							<li lang="es"><a href="index.php#contribute">Contribuir</a></li>
+							<li lang="es"><a href="index.php#footer">Contáctenos</a></li>
+
+							<!-- FRENCH -->
+							<li lang="fr"><a href="index.php#intro" class="active">Introduction</a></li>
+							<li lang="fr"><a href="index.php#about">À propos du toolkit</a></li>
+							<li lang="fr"><a href="toolkit.php">Voir le Toolkit</a></li>
+							<li lang="fr"><a href="index.php#contribute">Contribuer</a></li>
+							<li lang="fr"><a href="index.php#footer">Contactez nous</a></li>
 
 							<li>
 							<select id="lang-switch" class="fa-select">
 							  <option value="en" selected>&#xf1ab; English</option>
 							  <option value="es" >&#xf1ab; Espanol</option>
+							  <option value="fr" >&#xf1ab; Français</option>
 							</select>
 							</li>
 
@@ -57,16 +72,42 @@
 							<!-- </form> -->
 							</div>
 
-							<div class="search_explanation">
+
+							<!-- ENGLISH -->
+							<div class="search_explanation" lang="en">
 							This search box lets you search all toolkit titles.
 							</div>
 
-								<div id="txtHint">
-								<div class="column column-four">
-								<h3>Data Science</h3>
-								Data science, also known as data-driven science, is an interdisciplinary field about scientific methods, processes, and systems to extract knowledge or insights from data in various forms, either structured or unstructured, similar to data mining. [ <a title="more" href="https://en.wikipedia.org/wiki/Data_science" target="_blank">more</a> from Wikipedia ].
-								</div>
-								</div>
+							<!-- SPANISH -->
+							<div class="search_explanation" lang="es">
+							This search box lets you search all toolkit titles.
+							</div>
+
+							<!-- FRENCH -->
+							<div class="search_explanation" lang="fr">
+							This search box lets you search all toolkit titles.
+							</div>
+
+
+							<div id="txtHint">
+							<div class="column column-four">
+
+
+							<!-- ENGLISH -->
+							<h3 lang="en">Data Science</h3>
+							<p lang="en">Data science, also known as data-driven science, is an interdisciplinary field about scientific methods, processes, and systems to extract knowledge or insights from data in various forms, either structured or unstructured, similar to data mining. [ <a title="more" href="https://en.wikipedia.org/wiki/Data_science" target="_blank">more</a> from Wikipedia ].</p>
+
+							<!-- SPANISH -->
+							<h3 lang="es">Data Science</h3>
+							<p lang="es">Data science, also known as data-driven science, is an interdisciplinary field about scientific methods, processes, and systems to extract knowledge or insights from data in various forms, either structured or unstructured, similar to data mining. [ <a title="more" href="https://en.wikipedia.org/wiki/Data_science" target="_blank">more</a> from Wikipedia ].</p>
+
+							<!-- FRENCH -->
+							<h3 lang="fr">Data Science</h3>
+							<p lang="fr">Data science, also known as data-driven science, is an interdisciplinary field about scientific methods, processes, and systems to extract knowledge or insights from data in various forms, either structured or unstructured, similar to data mining. [ <a title="more" href="https://en.wikipedia.org/wiki/Data_science" target="_blank">more</a> from Wikipedia ].</p>							
+
+
+							</div>
+							</div>
 
 						</section>
 

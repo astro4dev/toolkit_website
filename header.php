@@ -1,4 +1,6 @@
-		<title>Astronomy & Data Science Toolkit</title>
+		<!-- ENGLISH -->
+		<title lang="en">Astronomy & Data Science Toolkit</title>
+
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -11,6 +13,8 @@
 		<meta name="description" content="The Astronomy & Data Science Toolkit develloped by the Office of Astronomy for Development">
 		<meta name="keywords" content="data science, astronomy, toolkit, oad, Office of Astronomy for Development">
 		<meta name="author" content="OAD">
+
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
