@@ -121,14 +121,13 @@ width: 300px;
         -ms-animation: fadein 3s; /* Internet Explorer */
          -o-animation: fadein 3s; /* Opera < 12.1 */
             animation: fadein 3s;
-    order: 4;
     background: #E3E4FA;
     border-radius: 0.25em;
     border: solid #000;
     border-width: 2px;
     border-color: #615295;
     padding: 20px;
-    margin-left: 20px;
+
 }
 
 .topic-header{
@@ -141,6 +140,21 @@ width: 300px;
 	font-size: 24px;
     font-weight: bold;
 }
+
+table td {
+    font-family: 'FontAwesome', 'Open Sans', Helvetica, sans-serif;
+}
+
+.image.author {
+margin: 20px;
+width: 150px;
+height: auto;
+float: right;
+content: "";
+clear: both;
+display: table;
+}
+
 
 @keyframes fadein {
     from { opacity: 0; }
@@ -177,5 +191,5 @@ width: 300px;
 .footer { padding-top: 100px;  margin: 50px; }
 
 .fa-select {
-    font-family: 'FontAwesome', 'Open Sans', Helvetica, sans-serif;;
+    font-family: 'FontAwesome', 'Open Sans', Helvetica, sans-serif;
 }

@@ -65,7 +65,7 @@
 
 							<div class="search">
 							<!-- <form method="post"> -->
-							<input type="text" name="search" class="typeahead" autocomplete="on" id="search" spellcheck="false" placeholder="Search the toolkit" autofocus>
+							<input type="text" name="search" class="typeahead" autocomplete="on" id="search" spellcheck="false" placeholder="Search the toolkit e.g: Exoplanet" autofocus>
 							 <input type="submit" class="button special" name="btnSearch" value="Search" id="btnSearch">
 							 <input type="submit" class="button" name="btnAll" value="Show All" id="btnAll">
 							<!-- <button onclick="myFunction()">Click me</button> -->

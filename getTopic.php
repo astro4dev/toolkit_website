@@ -22,6 +22,8 @@ if (!empty($author)) {
 $query_author_assessments  = "SELECT title, name, affiliation, author_link, author_img, links, author_id, assessment_id, language FROM authors, assessments, authors__assessments WHERE (authors.id=author_id AND assessments.Id = assessment_id AND authors.name LIKE '%".$author."%');";
 $query_author_courses      = "SELECT title, name, affiliation, author_link, author_img, links, author_id, course_id, language FROM authors, courses, authors__courses WHERE (authors.id=author_id AND courses.Id = course_id AND authors.name LIKE '%".$author."%');";
 $query_author_examples = "SELECT title, name, affiliation, author_link, author_img, links, author_id, example_id, language FROM authors, examples, authors__examples WHERE (authors.id=author_id AND examples.Id = example_id AND authors.name LIKE '%".$author."%');";
+$query_author_about = "SELECT about FROM authors WHERE authors.name LIKE '%".$author."%';";
+$query_author_img = "SELECT author_img FROM authors WHERE authors.name LIKE '%".$author."%';";
 }
 else {
 if (empty($keyword)) {
@@ -36,11 +38,17 @@ $query_examples     = "SELECT title, name, affiliation, author_link, author_img,
 }
 }
 
-
 if (!empty($author)) {
 $search_assessments = mysqli_query($con, $query_author_assessments);
 $search_courses     = mysqli_query($con, $query_author_courses);
 $search_examples    = mysqli_query($con, $query_author_examples);
+$about_author       = mysqli_query($con, $query_author_about);
+$author_img         = mysqli_query($con, $query_author_img);
+
+$contributions_assessments  = mysqli_num_rows($search_assessments);
+$contributions_courses      = mysqli_num_rows($search_courses);
+$contributions_examples     = mysqli_num_rows($search_examples);
+
 } else {
 $search_assessments = mysqli_query($con, $query_assessments);
 $search_courses     = mysqli_query($con, $query_courses);
@@ -52,7 +60,7 @@ if( mysqli_num_rows($search_examples)) {
     echo "<tr>
     <th colspan='3'>Examples:".$show."</th>
     </tr>";
-    echo "<tr><td><i>Language</i></td><td><i>Title</i></td><td><i>Author</i></td></tr>";
+    echo "<tr><td><b class=\"fa fa-language\"></b></td><td><i>Title</i></td><td><b class=\"fa fa-user\"></b> Author</td></tr>";
     while($row_search_query = mysqli_fetch_array($search_examples)) {
         echo "<tr><td>". $row_search_query['language'] . "</td>";
         echo "<td><a href=\"" . $row_search_query['links'] . "\" target=\"_blank\"><i>" . $row_search_query['title'] . "</i></a></td>";
@@ -66,7 +74,7 @@ if( mysqli_num_rows($search_courses)) {
     echo "<tr>
     <th colspan='3'>Courses:</th>
     </tr>";
-    echo "<tr><td><i>Language</i></td><td><i>Title</i></td><td><i>Author</i></td></tr>";
+    echo "<tr><td>&#xf1ab;</td><td><i>Title</i></td><td>&#xf007; Author</td></tr>";
     while($row_search_query = mysqli_fetch_array($search_courses)) {
         echo "<tr><td>". $row_search_query['language'] . "</td>";
         echo "<td> <a href=\"" . $row_search_query['links'] . "\" target=\"_blank\"><i>" . $row_search_query['title'] . "</i></a></td>";
@@ -80,7 +88,7 @@ if( mysqli_num_rows($search_assessments) ) {
     echo "<tr>
     <th colspan='3'>Assessments:</th>
     </tr>";
-    echo "<tr><td><i>Language</i></td><td><i>Title</i></td><td><i>Author</i></td></tr>";
+    echo "<tr><td>&#xf1ab;</td><td><i>Title</i></td><td>&#xf007; Author</td></tr>";
     while($row_search_query = mysqli_fetch_array($search_assessments)) {
         echo "<tr><td>". $row_search_query['language'] . "</td>";
         echo "<td> <a href=\"" . $row_search_query['links'] . "\" target=\"_blank\"><i>" . $row_search_query['title'] . "</i></a></td>";
@@ -91,11 +99,52 @@ if( mysqli_num_rows($search_assessments) ) {
 
 echo "</table>";
 
+# Get author description array
+$author_image       =  mysqli_fetch_array($author_img);
+$author_description =  mysqli_fetch_array($about_author);
 
 // Free results
 mysqli_free_result($search_assessments);
 mysqli_free_result($search_courses);
 mysqli_free_result($search_examples);
-
 mysqli_close($con);
+
+if (!empty($author)) {
+echo "<div class=\"column column-four\">";
+echo "<h3>" . $author ."</h3>";
+echo "<img src=\"" . $author_image['author_img'] . "\" class=\"image author\">";
+echo $author_description['about'];
+
+echo "<i>Contributions by " . $author ." thus far:</i>";
+if ($contributions_assessments != 0){
+    echo "<br/>";
+    if ($contributions_assessments == 1){
+        echo $contributions_assessments . " Assessment";
+    } else {
+        echo $contributions_assessments . " Assessments";
+    }
+}
+
+if ($contributions_courses != 0){
+    echo "<br/>";
+    if ($contributions_courses == 1){
+        echo $contributions_courses . " Course";
+    } else {
+        echo $contributions_courses . " Courses";
+    }
+}
+
+if ($contributions_examples != 0){
+    echo "<br/>";
+    if ($contributions_examples == 1){
+        echo $contributions_examples . " Example";
+    } else {
+        echo $contributions_examples . " Examples";
+    }
+}
+
+echo "</div>";
+}
+
+
 ?>
