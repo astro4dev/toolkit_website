@@ -2,7 +2,9 @@
 These are the files for the [OAD Astronomy & Data Science Toolkit Website](http://datascience.astro4dev.org).
 
 ## Translations
-The toolkit website allows for community to add translations. Ideally this is done via GitHub by forkng this repository, making the changes, and submitting a pull request. More information on this is found under _How to upload content via GitHub_ which is available [here](https://github.com/astro4dev/OAD-Data-Science-Toolkit/blob/master/CONTRIBUTING.md).
+The toolkit website allows for community to add translations. Ideally this is done via GitHub by forkng this repository, making the changes, and submitting a pull request. More information on this is found under [_How to upload content via GitHub_](https://github.com/astro4dev/OAD-Data-Science-Toolkit/blob/master/CONTRIBUTING.md).
+
+Have a look at [issues](https://github.com/astro4dev/toolkit_website/issues) to see which translations are needed. Feel free to contribute with whatever language you wish.
 
 You will find the parts which need translating by looking through the source code and looking for ```<!-- [LANGUAGE] -->```
 
