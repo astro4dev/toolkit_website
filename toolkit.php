@@ -90,8 +90,9 @@
 
 
 							<div id="txtHint">
-							<div class="column column-four">
 
+
+							<div class="column column-four">
 
 							<!-- ENGLISH -->
 							<h3 lang="en">Data Science</h3>
@@ -131,7 +132,7 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 
-		    <script>
+		    <script type="text/javascript">
 
 
 			var button		= document.getElementById('btnSearch');
@@ -139,6 +140,7 @@
 
     		var text 		= document.getElementById('search').value;
 
+    		// Show all toolkit results
 			showbutton.onclick	= function(){
 			    if (window.XMLHttpRequest) {
 			        // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -158,6 +160,7 @@
 			    xmlhttp.send();
 			}
 
+			// Show results which match the search keyword
 			button.onclick	= function(){
     		var text 		= document.getElementById('search').value;
 			if (text == "") {
@@ -176,13 +179,33 @@
 			            document.getElementById("txtHint").innerHTML = this.responseText;
 			        }
 			    };
-			    document.getElementById("txtHint").innerHTML = text;
+
 			    xmlhttp.open("GET","getTopic.php?keyword="+text,true);
 			    xmlhttp.send();
 				}
 			}
 
-			// Autocomplete box
+			function catQuery(category, query) {
+			    if (window.XMLHttpRequest) {
+			        // code for IE7+, Firefox, Chrome, Opera, Safari
+			        xmlhttp = new XMLHttpRequest();
+			    } else {
+			        // code for IE6, IE5
+			        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			    }
+			    xmlhttp.onreadystatechange = function() {
+			        if (this.readyState == 4 && this.status == 200) {
+			            document.getElementById("txtHint").innerHTML = this.responseText;
+			        }
+			    };
+
+			    xmlhttp.open("GET","getTopic.php?"+category+"="+query,true);
+
+			    xmlhttp.send();
+			}
+
+
+			// Autocomplete search box
 		    $(document).ready(function(){
 			    $('input.typeahead').typeahead({
 			        hint: true,

@@ -1,6 +1,7 @@
 <?php
 
 $keyword        = $_GET['keyword'];
+$author         = $_GET['author'];
 #$show           = 'courses';#$_GET['show'];
 
 # Load user credentials
@@ -30,8 +31,6 @@ $search_assessments = mysqli_query($con, $query_assessments);
 $search_courses     = mysqli_query($con, $query_courses);
 $search_examples    = mysqli_query($con, $query_examples);
 
-$show_all   = mysqli_query($con, $query_all_courses);
-
     echo "<table class='alt'>";
 
 if( mysqli_num_rows($search_examples)) {
@@ -42,12 +41,11 @@ if( mysqli_num_rows($search_examples)) {
     while($row_search_query = mysqli_fetch_array($search_examples)) {
         echo "<tr><td>". $row_search_query['language'] . "</td>";
         echo "<td><a href=\"" . $row_search_query['links'] . "\" target=\"_blank\"><i>" . $row_search_query['title'] . "</i></a></td>";
-        echo "<td><a href=\"" . $row_search_query['author_link'] . "\" target=\"_blank\"><i>" . $row_search_query['name'] . "</i></a></td>";
+        echo "<td><a href=\"#\" onclick=\"catQuery('keyword', 'Exo');\"><i>" . $row_search_query['name'] . "</i></a></td>";
+
         }
     echo "</tr>";
 }
-
-#<img src='" . $row_search_query['author_img'] . "' width='60'>
 
 if( mysqli_num_rows($search_courses)) {
     echo "<tr>
@@ -78,6 +76,7 @@ if( mysqli_num_rows($search_assessments) ) {
 
 echo "</table>";
 
+
 // Free results
 mysqli_free_result($search_assessments);
 mysqli_free_result($search_courses);
@@ -85,49 +84,3 @@ mysqli_free_result($search_examples);
 
 mysqli_close($con);
 ?>
-
-
-<script type="text/javascript">
-    
-$("#idOfElement").on('click', function(){
-
-    $.ajax({
-       url: 'pathToPhpFile.php',
-       dataType: 'json',
-       success: function(data){
-            //data returned from php
-       }
-    });
-)};
-
-</script>
-
-
-<!-- Work in progress
-<script type="text/javascript">
-
-    var text = 'courses'
-
-    function loadXMLDoc()
-    {
-        var xmlhttp;
-        if (window.XMLHttpRequest)
-        {
-            xmlhttp = new XMLHttpRequest();
-        }
-        else
-        {
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange = function()
-        {
-            if(xmlhttp.readyState == 4 && xmlhttp.status == 200)
-            {
-                // do something if the page loaded successfully
-            }
-        }
-        xmlhttp.open("GET","getTopic.php?show="+text,true);
-        xmlhttp.send();
-    }
-</script>
--->
