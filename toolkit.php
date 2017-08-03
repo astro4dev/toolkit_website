@@ -18,7 +18,7 @@
 						<!-- FRENCH -->
 						<h1 lang="fr">Astronomy & Data Science Toolkit</h1>
 
-						<p>v.0.2.5</p>
+						<p>v.0.2.6</p>
 					</header>
 
 				<!-- Nav -->

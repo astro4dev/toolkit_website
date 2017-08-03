@@ -4,6 +4,8 @@ $keyword        = $_GET['keyword'];
 $author         = $_GET['author'];
 #$show           = 'courses';#$_GET['show'];
 
+#echo print_r($author);
+
 # Load user credentials
 $iniData        = file_get_contents('/etc/mysql/user.cnf');
 $iniData        = preg_replace('/#.*$/m', '', $iniData);
@@ -16,6 +18,12 @@ if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
 }
 
+if (!empty($author)) {
+$query_author_assessments  = "SELECT title, name, affiliation, author_link, author_img, links, author_id, assessment_id, language FROM authors, assessments, authors__assessments WHERE (authors.id=author_id AND assessments.Id = assessment_id AND authors.name LIKE '%".$author."%');";
+$query_author_courses      = "SELECT title, name, affiliation, author_link, author_img, links, author_id, course_id, language FROM authors, courses, authors__courses WHERE (authors.id=author_id AND courses.Id = course_id AND authors.name LIKE '%".$author."%');";
+$query_author_examples = "SELECT title, name, affiliation, author_link, author_img, links, author_id, example_id, language FROM authors, examples, authors__examples WHERE (authors.id=author_id AND examples.Id = example_id AND authors.name LIKE '%".$author."%');";
+}
+else {
 if (empty($keyword)) {
 $query_assessments  = "SELECT title, name, affiliation, author_link, author_img, links, author_id, assessment_id, language FROM authors, assessments, authors__assessments WHERE (authors.id=author_id AND assessments.Id = assessment_id);";
 $query_courses      = "SELECT title, name, affiliation, author_link, author_img, links, author_id, course_id, language FROM authors, courses, authors__courses WHERE (authors.id=author_id AND courses.Id = course_id);";
@@ -26,11 +34,18 @@ $query_assessments  = "SELECT title, name, affiliation, author_link, author_img,
 $query_courses      = "SELECT title, name, affiliation, author_link, author_img, links, author_id, course_id, language FROM authors, courses, authors__courses WHERE (authors.id=author_id AND courses.Id = course_id) AND (IF(LENGTH('".$keyword."') > 0, courses.title LIKE '%".$keyword."%', 0));";
 $query_examples     = "SELECT title, name, affiliation, author_link, author_img, links, author_id, example_id, language FROM authors, examples, authors__examples WHERE (authors.id=author_id AND examples.Id = example_id) AND (IF(LENGTH('".$keyword."') > 0, examples.title LIKE '%".$keyword."%', 0));";
 }
+}
 
+
+if (!empty($author)) {
+$search_assessments = mysqli_query($con, $query_author_assessments);
+$search_courses     = mysqli_query($con, $query_author_courses);
+$search_examples    = mysqli_query($con, $query_author_examples);
+} else {
 $search_assessments = mysqli_query($con, $query_assessments);
 $search_courses     = mysqli_query($con, $query_courses);
 $search_examples    = mysqli_query($con, $query_examples);
-
+}
     echo "<table class='alt'>";
 
 if( mysqli_num_rows($search_examples)) {
@@ -41,7 +56,7 @@ if( mysqli_num_rows($search_examples)) {
     while($row_search_query = mysqli_fetch_array($search_examples)) {
         echo "<tr><td>". $row_search_query['language'] . "</td>";
         echo "<td><a href=\"" . $row_search_query['links'] . "\" target=\"_blank\"><i>" . $row_search_query['title'] . "</i></a></td>";
-        echo "<td><a href=\"#\" onclick=\"catQuery('keyword', 'Exo');\"><i>" . $row_search_query['name'] . "</i></a></td>";
+        echo "<td><a href=\"#\" onclick=\"catQuery('author', '" . $row_search_query['name'] . "');\"><i>" . $row_search_query['name'] . "</i></a></td>";
 
         }
     echo "</tr>";
@@ -55,7 +70,7 @@ if( mysqli_num_rows($search_courses)) {
     while($row_search_query = mysqli_fetch_array($search_courses)) {
         echo "<tr><td>". $row_search_query['language'] . "</td>";
         echo "<td> <a href=\"" . $row_search_query['links'] . "\" target=\"_blank\"><i>" . $row_search_query['title'] . "</i></a></td>";
-        echo "<td><a href=\"" . $row_search_query['author_link'] . "\" target=\"_blank\"><i>" . $row_search_query['name'] . "</i></a></td>";
+        echo "<td><a href=\"#\" onclick=\"catQuery('author', '" . $row_search_query['name'] . "');\"><i>" . $row_search_query['name'] . "</i></a></td>";
         #echo "<td><a href=\"" . $row_search_query['author_link'] . "\" target=\"_blank\"><i>#SQL</i></a> / <a href=\"" . $row_search_query['author_link'] . "\" target=\"_blank\"><i>#ASTR</i></a></td>";
         }
     echo "</tr>";
@@ -69,7 +84,7 @@ if( mysqli_num_rows($search_assessments) ) {
     while($row_search_query = mysqli_fetch_array($search_assessments)) {
         echo "<tr><td>". $row_search_query['language'] . "</td>";
         echo "<td> <a href=\"" . $row_search_query['links'] . "\" target=\"_blank\"><i>" . $row_search_query['title'] . "</i></a></td>";
-        echo "<td><a href=\"" . $row_search_query['author_link'] . "\" target=\"_blank\"><i>" . $row_search_query['name'] . "</i></a></td>";
+        echo "<td><a href=\"#\" onclick=\"catQuery('author', '" . $row_search_query['name'] . "');\"><i>" . $row_search_query['name'] . "</i></a></td>";
         }
     echo "</tr>";
 }
