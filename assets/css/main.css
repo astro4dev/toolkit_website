@@ -2761,11 +2761,13 @@
 			border: solid 0px;
 			border-left: 0;
 			border-right: 0;
+			font-size: 14pt;
 
 		}
 
 		table td {
-			padding: 0.75em 0.75em;
+			padding: 0.5em 0.5em;
+
 		}
 
 		table th {
@@ -2802,15 +2804,15 @@
 
 				table.alt tbody tr td:first-child {
 					padding-left: 10px;
-					border-left-width: 1px;
+					border-left-width: 0px;
 				}
 
 				table.alt tbody tr td:last-child {
-					border-right-width: 1px;
+					border-right-width: 0px;
 				}
 
 			table.alt tbody tr:first-child td {
-				border-top-width: 1px;
+				border-top-width: 0px;
 			}
 
 			table.alt thead {

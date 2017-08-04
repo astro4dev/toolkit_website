@@ -105,13 +105,13 @@ $search_assessments = mysqli_query($con, $query_assessments);
 $search_courses     = mysqli_query($con, $query_courses);
 $search_examples    = mysqli_query($con, $query_examples);
 }
-    echo "<table class='alt'>";
 
+echo "<table class='alt'>";
 if( mysqli_num_rows($search_examples)) {
     echo "<tr>
     <th colspan='4'>Examples:</th>
     </tr>";
-    echo "<tr><td><b class=\"fa fa-language\"></b></td><td><i>Title</i></td><td><i>Astr Topic</i></td><td><b class=\"fa fa-user\"></b> Author</td></tr>";
+    echo "<tr><td width=\"5%\"><b class=\"fa fa-language\"></b></td width=\"55%\"><td><b class=\"fa  fa-chevron-right\"></b> Title</td><td width=\"20%\"><b class=\"fa fa-star\"></b> Astro Topic</td><td width=\"20%\"><b class=\"fa fa-user\"></b> Author</td></tr>";
     while($row_search_query = mysqli_fetch_array($search_examples)) {
         echo "<tr><td>". $row_search_query['language'] . "</td>";
         echo "<td><a href=\"" . $row_search_query['links'] . "\" target=\"_blank\"><i>" . $row_search_query['title'] . "</i></a></td>";
@@ -125,40 +125,45 @@ if( mysqli_num_rows($search_examples)) {
         }
     echo "</tr>";
 }
+echo "</table>";
 
+echo "<table class='alt'>";
 if( mysqli_num_rows($search_courses)) {
     echo "<tr>
     <th colspan='4'>Courses:</th>
     </tr>";
-    echo "<tr><td><b class=\"fa fa-language\"></b></td><td><i>Title</i></td><td><i>Astr Topic</i></td><td><b class=\"fa fa-user\"></b> Author</td></tr>";
+    echo "<tr><td width=\"5%\"><b class=\"fa fa-language\"></b></td width=\"55%\"><td><b class=\"fa  fa-chevron-right\"></b> Title</td><td width=\"20%\"><b class=\"fa fa-star\"></b> Astro Topic</td><td width=\"20%\"><b class=\"fa fa-user\"></b> Author</td></tr>";
     while($row_search_query = mysqli_fetch_array($search_courses)) {
         echo "<tr><td>". $row_search_query['language'] . "</td>";
         echo "<td> <a href=\"" . $row_search_query['links'] . "\" target=\"_blank\"><i>" . $row_search_query['title'] . "</i></a></td>";
         if ($row_search_query['topics_astr'] != 'no_topic') {
-            echo "<td><a href=\"" . $row_search_query['links'] . "\" target=\"_blank\"><i>" . $row_search_query['topics_astr'] . "</i></a></td>";
+            echo "<td><a href=\"#\" onclick=\"catQuery('astr_topic', '" . $row_search_query['topics_astr'] . "');\"><i>" . $row_search_query['topics_astr'] . "</i></a></td>";
         } else {
             echo "<td></td>";
         }
         echo "<td><a href=\"#\" onclick=\"catQuery('author', '" . $row_search_query['name'] . "');\"><i>" . $row_search_query['name'] . "</i></a></td>";
-        #echo "<td><a href=\"" . $row_search_query['author_link'] . "\" target=\"_blank\"><i>#SQL</i></a> / <a href=\"" . $row_search_query['author_link'] . "\" target=\"_blank\"><i>#ASTR</i></a></td>";
+
         }
     echo "</tr>";
 }
+echo "</table>";
 
+echo "<table class='alt'>";
 if( mysqli_num_rows($search_assessments) ) {
     echo "<tr>
     <th colspan='4'>Assessments:</th>
     </tr>";
-    echo "<tr><td><b class=\"fa fa-language\"></b></td><td><i>Title</i></td><td><i>Astr Topic</i></td><td><b class=\"fa fa-user\"></b> Author</td></tr>";
+    echo "<tr><td width=\"5%\"><b class=\"fa fa-language\"></b></td width=\"55%\"><td><b class=\"fa  fa-chevron-right\"></b> Title</td><td width=\"20%\"><b class=\"fa fa-star\"></b> Astro Topic</td><td width=\"20%\"><b class=\"fa fa-user\"></b> Author</td></tr>";
     while($row_search_query = mysqli_fetch_array($search_assessments)) {
         echo "<tr><td>". $row_search_query['language'] . "</td>";
         echo "<td> <a href=\"" . $row_search_query['links'] . "\" target=\"_blank\"><i>" . $row_search_query['title'] . "</i></a></td>";
-         if ($row_search_query['topics_astr'] != 'no_topic') {
-            echo "<td><a href=\"" . $row_search_query['links'] . "\" target=\"_blank\"><i>" . $row_search_query['topics_astr'] . "</i></a></td>";
+        if ($row_search_query['topics_astr'] != 'no_topic') {
+            echo "<td><a href=\"#\" onclick=\"catQuery('astr_topic', '" . $row_search_query['topics_astr'] . "');\"><i>" . $row_search_query['topics_astr'] . "</i></a></td>";
         } else {
             echo "<td></td>";
         }
         echo "<td><a href=\"#\" onclick=\"catQuery('author', '" . $row_search_query['name'] . "');\"><i>" . $row_search_query['name'] . "</i></a></td>";
+
         }
     echo "</tr>";
 }
@@ -175,7 +180,7 @@ mysqli_free_result($search_examples);
 mysqli_close($con);
 
 if (!empty($author)) {
-echo "<div class=\"column column-four\">";
+echo "<div class=\"column column-three\">";
 echo "<h3><a href=\"" . $author['author_link'] . "\" target=\"_blank\">" . $author['name'] ."</a></h3>";
 echo "<div class=\"author-info fa fa-institution\"> " . $author['affiliation'] . "</div>";
 if (!empty($author['email'])) {

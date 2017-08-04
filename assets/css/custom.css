@@ -89,32 +89,43 @@ width: 300px;
     z-index: 10000;
 }
 
-.bg-purple {
-  background-color: #b10dc9; }
-
 .container {
     display: flex;
 }
 
 .column {
-    flex: 1;
-    /* border: 1px solid #e6e6e6; */
-    box-sizing: border-box;
+    display: inline-block;
+    margin: auto;
+    padding: 25px;
+    border-radius: 0.25em;
 }
 
 .column-one {
     order: 1;
-    padding-right: 60px;
+    float: left;
+    background: #CED8F6;
+    background: -webkit-linear-gradient(left top, #CED8F6, #F6CEF5); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #CED8F6, #F6CEF5); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #CED8F6, #F6CEF5); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top, #CED8F6, #F6CEF5); /* Standard syntax */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    width: 47%;
+    height: 500px;
 }
 .column-two {
     order: 2;
-    padding-left: 60px;
+    background: #F6CEF5;
+    background: -webkit-linear-gradient(left top, #CED8F6, #F6CEF5); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #CED8F6, #F6CEF5); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #CED8F6, #F6CEF5); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top, #CED8F6, #F6CEF5); /* Standard syntax */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin-left: 6%; 
+    width: 47%; /* this dirty code and needs fixing */
+    height: 500px;
 }
+
 .column-three {
-    order: 3;
-    padding-top: 1.65em;
-}
-.column-four {
 
     -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 3s; /* Firefox < 16 */
@@ -122,11 +133,9 @@ width: 300px;
          -o-animation: fadein 3s; /* Opera < 12.1 */
             animation: fadein 3s;
     background: #E3E4FA;
-    border-radius: 0.25em;
-    border: solid #000;
+    border: solid;
     border-width: 2px;
-    border-color: #615295;
-    padding: 20px;
+    border-color: #df7984;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }

@@ -91,12 +91,22 @@
 
 							<div id="txtHint">
 
-
-							<div class="column column-four">
+							<div class="column column-one">
 
 							<!-- ENGLISH -->
 							<h3 lang="en">Data Science</h3>
-							<p lang="en">Data science, also known as data-driven science, is an interdisciplinary field about scientific methods, processes, and systems to extract knowledge or insights from data in various forms, either structured or unstructured, similar to data mining. [ <a title="more" href="https://en.wikipedia.org/wiki/Data_science" target="_blank">more</a> from Wikipedia ].</p>
+							<p lang="en">Data science, also known as data-driven science, is an interdisciplinary field about scientific methods, processes, and systems to extract knowledge or insights from data in various forms, either structured or unstructured, similar to data mining. [ <a title="more" href="https://en.wikipedia.org/wiki/Data_science" target="_blank">more</a> from Wikipedia ].
+
+							<!--
+							<ul>
+							<li><a href="#" onclick="catQuery('skill_topic', 'Wrangling');"><i>Data Wrangling</i></a></li>
+							<li><a href="#" onclick="catQuery('skill_topic', 'Python');"><i>Python</i></a></li>
+							<li><a href="#" onclick="catQuery('skill_topic', 'Machine Learning');"><i>Machine Learning</i></a></li>
+							</ul>
+							-->
+
+
+							</p>
 
 							<!-- SPANISH -->
 							<h3 lang="es">Data Science</h3>
@@ -108,6 +118,21 @@
 
 
 							</div>
+
+							<div class="column column-two">
+
+							<!-- ENGLISH -->
+							<h3 lang="en">Astronomy</h3>
+							<p lang="en">Please select from the topics below.
+							<ul>
+							<li><a href="#" onclick="catQuery('astr_topic', 'Galaxies');"><i>Galaxies</i></a></li>
+							<li><a href="#" onclick="catQuery('astr_topic', 'Solar');"><i>Solar & Stellar</i></a></li>
+							<li><a href="#" onclick="catQuery('astr_topic', 'Planetary');"><i>Planetary science</i></a></li>
+							</ul>
+							</p>
+
+							</div>
+
 							</div>
 
 						</section>
