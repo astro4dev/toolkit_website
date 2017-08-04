@@ -110,10 +110,12 @@ if (!empty($author)) {
 echo "<div class=\"column column-four\">";
 echo "<h3><a href=\"" . $author['author_link'] . "\" target=\"_blank\">" . $author['name'] ."</a></h3>";
 echo "<div class=\"author-info fa fa-institution\"> " . $author['affiliation'] . "</div>";
+if (!empty($author['email'])) {
 echo "<div class=\"author-info fa fa-envelope\"> " . $author['email'] . "</div>";
+}
 echo "<img src=\"" . $author['author_img'] . "\" class=\"image author\">";
 echo $author['about'];
-echo "<i>Contributions by " . $author['name'] ." thus far:</i>";
+echo "<i>Contributions by " . $author['name'] ." to the toolkit:</i>";
 if ($contributions_assessments != 0){
     echo "<br/>";
     if ($contributions_assessments == 1){
