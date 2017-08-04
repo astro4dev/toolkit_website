@@ -95,16 +95,14 @@
 
 							<!-- ENGLISH -->
 							<h3 lang="en">Data Science</h3>
-							<p lang="en">Data science, also known as data-driven science, is an interdisciplinary field about scientific methods, processes, and systems to extract knowledge or insights from data in various forms, either structured or unstructured, similar to data mining. [ <a title="more" href="https://en.wikipedia.org/wiki/Data_science" target="_blank">more</a> from Wikipedia ].
-
-							<!--
+							<p lang="en">I am a data scientist interested in using astronomy examples for my teaching:
 							<ul>
 							<li><a href="#" onclick="catQuery('skill_topic', 'Wrangling');"><i>Data Wrangling</i></a></li>
 							<li><a href="#" onclick="catQuery('skill_topic', 'Python');"><i>Python</i></a></li>
 							<li><a href="#" onclick="catQuery('skill_topic', 'Machine Learning');"><i>Machine Learning</i></a></li>
 							</ul>
-							-->
-
+							<br />
+							(links above not implemented yet.)
 
 							</p>
 
@@ -123,7 +121,7 @@
 
 							<!-- ENGLISH -->
 							<h3 lang="en">Astronomy</h3>
-							<p lang="en">Please select from the topics below.
+							<p lang="en">I am an astronomer interested in seeing data science techniques used within the field of:
 							<ul>
 							<li><a href="#" onclick="catQuery('astr_topic', 'Galaxies');"><i>Galaxies</i></a></li>
 							<li><a href="#" onclick="catQuery('astr_topic', 'Solar');"><i>Solar & Stellar</i></a></li>
