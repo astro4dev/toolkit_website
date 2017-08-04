@@ -2761,10 +2761,13 @@
 			border: solid 0px;
 			border-left: 0;
 			border-right: 0;
+			font-size: 14pt;
+
 		}
 
 		table td {
-			padding: 0.75em 0.75em;
+			padding: 0.5em 0.5em;
+
 		}
 
 		table th {
@@ -2778,6 +2781,7 @@
 			background: -moz-linear-gradient(bottom right, purple, pink); /* For Firefox 3.6 to 15 */
 			background: linear-gradient(to right, #615295, #df7984); /* Standard syntax */
 			text-align: left;
+			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 		}
 
 		table thead {
@@ -2793,17 +2797,22 @@
 		}
 
 			table.alt tbody tr td {
-				border: solid 1px;
+				border: solid 0px;
 				border-left-width: 0;
 				border-top-width: 0;
 			}
 
 				table.alt tbody tr td:first-child {
-					border-left-width: 1px;
+					padding-left: 10px;
+					border-left-width: 0px;
+				}
+
+				table.alt tbody tr td:last-child {
+					border-right-width: 0px;
 				}
 
 			table.alt tbody tr:first-child td {
-				border-top-width: 1px;
+				border-top-width: 0px;
 			}
 
 			table.alt thead {

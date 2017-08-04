@@ -89,46 +89,55 @@ width: 300px;
     z-index: 10000;
 }
 
-.bg-purple {
-  background-color: #b10dc9; }
-
 .container {
     display: flex;
 }
 
 .column {
-    flex: 1;
-    /* border: 1px solid #e6e6e6; */
-    box-sizing: border-box;
+    display: inline-block;
+    margin: auto;
+    padding: 25px;
+    border-radius: 0.25em;
 }
 
 .column-one {
     order: 1;
-    padding-right: 60px;
+    float: left;
+    background: #CED8F6;
+    background: -webkit-linear-gradient(left top, #CED8F6, #F6CEF5); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #CED8F6, #F6CEF5); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #CED8F6, #F6CEF5); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top, #CED8F6, #F6CEF5); /* Standard syntax */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    width: 47%;
+    height: 500px;
 }
 .column-two {
     order: 2;
-    padding-left: 60px;
+    background: #F6CEF5;
+    background: -webkit-linear-gradient(left top, #CED8F6, #F6CEF5); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #CED8F6, #F6CEF5); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #CED8F6, #F6CEF5); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top, #CED8F6, #F6CEF5); /* Standard syntax */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin-left: 6%; 
+    width: 47%; /* this dirty code and needs fixing */
+    height: 500px;
 }
+
 .column-three {
-    order: 3;
-    padding-top: 1.65em;
-}
-.column-four {
 
     -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 3s; /* Firefox < 16 */
         -ms-animation: fadein 3s; /* Internet Explorer */
          -o-animation: fadein 3s; /* Opera < 12.1 */
             animation: fadein 3s;
-    order: 4;
     background: #E3E4FA;
-    border-radius: 0.25em;
-    border: solid #000;
+    border: solid;
     border-width: 2px;
-    border-color: #615295;
-    padding: 20px;
-    margin-left: 20px;
+    border-color: #df7984;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 .topic-header{
@@ -141,6 +150,32 @@ width: 300px;
 	font-size: 24px;
     font-weight: bold;
 }
+
+table td {
+    font-family: 'FontAwesome', 'Open Sans', Helvetica, sans-serif;
+}
+
+tbody tr:first-child td {
+  background-color: #FF0000;
+}
+
+div.author-info {
+padding-top: -5px;
+padding-bottom: 15px;
+display: block;
+font-family: 'FontAwesome', 'Open Sans', Helvetica, sans-serif;
+}
+
+.image.author {
+margin: 20px;
+width: 150px;
+height: auto;
+float: right;
+content: "";
+clear: both;
+display: table;
+}
+
 
 @keyframes fadein {
     from { opacity: 0; }
@@ -177,5 +212,5 @@ width: 300px;
 .footer { padding-top: 100px;  margin: 50px; }
 
 .fa-select {
-    font-family: 'FontAwesome', 'Open Sans', Helvetica, sans-serif;;
+    font-family: 'FontAwesome', 'Open Sans', Helvetica, sans-serif;
 }
