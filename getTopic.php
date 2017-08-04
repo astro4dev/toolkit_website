@@ -22,8 +22,7 @@ if (!empty($author)) {
 $query_author_assessments  = "SELECT title, name, affiliation, author_link, author_img, links, author_id, assessment_id, language FROM authors, assessments, authors__assessments WHERE (authors.id=author_id AND assessments.Id = assessment_id AND authors.name LIKE '%".$author."%');";
 $query_author_courses      = "SELECT title, name, affiliation, author_link, author_img, links, author_id, course_id, language FROM authors, courses, authors__courses WHERE (authors.id=author_id AND courses.Id = course_id AND authors.name LIKE '%".$author."%');";
 $query_author_examples = "SELECT title, name, affiliation, author_link, author_img, links, author_id, example_id, language FROM authors, examples, authors__examples WHERE (authors.id=author_id AND examples.Id = example_id AND authors.name LIKE '%".$author."%');";
-$query_author_about = "SELECT about FROM authors WHERE authors.name LIKE '%".$author."%';";
-$query_author_img = "SELECT author_img FROM authors WHERE authors.name LIKE '%".$author."%';";
+$query_author = "SELECT name, affiliation, author_link, author_img, about, email FROM authors WHERE authors.name LIKE '%".$author."%';";
 }
 else {
 if (empty($keyword)) {
@@ -42,8 +41,7 @@ if (!empty($author)) {
 $search_assessments = mysqli_query($con, $query_author_assessments);
 $search_courses     = mysqli_query($con, $query_author_courses);
 $search_examples    = mysqli_query($con, $query_author_examples);
-$about_author       = mysqli_query($con, $query_author_about);
-$author_img         = mysqli_query($con, $query_author_img);
+$author_data        = mysqli_query($con, $query_author);
 
 $contributions_assessments  = mysqli_num_rows($search_assessments);
 $contributions_courses      = mysqli_num_rows($search_courses);
@@ -100,8 +98,7 @@ if( mysqli_num_rows($search_assessments) ) {
 echo "</table>";
 
 # Get author description array
-$author_image       =  mysqli_fetch_array($author_img);
-$author_description =  mysqli_fetch_array($about_author);
+$author       =  mysqli_fetch_array($author_data);
 
 // Free results
 mysqli_free_result($search_assessments);
@@ -111,11 +108,12 @@ mysqli_close($con);
 
 if (!empty($author)) {
 echo "<div class=\"column column-four\">";
-echo "<h3>" . $author ."</h3>";
-echo "<img src=\"" . $author_image['author_img'] . "\" class=\"image author\">";
-echo $author_description['about'];
-
-echo "<i>Contributions by " . $author ." thus far:</i>";
+echo "<h3><a href=\"" . $author['author_link'] . "\" target=\"_blank\">" . $author['name'] ."</a></h3>";
+echo "<div class=\"author-info fa fa-institution\"> " . $author['affiliation'] . "</div>";
+echo "<div class=\"author-info fa fa-envelope\"> " . $author['email'] . "</div>";
+echo "<img src=\"" . $author['author_img'] . "\" class=\"image author\">";
+echo $author['about'];
+echo "<i>Contributions by " . $author['name'] ." thus far:</i>";
 if ($contributions_assessments != 0){
     echo "<br/>";
     if ($contributions_assessments == 1){

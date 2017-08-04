@@ -9,9 +9,7 @@
 	<?php include 'header.php';?>
 	</head>
 
-
 	<body>
-
 
 		<!-- Wrapper -->
 			<div id="wrapper">
