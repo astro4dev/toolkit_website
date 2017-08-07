@@ -75,17 +75,14 @@
 
 				<!-- ENGLISH -->
 				<div class="search_explanation" lang="en">
-					This search box lets you search all toolkit titles.
 				</div>
 
 				<!-- SPANISH -->
 				<div class="search_explanation" lang="es">
-					This search box lets you search all toolkit titles.
 				</div>
 
 				<!-- FRENCH -->
 				<div class="search_explanation" lang="fr">
-					This search box lets you search all toolkit titles.
 				</div>
 
 

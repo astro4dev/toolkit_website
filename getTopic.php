@@ -313,6 +313,7 @@ if (!empty($author)) {
     }
     echo "<img src=\"" . $author['author_img'] . "\" class=\"image author\">";
     echo $author['about'];
+    /*
     echo "<i>Contributions by " . $author['name'] ." to the toolkit:</i>";
     if ($contributions_assessments != 0){
         echo "<br/>";
@@ -340,7 +341,7 @@ if (!empty($author)) {
             echo $contributions_examples . " Examples";
         }
     }
-
+    */
     echo "</div>";
 }
 
