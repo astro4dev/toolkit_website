@@ -18,7 +18,7 @@
 			<!-- FRENCH -->
 			<h1 lang="fr">Astronomy & Data Science Toolkit</h1>
 
-			<p>v.0.2.7</p>
+			<p>v.0.2.8</p>
 		</header>
 
 		<!-- Nav -->
@@ -65,7 +65,7 @@
 
 				<div class="search">
 					<!-- <form method="post"> -->
-					<input type="text" name="search" class="typeahead" autocomplete="on" id="search" spellcheck="false" placeholder="Search the toolkit e.g: Exoplanet" autofocus>
+					<input type="text" name="search" class="typeahead" autocomplete="on" id="search" spellcheck="false" placeholder="Search..." autofocus>
 					<input type="submit" class="button special" name="btnSearch" value="Search" id="btnSearch">
 					<input type="submit" class="button" name="btnAll" value="Show All" id="btnAll">
 					<!-- <button onclick="myFunction()">Click me</button> -->
@@ -101,17 +101,24 @@
 							<li><a href="#" onclick="catQuery('skills', 'Python');"><i>Python</i></a></li>
 							<li><a href="#" onclick="catQuery('skills', 'Machine Learning');"><i>Machine Learning</i></a></li>
 						</ul>
-						(links above not implemented yet.)
-
-						
 
 						<!-- SPANISH -->
 						<h3 lang="es">Data Science</h3>
-						<p lang="es">Data science, also known as data-driven science, is an interdisciplinary field about scientific methods, processes, and systems to extract knowledge or insights from data in various forms, either structured or unstructured, similar to data mining. [ <a title="more" href="https://en.wikipedia.org/wiki/Data_science" target="_blank">more</a> from Wikipedia ].</p>
+						<p lang="es">I am a data scientist interested in using astronomy examples for my teaching:</p>
+						<ul lang="es">
+							<li><a href="#" onclick="catQuery('skills', 'Data Wrangling');"><i>Data Wrangling</i></a></li>
+							<li><a href="#" onclick="catQuery('skills', 'Python');"><i>Python</i></a></li>
+							<li><a href="#" onclick="catQuery('skills', 'Machine Learning');"><i>Machine Learning</i></a></li>
+						</ul>
 
 						<!-- FRENCH -->
 						<h3 lang="fr">Data Science</h3>
-						<p lang="fr">Data science, also known as data-driven science, is an interdisciplinary field about scientific methods, processes, and systems to extract knowledge or insights from data in various forms, either structured or unstructured, similar to data mining. [ <a title="more" href="https://en.wikipedia.org/wiki/Data_science" target="_blank">more</a> from Wikipedia ].</p>							
+						<p lang="fr">I am a data scientist interested in using astronomy examples for my teaching:</p>
+						<ul lang="fr">
+							<li><a href="#" onclick="catQuery('skills', 'Data Wrangling');"><i>Data Wrangling</i></a></li>
+							<li><a href="#" onclick="catQuery('skills', 'Python');"><i>Python</i></a></li>
+							<li><a href="#" onclick="catQuery('skills', 'Machine Learning');"><i>Machine Learning</i></a></li>
+						</ul>					
 
 
 					</div>
@@ -126,7 +133,7 @@
 							<li><a href="#" onclick="catQuery('astr_topic', 'Solar');"><i>Solar & Stellar</i></a></li>
 							<li><a href="#" onclick="catQuery('astr_topic', 'Planetary');"><i>Planetary science</i></a></li>
 						</ul>
-						
+
 
 					</div>
 

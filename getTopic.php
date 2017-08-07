@@ -73,15 +73,15 @@ if (!empty($keyword)) {
 # The queries used when a keyword is given
     $query_assessments  = "SELECT title, name, affiliation, author_link, author_img, links, topics_astr, skills, author_id, authors__assessments.assessment_id, topics_astr__assessments.topic_id, skills__assessments.skill_id, language
     FROM authors, assessments, authors__assessments, topics_astr, topics_astr__assessments, skills, skills__assessments
-    WHERE (authors.Id=author_id AND assessments.Id = authors__assessments.assessment_id AND topics_astr.Id=topics_astr__assessments.topic_id AND assessments.Id = topics_astr__assessments.assessment_id AND skills.Id=skills__assessments.skill_id AND assessments.Id = skills__assessments.assessment_id AND IF(LENGTH('".$keyword."') > 0, assessments.title LIKE '%".$keyword."%', 0));";
+    WHERE (authors.Id=author_id AND assessments.Id = authors__assessments.assessment_id AND topics_astr.Id=topics_astr__assessments.topic_id AND assessments.Id = topics_astr__assessments.assessment_id AND skills.Id=skills__assessments.skill_id AND assessments.Id = skills__assessments.assessment_id AND IF(LENGTH('".$keyword."') > 0, assessments.title LIKE '%".$keyword."%' OR topics_astr.topics_astr LIKE '%".$keyword."%' OR skills.skills LIKE '%".$keyword."%', 0));";
 
     $query_courses      = "SELECT title, name, affiliation, author_link, author_img, links, topics_astr, skills, author_id, authors__courses.course_id, topics_astr__courses.topic_id, skills__courses.skill_id, language
     FROM authors, courses, authors__courses, topics_astr, topics_astr__courses, skills, skills__courses
-    WHERE (authors.Id=author_id AND courses.Id = authors__courses.course_id AND topics_astr.Id=topics_astr__courses.topic_id AND courses.Id = topics_astr__courses.course_id AND skills.Id=skills__courses.skill_id AND courses.Id = skills__courses.course_id AND IF(LENGTH('".$keyword."') > 0, courses.title LIKE '%".$keyword."%', 0));";
+    WHERE (authors.Id=author_id AND courses.Id = authors__courses.course_id AND topics_astr.Id=topics_astr__courses.topic_id AND courses.Id = topics_astr__courses.course_id AND skills.Id=skills__courses.skill_id AND courses.Id = skills__courses.course_id AND IF(LENGTH('".$keyword."') > 0, courses.title LIKE '%".$keyword."%' OR topics_astr.topics_astr LIKE '%".$keyword."%' OR skills.skills LIKE '%".$keyword."%', 0));";
 
     $query_examples     = "SELECT title, name, affiliation, author_link, author_img, links, topics_astr, skills, author_id, authors__examples.example_id, topics_astr__examples.topic_id, skills__examples.skill_id, language
     FROM authors, examples, authors__examples, topics_astr, topics_astr__examples, skills, skills__examples
-    WHERE (authors.Id=author_id AND examples.Id = authors__examples.example_id AND topics_astr.Id=topics_astr__examples.topic_id AND examples.Id = topics_astr__examples.example_id AND skills.Id=skills__examples.skill_id AND examples.Id = skills__examples.example_id AND IF(LENGTH('".$keyword."') > 0, examples.title LIKE '%".$keyword."%', 0));";
+    WHERE (authors.Id=author_id AND examples.Id = authors__examples.example_id AND topics_astr.Id=topics_astr__examples.topic_id AND examples.Id = topics_astr__examples.example_id AND skills.Id=skills__examples.skill_id AND examples.Id = skills__examples.example_id AND IF(LENGTH('".$keyword."') > 0, examples.title LIKE '%".$keyword."%' OR topics_astr.topics_astr LIKE '%".$keyword."%' OR skills.skills LIKE '%".$keyword."%', 0));";
 }
 
 
@@ -146,7 +146,7 @@ echo "<tr>
 while($row_search_query = mysqli_fetch_array($search_examples)) {
 
     if ($topic_dummy_examples != $row_search_query['topics_astr']) {
-        
+
         $topic_dummy_examples = $row_search_query['topics_astr'];
 
 
@@ -200,7 +200,7 @@ echo "<tr>
 while($row_search_query = mysqli_fetch_array($search_courses)) {
 
     if ($topic_dummy_courses != $row_search_query['topics_astr']) {
-        
+
         $topic_dummy_courses = $row_search_query['topics_astr'];
 
 
@@ -255,7 +255,7 @@ echo "<tr>
 while($row_search_query = mysqli_fetch_array($search_assessments)) {
 
     if ($topic_dummy_assessments != $row_search_query['topics_astr']) {
-        
+
         $topic_dummy_assessments = $row_search_query['topics_astr'];
 
 
