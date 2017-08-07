@@ -97,11 +97,10 @@
 							<h3 lang="en">Data Science</h3>
 							<p lang="en">I am a data scientist interested in using astronomy examples for my teaching:
 							<ul>
-							<li><a href="#" onclick="catQuery('skill_topic', 'Wrangling');"><i>Data Wrangling</i></a></li>
-							<li><a href="#" onclick="catQuery('skill_topic', 'Python');"><i>Python</i></a></li>
-							<li><a href="#" onclick="catQuery('skill_topic', 'Machine Learning');"><i>Machine Learning</i></a></li>
+							<li><a href="#" onclick="catQuery('skills', 'Data Wrangling');"><i>Data Wrangling</i></a></li>
+							<li><a href="#" onclick="catQuery('skills', 'Python');"><i>Python</i></a></li>
+							<li><a href="#" onclick="catQuery('skills', 'Machine Learning');"><i>Machine Learning</i></a></li>
 							</ul>
-							<br />
 							(links above not implemented yet.)
 
 							</p>
