@@ -4,7 +4,7 @@
     align-items:center;
 margin-left: auto;
 margin-right: auto;
-width: 300px;
+
 }
 
 .search_explanation {
@@ -24,7 +24,7 @@ width: 300px;
     line-height: 30px;
     outline: medium none;
     padding: 8px 12px;
-    width: 396px;
+    
 }
 .typeahead {
     background-color: #FFFFFF;
@@ -66,29 +66,6 @@ width: 300px;
     margin: .5em;
 }
 
-.ribbon {
-    top: 3.2em;
-    right: -3.7em;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    color:#fff;
-    display: block;
-    padding: .6em 5.5em; /*Adujst width of band here 5.5em*/
-    position: fixed;
-    text-align: center;
-    text-decoration: none;
-    border: 2px solid #df7984;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-    z-index: 10000;
-}
-
 .container {
     display: flex;
 }
@@ -100,29 +77,47 @@ width: 300px;
     border-radius: 0.25em;
 }
 
+.bg-astronomy{
+
+
+}
+
 .column-one {
     order: 1;
     float: left;
-    background: #CED8F6;
-    background: -webkit-linear-gradient(left top, #CED8F6, #F6CEF5); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(bottom right, #CED8F6, #F6CEF5); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(bottom right, #CED8F6, #F6CEF5); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to top, #CED8F6, #F6CEF5); /* Standard syntax */
+    background-image: url("../../images/ds_10.jpg");
+    /* Photo by Patrick Lindenberg on Unsplash */
+    /* background: #CED8F6; */
+    /* background: -webkit-linear-gradient(left top, #CED8F6, #F6CEF5);  For Safari 5.1 to 6.0 */
+    /* background: -o-linear-gradient(bottom right, #CED8F6, #F6CEF5);  For Opera 11.1 to 12.0 */
+    /* background: -moz-linear-gradient(bottom right, #CED8F6, #F6CEF5);  For Firefox 3.6 to 15 */
+    /* background: linear-gradient(to top, #CED8F6, #F6CEF5);  Standard syntax */
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     width: 47%;
     height: 500px;
 }
+
+.column-one:hover {
+    background-image: url("../../images/ds_20.jpg");
+}
+
 .column-two {
     order: 2;
-    background: #F6CEF5;
-    background: -webkit-linear-gradient(left top, #CED8F6, #F6CEF5); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(bottom right, #CED8F6, #F6CEF5); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(bottom right, #CED8F6, #F6CEF5); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to top, #CED8F6, #F6CEF5); /* Standard syntax */
+    background-image: url("../../images/astro_10.jpg");
+    /* Photo by Marat Gilyadzinov on Unsplash */
+    /* background: #CED8F6; */
+    /* background: -webkit-linear-gradient(left top, #CED8F6, #F6CEF5);  For Safari 5.1 to 6.0 */
+    /* background: -o-linear-gradient(bottom right, #CED8F6, #F6CEF5);  For Opera 11.1 to 12.0 */
+    /* background: -moz-linear-gradient(bottom right, #CED8F6, #F6CEF5);  For Firefox 3.6 to 15 */
+    /* background: linear-gradient(to top, #CED8F6, #F6CEF5);  Standard syntax */
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     margin-left: 6%; 
     width: 47%; /* this dirty code and needs fixing */
     height: 500px;
+}
+
+.column-two:hover {
+    background-image: url("../../images/astro_20.jpg");
 }
 
 .column-three {

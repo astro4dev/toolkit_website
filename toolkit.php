@@ -18,7 +18,7 @@
 			<!-- FRENCH -->
 			<h1 lang="fr">Astronomy & Data Science Toolkit</h1>
 
-			<p>v.0.2.8</p>
+			<p>v.0.2.9</p>
 		</header>
 
 		<!-- Nav -->
@@ -59,7 +59,7 @@
 
 		<!-- Main -->
 		<div id="main">
-			<a href="http://wsnippets.com" class="ribbon bg-purple" >Alpha version</a>
+
 			<!-- Content -->
 			<section id="content" class="main">
 
@@ -75,17 +75,14 @@
 
 				<!-- ENGLISH -->
 				<div class="search_explanation" lang="en">
-					This search box lets you search all toolkit titles.
 				</div>
 
 				<!-- SPANISH -->
 				<div class="search_explanation" lang="es">
-					This search box lets you search all toolkit titles.
 				</div>
 
 				<!-- FRENCH -->
 				<div class="search_explanation" lang="fr">
-					This search box lets you search all toolkit titles.
 				</div>
 
 

@@ -108,9 +108,9 @@ if (!empty($author)) {
     $search_examples    = mysqli_query($con, $query_author_examples);
     $author_data        = mysqli_query($con, $query_author);
 
-    $contributions_assessments  = mysqli_num_rows($search_assessments);
-    $contributions_courses      = mysqli_num_rows($search_courses);
-    $contributions_examples     = mysqli_num_rows($search_examples);
+    //$contributions_assessments  = mysqli_num_rows($search_assessments);
+    //$contributions_courses      = mysqli_num_rows($search_courses);
+    //$contributions_examples     = mysqli_num_rows($search_examples);
 }
 
 if (!empty($astr_topic)){
@@ -302,6 +302,7 @@ $author       =  mysqli_fetch_array($author_data);
 mysqli_free_result($search_assessments);
 mysqli_free_result($search_courses);
 mysqli_free_result($search_examples);
+mysqli_free_result($author_data);
 mysqli_close($con);
 
 if (!empty($author)) {
@@ -313,6 +314,7 @@ if (!empty($author)) {
     }
     echo "<img src=\"" . $author['author_img'] . "\" class=\"image author\">";
     echo $author['about'];
+    /*
     echo "<i>Contributions by " . $author['name'] ." to the toolkit:</i>";
     if ($contributions_assessments != 0){
         echo "<br/>";
@@ -340,7 +342,7 @@ if (!empty($author)) {
             echo $contributions_examples . " Examples";
         }
     }
-
+    */
     echo "</div>";
 }
 

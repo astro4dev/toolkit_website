@@ -75,14 +75,6 @@
 		<div id="main">
 
 
-			<!-- ENGLISH -->
-			<a href="https://github.com/astro4dev" class="ribbon bg-purple" lang="en">Alpha version</a>
-
-			<!-- SPANISH -->
-			<a href="https://github.com/astro4dev" class="ribbon bg-purple" lang="es">Versión alfa</a>
-
-			<!-- FRENCH -->
-			<a href="https://github.com/astro4dev" class="ribbon bg-purple" lang="fr">Alpha version</a>
 
 
 			<!-- Introduction -->
