@@ -201,9 +201,6 @@ while($row_search_query = mysqli_fetch_array($search_courses)) {
 
     if ($topic_dummy_courses != $row_search_query['topics_astr']) {
 
-        $topic_dummy_courses = $row_search_query['topics_astr'];
-
-
         echo "<tr><td>". $row_search_query['language'] . "</td>";
         echo "<td><a href=\"" . $row_search_query['links'] . "\" target=\"_blank\"><i>" . $row_search_query['title'] . "</i></a></td>";
 
@@ -226,7 +223,7 @@ while($row_search_query = mysqli_fetch_array($search_courses)) {
 
     }
 
-    else{
+        else{
         if ($skill_dummy != $row_search_query['skills']){
             echo "<td><a href=\"#\" onclick=\"catQuery('skills', '" . $row_search_query['skills'] . "');\"><i>" . $row_search_query['skills'] . "</i></a></td>";
         }
