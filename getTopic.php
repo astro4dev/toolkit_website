@@ -135,48 +135,45 @@ if( mysqli_num_rows($search_examples)) {
     echo "<table class='alt'>";
     echo "<tr>
     <th colspan='6'>Examples:</th>
-</tr>";
-echo "<tr>
-<td><b class=\"fa fa-language\"></b></td>
-<td><b class=\"fa  fa-chevron-right\"></b> Title</td>
-<td><b class=\"fa fa-user\"></b> Author</td>
-<td><b class=\"fa fa-star\"></b> Astro Topic</td>
-<td colspan='2'><b class=\"fa fa-code\"></b> Skills</td>
-</tr>";
+    </tr>";
+    echo "<tr>
+    <td><b class=\"fa fa-language\"></b></td>
+    <td><b class=\"fa  fa-chevron-right\"></b> Title</td>
+    <td><b class=\"fa fa-user\"></b> Author</td>
+    <td><b class=\"fa fa-star\"></b> Astro Topic</td>
+    <td colspan='2'><b class=\"fa fa-code\"></b> Skills</td>
+    </tr>";
 while($row_search_query = mysqli_fetch_array($search_examples)) {
 
     if ($topic_dummy_examples != $row_search_query['title']) {
 
-        $topic_dummy_examples = $row_search_query['title'];
+        $topic_dummy_examples   = $row_search_query['title'];
+        $skill_dummy_examples   = $row_search_query['skills'];
 
-
+        # Language
         echo "<tr><td>". $row_search_query['language'] . "</td>";
+
+        # Title
         echo "<td><a href=\"" . $row_search_query['links'] . "\" target=\"_blank\"><i>" . $row_search_query['title'] . "</i></a></td>";
 
+        # Author name
         echo "<td><a href=\"#\" onclick=\"catQuery('author', '" . $row_search_query['name'] . "');\"><i>" . $row_search_query['name'] . "</i></a></td>";
 
-        # Astronomy topics
+        # Astronomy topic
         if ($row_search_query['topics_astr'] != 'no_topic') {
             echo "<td><a href=\"#\" onclick=\"catQuery('astr_topic', '" . $row_search_query['topics_astr'] . "');\"><i>" . $row_search_query['topics_astr'] . "</i></a></td>";
         } else {
             echo "<td></td>";
         }
 
-        # Data Science Skills
-        if ($row_search_query['skills'] != 'no_topic') {
-            $skill_dummy = $row_search_query['skills'];
-            echo "<td><a href=\"#\" onclick=\"catQuery('skills', '" . $row_search_query['skills'] . "');\"><i>" . $row_search_query['skills'] . "</i></a></td>";
-        } else {
-            echo "<td></td>";
-        }
-
+        # Data Science Skill #1
+        echo "<td><a href=\"#\" onclick=\"catQuery('skills', '" . $row_search_query['skills'] . "');\"><i>" . $row_search_query['skills'] . "</i></a></td>";
     }
 
-    else{
-        if ($skill_dummy != $row_search_query['skills']){
-            echo "<td>/ <a href=\"#\" onclick=\"catQuery('skills', '" . $row_search_query['skills'] . "');\"><i>" . $row_search_query['skills'] . "</i></a></td>";
+    else {
+        # Data Science Skill #2 (if it exists)
+        echo "<td>/ <a href=\"#\" onclick=\"catQuery('skills', '" . $row_search_query['skills'] . "');\"><i>" . $row_search_query['skills'] . "</i></a></td>";
         }
-    }
 
 }
 
@@ -185,59 +182,55 @@ echo "</table>";
 }
 
 
-echo "<table class='alt'>";
 if( mysqli_num_rows($search_courses)) {
+    echo "<table class='alt'>";
     echo "<tr>
     <th colspan='6'>Courses:</th>
-</tr>";
-echo "<tr>
-<td><b class=\"fa fa-language\"></b></td>
-<td><b class=\"fa  fa-chevron-right\"></b> Title</td>
-<td><b class=\"fa fa-user\"></b> Author</td>
-<td><b class=\"fa fa-star\"></b> Astro Topic</td>
-<td colspan='2'><b class=\"fa fa-code\"></b> Skills</td>
-</tr>";
+    </tr>";
+    echo "<tr>
+    <td><b class=\"fa fa-language\"></b></td>
+    <td><b class=\"fa  fa-chevron-right\"></b> Title</td>
+    <td><b class=\"fa fa-user\"></b> Author</td>
+    <td><b class=\"fa fa-star\"></b> Astro Topic</td>
+    <td colspan='2'><b class=\"fa fa-code\"></b> Skills</td>
+    </tr>";
 while($row_search_query = mysqli_fetch_array($search_courses)) {
 
     if ($topic_dummy_courses != $row_search_query['title']) {
 
-        $topic_dummy_courses = $row_search_query['title'];
+        $topic_dummy_courses    = $row_search_query['title'];
+        $skill_dummy_courses    = $row_search_query['skills'];
 
-
+        # Language
         echo "<tr><td>". $row_search_query['language'] . "</td>";
+
+        # Title
         echo "<td><a href=\"" . $row_search_query['links'] . "\" target=\"_blank\"><i>" . $row_search_query['title'] . "</i></a></td>";
 
+        # Author name
         echo "<td><a href=\"#\" onclick=\"catQuery('author', '" . $row_search_query['name'] . "');\"><i>" . $row_search_query['name'] . "</i></a></td>";
 
-        # Astronomy topics
+        # Astronomy topic
         if ($row_search_query['topics_astr'] != 'no_topic') {
             echo "<td><a href=\"#\" onclick=\"catQuery('astr_topic', '" . $row_search_query['topics_astr'] . "');\"><i>" . $row_search_query['topics_astr'] . "</i></a></td>";
         } else {
             echo "<td></td>";
         }
 
-        # Data Science Skills
-        if ($row_search_query['skills'] != 'no_topic') {
-            $skill_dummy = $row_search_query['skills'];
-            echo "<td><a href=\"#\" onclick=\"catQuery('skills', '" . $row_search_query['skills'] . "');\"><i>" . $row_search_query['skills'] . "</i></a></td>";
-        } else {
-            echo "<td></td>";
-        }
-
+        # Data Science Skill #1
+        echo "<td><a href=\"#\" onclick=\"catQuery('skills', '" . $row_search_query['skills'] . "');\"><i>" . $row_search_query['skills'] . "</i></a></td>";
     }
 
-        else{
-        if ($skill_dummy != $row_search_query['skills']){
-            echo "<td>/ <a href=\"#\" onclick=\"catQuery('skills', '" . $row_search_query['skills'] . "');\"><i>" . $row_search_query['skills'] . "</i></a></td>";
+    else {
+        # Data Science Skill #2 (if it exists)
+        echo "<td>/ <a href=\"#\" onclick=\"catQuery('skills', '" . $row_search_query['skills'] . "');\"><i>" . $row_search_query['skills'] . "</i></a></td>";
         }
-    }
 
 }
 
 echo "</tr>";
 echo "</table>";
 }
-
 
 
 if( mysqli_num_rows($search_assessments) ) {
@@ -284,6 +277,8 @@ while($row_search_query = mysqli_fetch_array($search_assessments)) {
     else{
         if ($skill_dummy != $row_search_query['skills']){
             echo "<td>/ <a href=\"#\" onclick=\"catQuery('skills', '" . $row_search_query['skills'] . "');\"><i>" . $row_search_query['skills'] . "</i></a></td>";
+        } else {
+            echo "<td></td>";
         }
     }
 
@@ -314,37 +309,7 @@ if (!empty($author)) {
     }
     echo "<img src=\"" . $author['author_img'] . "\" class=\"image author\">";
     echo $author['about'];
-    /*
-    echo "<i>Contributions by " . $author['name'] ." to the toolkit:</i>";
-    if ($contributions_assessments != 0){
-        echo "<br/>";
-        if ($contributions_assessments == 1){
-            echo $contributions_assessments . " Assessment";
-        } else {
-            echo $contributions_assessments . " Assessments";
-        }
-    }
-
-    if ($contributions_courses != 0){
-        echo "<br/>";
-        if ($contributions_courses == 1){
-            echo $contributions_courses . " Course";
-        } else {
-            echo $contributions_courses . " Courses";
-        }
-    }
-
-    if ($contributions_examples != 0){
-        echo "<br/>";
-        if ($contributions_examples == 1){
-            echo $contributions_examples . " Example";
-        } else {
-            echo $contributions_examples . " Examples";
-        }
-    }
-    */
     echo "</div>";
 }
-
 
 ?>
