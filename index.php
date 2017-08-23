@@ -69,13 +69,8 @@
 			</ul>
 		</nav>
 
-
-
 		<!-- Main -->
 		<div id="main">
-
-
-
 
 			<!-- Introduction -->
 			<section id="intro" class="main">
@@ -100,6 +95,7 @@
 						<p lang="en">The overall objective of this toolkit is to provide a foundation for a “common language” between data science and astronomy communities. The toolkit should help astronomers get a sense of the breadth of data science (as a field and in its applications) and to see where their skills and knowledge fit into this wider view; it should help data scientists and those in need of data scientists (e.g. companies, NGOs) see what astronomers can contribute.</p>
 
 						<a href="toolkit.php" class="button special">View toolkit</a>
+						<a href="https://github.com/astro4dev/OAD-Data-Science-Toolkit/archive/master.zip" class="button special icon fa-download">Download toolkit</a>
 
 						<!-- SPANISH -->
 						<p lang="es">Necesitamos ayuda para traducir. Por favor, eche un vistazo a cómo se puede traducir <a href="https://github.com/astro4dev/OAD-Data-Science-Toolkit/blob/master/CONTRIBUTING.md" target="_blank">aquí</a>.</p>
@@ -286,7 +282,7 @@
 						</li>
 						<li class="style4">
 							<span class="icon fa-code-fork"></span>
-							<strong>8</strong>
+							<strong>9</strong>
 
 
 							<!-- ENGLISH -->
