@@ -266,7 +266,7 @@
 						</li>
 						<li class="style3">
 							<span class="icon fa-graduation-cap"></span>
-							<strong>4</strong>
+							<strong>5</strong>
 
 
 							<!-- ENGLISH -->
