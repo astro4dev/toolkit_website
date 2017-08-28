@@ -1,11 +1,21 @@
-<?php
+<!--
+getTopic.php - This is the heart of toolkit. The file which requests information from the
+database. It starts of by getting the variables from toolkit.php. Then opens a connection
+to the database. Then issues the SQL queries.
 
+The file creates a table with the search results and also provides the user with author
+information if their name is clicked.
+-->
+
+<?php
+# Loading variables from toolkit.php given by 
 $keyword        = $_GET['keyword'];
 $author         = $_GET['author'];
 $skills         = $_GET['skills'];
 $astr_topic     = $_GET['astr_topic'];
 
-# Load user credentials
+# Loading user credentials to be able to connect to the datbase
+# NEVER hard code your password into a PHP file.
 $iniData        = file_get_contents('/etc/mysql/user.cnf');
 $iniData        = preg_replace('/#.*$/m', '', $iniData);
 $mysqlConfig    = parse_ini_string($iniData, true);
@@ -13,13 +23,14 @@ $mysqlConfig    = parse_ini_string($iniData, true);
 # Connect to database
 $con = mysqli_connect('dbint.astro4dev.org',$mysqlConfig['client']['user'],$mysqlConfig['client']['password'],'toolkit_db');
 
+# If the connection fails show the reason why
 if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
 }
 
 
 if (!empty($author)) {
-# Use these queries to sort contributions by authors.
+# This query lists work done by a particular author and orders it by title.
     $query_author_assessments  = "SELECT title, name, affiliation, author_link, author_img, links, topics_astr, skills, author_id, authors__assessments.assessment_id, topics_astr__assessments.topic_id, skills__assessments.skill_id, language
     FROM authors, assessments, authors__assessments, topics_astr, topics_astr__assessments, skills, skills__assessments
     WHERE (authors.Id=author_id AND assessments.Id = authors__assessments.assessment_id AND topics_astr.Id=topics_astr__assessments.topic_id AND assessments.Id = topics_astr__assessments.assessment_id AND skills.Id=skills__assessments.skill_id AND assessments.Id = skills__assessments.assessment_id AND authors.name LIKE '%".$author."%') ORDER BY title;";
@@ -39,7 +50,7 @@ if (!empty($author)) {
 
 
 if (!empty($skills)) {
-# Extract the toolkit info from the database
+# This query lists all results which match a selected skill and orders it by title.
     $query_skills_assessments = "SELECT title, name, affiliation, author_link, author_img, links, topics_astr, skills, author_id, authors__assessments.assessment_id, topics_astr__assessments.topic_id, skills__assessments.skill_id, language
     FROM authors, assessments, authors__assessments, topics_astr, topics_astr__assessments, skills, skills__assessments
     WHERE (authors.Id=author_id AND assessments.Id = authors__assessments.assessment_id AND topics_astr.Id=topics_astr__assessments.topic_id AND assessments.Id = topics_astr__assessments.assessment_id AND skills.Id=skills__assessments.skill_id AND assessments.Id = skills__assessments.assessment_id AND skills.skills = '".$skills."') ORDER BY title;";
@@ -54,7 +65,7 @@ if (!empty($skills)) {
 }
 
 if (!empty($astr_topic)) {
-# Use these queries to sort contributions by astronomy topic.
+# This query lists all results which match a selected astronomy topic and orders it by title.
     $query_astr_topic_assessments  = "SELECT title, name, affiliation, author_link, author_img, links, topics_astr, skills, author_id, authors__assessments.assessment_id, topics_astr__assessments.topic_id, skills__assessments.skill_id, language
     FROM authors, assessments, authors__assessments, topics_astr, topics_astr__assessments, skills, skills__assessments
     WHERE (authors.Id=author_id AND assessments.Id = authors__assessments.assessment_id AND topics_astr.Id=topics_astr__assessments.topic_id AND assessments.Id = topics_astr__assessments.assessment_id AND skills.Id=skills__assessments.skill_id AND assessments.Id = skills__assessments.assessment_id AND topics_astr.topics_astr LIKE '%".$astr_topic."%') ORDER BY title;";
@@ -70,7 +81,7 @@ if (!empty($astr_topic)) {
 
 
 if (!empty($keyword)) {
-# The queries used when a keyword is given
+# This query lists all results which match the given keyword and orders it by title.
     $query_assessments  = "SELECT title, name, affiliation, author_link, author_img, links, topics_astr, skills, author_id, authors__assessments.assessment_id, topics_astr__assessments.topic_id, skills__assessments.skill_id, language
     FROM authors, assessments, authors__assessments, topics_astr, topics_astr__assessments, skills, skills__assessments
     WHERE (authors.Id=author_id AND assessments.Id = authors__assessments.assessment_id AND topics_astr.Id=topics_astr__assessments.topic_id AND assessments.Id = topics_astr__assessments.assessment_id AND skills.Id=skills__assessments.skill_id AND assessments.Id = skills__assessments.assessment_id AND IF(LENGTH('".$keyword."') > 0, assessments.title LIKE '%".$keyword."%' OR topics_astr.topics_astr LIKE '%".$keyword."%' OR skills.skills LIKE '%".$keyword."%', 0)) ORDER BY title;";
@@ -86,7 +97,7 @@ if (!empty($keyword)) {
 
 
 if (empty($keyword)) {
-# The queries used when the Show All button is clicked
+# The queries used when the Show All button is clicked. Bascially show the entire toolkit.
     $query_assessments  = "SELECT title, name, affiliation, author_link, author_img, links, topics_astr, skills, author_id, authors__assessments.assessment_id, topics_astr__assessments.topic_id, skills__assessments.skill_id, language
     FROM authors, assessments, authors__assessments, topics_astr, topics_astr__assessments, skills, skills__assessments
     WHERE (authors.Id=author_id AND assessments.Id = authors__assessments.assessment_id AND topics_astr.Id=topics_astr__assessments.topic_id AND assessments.Id = topics_astr__assessments.assessment_id AND skills.Id=skills__assessments.skill_id AND assessments.Id = skills__assessments.assessment_id) ORDER BY title;";
@@ -101,16 +112,12 @@ if (empty($keyword)) {
 }
 
 
-
+# Perform the actually queries using the above constructed SQL queries.
 if (!empty($author)) {
     $search_assessments = mysqli_query($con, $query_author_assessments);
     $search_courses     = mysqli_query($con, $query_author_courses);
     $search_examples    = mysqli_query($con, $query_author_examples);
     $author_data        = mysqli_query($con, $query_author);
-
-    //$contributions_assessments  = mysqli_num_rows($search_assessments);
-    //$contributions_courses      = mysqli_num_rows($search_courses);
-    //$contributions_examples     = mysqli_num_rows($search_examples);
 }
 
 if (!empty($astr_topic)){
@@ -131,6 +138,7 @@ elseif (empty($author) && empty($astr_topic) && empty($skills)){
     $search_examples    = mysqli_query($con, $query_examples);
 }
 
+# Create the table of results.
 if( mysqli_num_rows($search_examples)) {
     echo "<table class='alt'>";
     echo "<tr>
@@ -293,13 +301,14 @@ echo "</table>";
 # Get author description array
 $author       =  mysqli_fetch_array($author_data);
 
-// Free results
+// Free memory from the queries
 mysqli_free_result($search_assessments);
 mysqli_free_result($search_courses);
 mysqli_free_result($search_examples);
 mysqli_free_result($author_data);
 mysqli_close($con);
 
+# Display author info if an authors name is selected.
 if (!empty($author)) {
     echo "<div class=\"column column-three\">";
     echo "<h3><a href=\"" . $author['author_link'] . "\" target=\"_blank\">" . $author['name'] ."</a></h3>";
@@ -311,5 +320,4 @@ if (!empty($author)) {
     echo $author['about'];
     echo "</div>";
 }
-
 ?>
