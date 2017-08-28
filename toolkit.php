@@ -1,3 +1,12 @@
+<!--
+toolkit.php - The job of this file is to pass information from the user to the file getTopic.php.
+This is done through the search box (including buttons) or from the two boxes on the page which
+each contain direct links. The functions for passing the variables are at the end of this file.
+
+Finally, the autocomplete feature of the search box is made possible with the typehead.js library
+found on: https://twitter.github.io/typeahead.js/
+-->
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -18,7 +27,7 @@
 			<!-- FRENCH -->
 			<h1 lang="fr">Astronomy & Data Science Toolkit</h1>
 
-			<p>v.0.2.9</p>
+			<p>v.0.3.0</p>
 		</header>
 
 		<!-- Nav -->
@@ -35,7 +44,6 @@
 					<input type="text" name="search" class="typeahead" autocomplete="on" id="search" spellcheck="false" placeholder="Search..." autofocus>
 					<input type="submit" class="button special" name="btnSearch" value="Search" id="btnSearch">
 					<input type="submit" class="button" name="btnAll" value="Show All" id="btnAll">
-					<!-- <button onclick="myFunction()">Click me</button> -->
 					<!-- </form> -->
 				</div>
 
@@ -133,7 +141,11 @@
 
 		var text 		= document.getElementById('search').value;
 
-    		// Show all toolkit results
+    		/* This function passes an empty variable called keyword.
+    		E.g keyword = '', when the 'Show all button is pressed'.
+			The empty keyword triggers the conditional statement:
+			if (!empty($keyword)) which can be found in getTopic.php
+    		*/
     		showbutton.onclick	= function(){
     			if (window.XMLHttpRequest) {
 			        // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -153,7 +165,10 @@
 			    xmlhttp.send();
 			}
 
-			// Show results which match the search keyword
+			/* This function is similar to the one described above, however,
+			this time the keyword parameter carries a variable in the form
+			of a string which is used to search the database.
+			*/
 			button.onclick	= function(){
 				var text 		= document.getElementById('search').value;
 				if (text == "") {
@@ -178,27 +193,36 @@
 			}
 		}
 
-		function catQuery(category, query) {
-			if (window.XMLHttpRequest) {
-			        // code for IE7+, Firefox, Chrome, Opera, Safari
-			        xmlhttp = new XMLHttpRequest();
-			    } else {
-			        // code for IE6, IE5
-			        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-			    }
-			    xmlhttp.onreadystatechange = function() {
-			    	if (this.readyState == 4 && this.status == 200) {
-			    		document.getElementById("txtHint").innerHTML = this.responseText;
-			    	}
-			    };
+			/* This function passes to variables to getTopic.php:
+			category: The categoary such as skills, astro_topic (basically
+			which database to look for results)
+			and
+			query: The Data Science or Astronomy topics. Look for where the
+			catQuery fucntion is used above to see examples.
+			*/
+			function catQuery(category, query) {
+				if (window.XMLHttpRequest) {
+				        // code for IE7+, Firefox, Chrome, Opera, Safari
+				        xmlhttp = new XMLHttpRequest();
+				    } else {
+				        // code for IE6, IE5
+				        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+				    }
+				    xmlhttp.onreadystatechange = function() {
+				    	if (this.readyState == 4 && this.status == 200) {
+				    		document.getElementById("txtHint").innerHTML = this.responseText;
+				    	}
+				    };
 
-			    xmlhttp.open("GET","getTopic.php?"+category+"="+query,true);
+				    xmlhttp.open("GET","getTopic.php?"+category+"="+query,true);
 
-			    xmlhttp.send();
-			}
+				    xmlhttp.send();
+				}
 
 
-			// Autocomplete search box
+			/* This function does the search box autocompletion. The code is all
+			in typeahead.min.js which is loaded a above.
+			*/
 			$(document).ready(function(){
 				$('input.typeahead').typeahead({
 					hint: true,
