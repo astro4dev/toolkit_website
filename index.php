@@ -98,7 +98,7 @@
 						<a href="https://github.com/astro4dev/OAD-Data-Science-Toolkit/archive/master.zip" class="button special icon fa-download">Download toolkit</a>
 
 						<!-- SPANISH -->
-						<p lang="en">El objectivo principal de este toolkit es proporcionar la base para un "lenguaje común" entre las comunidades astronómica y de ciencia de datos. El toolkit ayuda a astrónomos a comprender la amplitud del campo de la ciencia de datos y sus aplicaciones, y a determinar dónde sus conocimentos y habilidades mejor cuadran en estas miras más amplias. Al mismo tiempo, ayuda a científicos de datos o entidades necesitadas de estos (p. ej. empresas, ONGs) a entender la posible contribución de astrónomos.</p>
+						<p lang="es">El objectivo principal de este toolkit es proporcionar la base para un "lenguaje común" entre las comunidades astronómica y de ciencia de datos. El toolkit ayuda a astrónomos a comprender la amplitud del campo de la ciencia de datos y sus aplicaciones, y a determinar dónde sus conocimentos y habilidades mejor cuadran en estas miras más amplias. Al mismo tiempo, ayuda a científicos de datos o entidades necesitadas de estos (p. ej. empresas, ONGs) a entender la posible contribución de astrónomos.</p>
 
 						<a href="toolkit.php" class="button special">Ver toolkit</a>
 						
