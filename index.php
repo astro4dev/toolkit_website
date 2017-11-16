@@ -23,7 +23,7 @@
 			<p lang="en">Connecting Astronomy and Data Science</p>
 
 			<!-- SPANISH -->
-			<h1 lang="es">Toolkit de Astronomía y Ciencia de Datos</h1>
+			<h1 lang="es">Toolkit para Astronomía y Ciencia de Datos</h1>
 			<p lang="es">Conexión de la astronomía y la ciencia de los datos</p>
 
 			<!-- FRENCH -->
@@ -82,7 +82,7 @@
 							<h2 lang="en">Overall objective</h2>
 
 							<!-- SPANISH -->
-							<h2 lang="es">Ayúdanos a traducir al español</h2>
+							<h2 lang="es">Objetivos</h2>
 
 							<!-- FRENCH -->
 							<h2 lang="fr">Overall objective</h2>
@@ -98,8 +98,10 @@
 						<a href="https://github.com/astro4dev/OAD-Data-Science-Toolkit/archive/master.zip" class="button special icon fa-download">Download toolkit</a>
 
 						<!-- SPANISH -->
-						<p lang="es">Necesitamos ayuda para traducir. Por favor, eche un vistazo a cómo se puede traducir <a href="https://github.com/astro4dev/OAD-Data-Science-Toolkit/blob/master/CONTRIBUTING.md" target="_blank">aquí</a>.</p>
+						<p lang="en">El objectivo principal de este toolkit es proporcionar la base para un "lenguaje común" entre las comunidades astronómica y de ciencia de datos. El toolkit ayuda a astrónomos a comprender la amplitud del campo de la ciencia de datos y sus aplicaciones, y a determinar dónde sus conocimentos y habilidades mejor cuadran en estas miras más amplias. Al mismo tiempo, ayuda a científicos de datos o entidades necesitadas de estos (p. ej. empresas, ONGs) a entender la posible contribución de astrónomos.</p>
 
+						<a href="toolkit.php" class="button special">Ver toolkit</a>
+						
 						<!-- FRENCH -->
 						<p lang="fr">Nous avons besoin d'aide avec les traductions. S'il vous plaît jeter un oeil à la façon dont vous pouvez aider <a href="https://github.com/astro4dev/OAD-Data-Science-Toolkit/blob/master/CONTRIBUTING.md" target="_blank">ici</a></p>
 
@@ -136,8 +138,8 @@
 						<p lang="en">The entire toolkit is released as Open Source under the GPLv3 license. This includes: the content, the tools for updating it and this website.</p>
 
 						<!-- SPANISH -->
-						<h3 lang="es">Open Source</h3>
-						<p lang="es">The entire toolkit is released as Open Source under the GPLv3 license. This includes: the content, the tools for updating it and this website.</p>
+						<h3 lang="es">Código Abierto</h3>
+						<p lang="es">El toolkit al completo se distribuye como Código Abierto sujeto a la licencia GPLv3. Esto incluye: los contenidos, las herramientas para actualizarlo y este sitio web.</p>
 
 						<!-- FRENCH -->
 						<h3 lang="fr">Open Source</h3>
@@ -154,8 +156,8 @@
 						<p lang="en">The toolkit is maintained by volunteers from astronomy and data science communities.</p>
 
 						<!-- SPANISH -->
-						<h3 lang="es">Community driven</h3>
-						<p lang="es">The toolkit is maintained by volunteers from astronomy and data science communities.</p>
+						<h3 lang="es">Impulsado por la comunidad</h3>
+						<p lang="es">El toolkit es administrado por voluntarios de las comunidades astronómica y de ciencia de datos.</p>
 
 						<!-- FRENCH -->
 						<h3 lang="fr">Community driven</h3>
@@ -172,8 +174,8 @@
 						<p lang="en">The toolkit is accessible free of charge. Contact us if you have problems accessing the toolkit.</p>
 
 						<!-- SPANISH -->
-						<h3 lang="es">Accessibility</h3>
-						<p lang="es">The toolkit is accessible free of charge. Contact us if you have problems accessing the toolkit.</p>
+						<h3 lang="es">Disponibilidad</h3>
+						<p lang="es">El toolkit se distribuye gratuitamente. Contáctenos en caso de problemas accediendo al toolkit.</p>
 
 						<!-- FRENCH -->
 						<h3 lang="fr">Accessibility</h3>
@@ -190,9 +192,9 @@
 
 
 				<!-- SPANISH -->
-				<p lang="es">The focus of the toolkit is to provide high quality teaching materials in the form of examples, courses and assessments which you are welcome to use for your teaching or perhaps when organising a workshop or a summer school.</p>
+				<p lang="es">El toolkit se enfoca en proporcionar material educativo de gran calidad en forma de ejemplos, cursos y evaluaciones que puedes, con total libertad, utilizar en tu enseñanza o quizás durante la organización de talleres o cursos de verano.</p>
 
-				<p lang="es">The toolkit is aimed at specifically connecting the fields of astronomy and data science and is not meant to compete with massive open online courses such as <a href="https://www.edx.org/" target="_blank">edX</a> or <a href="https://www.coursera.org/" target="_blank">Coursera</a>.</p>				
+				<p lang="es">El toolkit esta especialmente dedicado a conectar los campos de la astronomía y la ciencia de datos y no persigue competir con cursos on-line como por ejemplo <a href="https://www.edx.org/" target="_blank">edX</a> o <a href="https://www.coursera.org/" target="_blank">Coursera</a>.</p>		
 
 				<!-- FRENCH -->
 				<p lang="fr">The focus of the toolkit is to provide high quality teaching materials in the form of examples, courses and assessments which you are welcome to use for your teaching or perhaps when organising a workshop or a summer school.</p>
@@ -219,9 +221,9 @@
 
 
 					<!-- SPANISH -->
-					<h2 lang="es">Help contribute</h2>								
+					<h2 lang="es">Contribuye</h2>								
 					
-					<p lang="es">The toolkit is in its infancy and for it to be a success we need people to help us create and share content. We are always looking for people keen on contributing.</p>
+					<p lang="es">El toolkit está creciendo y para tener éxito necesitamos gente que nos ayude a crear y compartir contenidos. Siempre buscamos personas con ánimo de contribuir.</p>
 
 
 					<!-- FRENCH -->
@@ -289,7 +291,7 @@
 							<i lang="en"><a href="https://github.com/astro4dev/OAD-Data-Science-Toolkit/network/members" target="_blank">Forks</a></i>
 							
 							<!-- SPANISH -->
-							<i lang="es"><a href="https://github.com/astro4dev/OAD-Data-Science-Toolkit/network/members" target="_blank">Tenedores</a></i>
+							<i lang="es"><a href="https://github.com/astro4dev/OAD-Data-Science-Toolkit/network/members" target="_blank">Forks</a></i>
 							
 							<!-- FRENCH -->
 							<i lang="fr"><a href="https://github.com/astro4dev/OAD-Data-Science-Toolkit/network/members" target="_blank">Forks</a></i>
@@ -321,8 +323,8 @@
 					<p class="content" lang="en">If you have ever taught astronomy using data science techniques or you are a data scientist who has used astronomy examples to teach data science, please consider sharing your teaching materials. You can either directly contribute to <a href="https://github.com/astro4dev/OAD-Data-Science-Toolkit" target="_blank">github</a> or send us the materials directly via email.</p>
 
 					<!-- SPANISH -->
-					<h3 lang="es">Teaching materials</h3>
-					<p class="content" lang="es">If you have ever taught astronomy using data science techniques or you are a data scientist who has used astronomy examples to teach data science, please consider sharing your teaching materials. You can either directly contribute to <a href="https://github.com/astro4dev/OAD-Data-Science-Toolkit" target="_blank">github</a> or send us the materials directly via email.</p>
+					<h3 lang="es">Material educativo</h3>
+					<p class="content" lang="es">Si alguna vez has enseñado astronomía utilizando ciencia de datos o eres un científico de datos que ha usado ejemplos de astronomía para enseñar ciencia de datos, por favor considera la opción de compartir tu material educativo. Puedes contribuir directamente en <a href="https://github.com/astro4dev/OAD-Data-Science-Toolkit" target="_blank">github</a> or enviarnos el material directamente por e-mail.</p>
 
 					<!-- FRENCH -->
 					<h3 lang="fr">Teaching materials</h3>
@@ -337,9 +339,9 @@
 					<p class="content" lang="en">Few Astronomy summer schools and extra-curricular programmes use any form of assessment. This deprives students of the opportunity to both experience and demonstrate their achievements; and doesn't allow the ability to show others that they achieved what they intended. The toolkit strives towards providing high quality pre- and post-assessments.</p>
 
 					<!-- SPANISH -->
-					<h3 lang="es">Assessments</h3>
+					<h3 lang="es">Evaluaciones</h3>
 					<!-- <img src="images/logo.svg" alt="" /> -->
-					<p class="content" lang="es">Few Astronomy summer schools and extra-curricular programmes use any form of assessment. This deprives students of the opportunity to both experience and demonstrate their achievements; and doesn't allow the ability to show others that they achieved what they intended. The toolkit strives towards providing high quality pre- and post-assessments.</p>
+					<p class="content" lang="es">Pocas escuelas de verano o programas extracurriculares de astronomía utilizan alguna forma de evaluación. Esto priva a los estudiantes de la oportunidad de experimentar y demostrar sus avances, además de dificultar el compartir la relación entre logros y objetivos con terceras personas. Este toolkit pretende ofrecer pre- y post-evaluaciones de gran calidad.</p>
 
 					<!-- FRENCH -->
 					<h3 lang="fr">Assessments</h3>
@@ -355,9 +357,9 @@
 					<p class="content" lang="en">This website has been created using a lot of different tools: HTML5, CSS3, PHP, MySQL, AJAX, jQuery, Shell, JavaScript and Python. If you have experience in any of these tools or perhaps would like to improve the content on this website please help contribute. The entire website can be found <a href="https://github.com/astro4dev/toolkit_website" target="_blank">here</a>.</p>
 
 					<!-- SPANISH -->
-					<h3 lang="es">Coding and Content</h3>
+					<h3 lang="es">Código y Contenido</h3>
 					<!-- <img src="images/logo.svg" alt="" /> -->
-					<p class="content" lang="es">This website has been created using a lot of different tools: HTML5, CSS3, PHP, MySQL, AJAX, jQuery, Shell, JavaScript and Python. If you have experience in any of these tools or perhaps would like to improve the content on this website please help contribute. The entire website can be found <a href="https://github.com/astro4dev/toolkit_website" target="_blank">here</a>.</p>
+					<p class="content" lang="es">Este sitio web ha sido creado utilizando múltiples herramientas de programación: HTML5, CSS3, PHP, MySQL, AJAX, jQuery, Shell, JavaScript y Python. Si posees experiencia en cualquiera de estas herramientas o quizás desees mejorar el contenido del sitio web, no dudes en contribuir. El sitio web al completo esta disponible <a href="https://github.com/astro4dev/toolkit_website" target="_blank">aquí</a>.</p>
 
 					<!-- FRENCH -->
 					<h3 lang="fr">Coding and Content</h3>

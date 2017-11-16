@@ -6,8 +6,8 @@
 	<p lang="en">There are several ways to work with the OAD, including <a title="Volunteers" href="http://www.astro4dev.org/volunteers/" target="_blank">volunteers</a>, interns, <a title="OAD Visiting Fellowships" href="http://www.astro4dev.org/work-with-the-oad/opportunities-oad/oad-visiting-fellowships/" target="_blank">visiting fellowships</a>, organisational partners, even becoming OAD staff when the occasional <a href="http://www.astro4dev.org/vacancies/" target="_blank">vacancy</a> opens up.</p>
 
 	<!-- SPANISH -->
-	<h2 lang="es">Get involved with the OAD</h2>
-	<p lang="es">There are several ways to work with the OAD, including <a title="Volunteers" href="http://www.astro4dev.org/volunteers/" target="_blank">volunteers</a>, interns, <a title="OAD Visiting Fellowships" href="http://www.astro4dev.org/work-with-the-oad/opportunities-oad/oad-visiting-fellowships/" target="_blank">visiting fellowships</a>, organisational partners, even becoming OAD staff when the occasional <a href="http://www.astro4dev.org/vacancies/" target="_blank">vacancy</a> opens up.</p>
+	<h2 lang="es">Contribuye a la OAD</h2>
+	<p lang="es">Existen múltiples maneras de colaborar con la OAD, entre ellas <a title="Voluntarios" href="http://www.astro4dev.org/volunteers/" target="_blank">voluntarios</a>, prácticas, <a title="Becas de visita OAD" href="http://www.astro4dev.org/work-with-the-oad/opportunities-oad/oad-visiting-fellowships/" target="_blank">becas de visita</a>, organizaciones asociadas, o incluso uniéndose a la plantilla de la OAD en caso de <a href="http://www.astro4dev.org/vacancies/" target="_blank">puestos vacantes</a>.</p>
 
 	<!-- FRENCH -->
 	<h2 lang="fr">Get involved with the OAD</h2>
@@ -21,7 +21,7 @@
 		<li lang="en"><a href="http://www.astro4dev.org/" class="button" target="_blank">Learn More</a></li>
 
 		<!-- SPANISH -->
-		<li lang="es"><a href="http://www.astro4dev.org/" class="button" target="_blank">Learn More</a></li>
+		<li lang="es"><a href="http://www.astro4dev.org/" class="button" target="_blank">Más información</a></li>
 
 		<!-- FRENCH -->
 		<li lang="fr"><a href="http://www.astro4dev.org/" class="button" target="_blank">Learn More</a></li>	
@@ -35,7 +35,7 @@
 	<h2 lang="en">Contact</h2>
 
 	<!-- SPANISH -->
-	<h2 lang="es">Contact</h2>
+	<h2 lang="es">Contacto</h2>
 
 	<!-- FRENCH -->
 	<h2 lang="fr">Contact</h2>
@@ -70,7 +70,7 @@ document.write("<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" +
 <p class="copyright" lang="en">An Astronomy for Development Project: <a href="http://www.astro4dev.org/" target="_blank">astro4dev.org</a>.</p>
 
 <!-- SPANISH -->
-<p class="copyright" lang="es">An Astronomy for Development Project: <a href="http://www.astro4dev.org/" target="_blank">astro4dev.org</a>.</p>
+<p class="copyright" lang="es">Un proyecto de Astronomía para el Desarrollo: <a href="http://www.astro4dev.org/" target="_blank">astro4dev.org</a>.</p>
 
 <!-- FRENCH -->
 <p class="copyright" lang="fr">An Astronomy for Development Project: <a href="http://www.astro4dev.org/" target="_blank">astro4dev.org</a>.</p>

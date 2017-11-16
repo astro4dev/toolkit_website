@@ -75,8 +75,8 @@ found on: https://twitter.github.io/typeahead.js/
 						</ul>
 
 						<!-- SPANISH -->
-						<h3 lang="es">Data Science</h3>
-						<p lang="es">I am a data scientist interested in using astronomy examples for my teaching:</p>
+						<h3 lang="es">Ciencia de datos</h3>
+						<p lang="es">Me dedico a la ciencia de datos y estoy interesado en utilizar ejemplos de astronomía para mi enseñanza:</p>
 						<ul lang="es">
 							<li><a href="#" onclick="catQuery('skills', 'Data Wrangling');"><i>Data Wrangling</i></a></li>
 							<li><a href="#" onclick="catQuery('skills', 'Python');"><i>Python</i></a></li>
@@ -106,6 +106,14 @@ found on: https://twitter.github.io/typeahead.js/
 							<li><a href="#" onclick="catQuery('astr_topic', 'Planetary');"><i>Planetary science</i></a></li>
 						</ul>
 
+						<!-- SPANISH -->
+						<h3 lang="es">Astronomía</h3>
+						<p lang="es">Me dedico a la astronomía y estoy interesado en utilizar técnicas de ciencia de datos en el área de:</p>
+						<ul lang="es">
+							<li><a href="#" onclick="catQuery('astr_topic', 'Galaxies');"><i>Galaxias</i></a></li>
+							<li><a href="#" onclick="catQuery('astr_topic', 'Solar');"><i>Sol y estrellas</i></a></li>
+							<li><a href="#" onclick="catQuery('astr_topic', 'Planetary');"><i>Ciencia planetaria</i></a></li>
+						</ul>						
 
 					</div>
 
