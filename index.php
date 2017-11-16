@@ -271,7 +271,7 @@
 						</li>
 						<li class="style3">
 							<span class="icon fa-graduation-cap"></span>
-							<strong>5</strong>
+							<strong>6</strong>
 
 
 							<!-- ENGLISH -->
@@ -287,7 +287,7 @@
 						</li>
 						<li class="style4">
 							<span class="icon fa-code-fork"></span>
-							<strong>9</strong>
+							<strong>11</strong>
 
 
 							<!-- ENGLISH -->
@@ -303,7 +303,7 @@
 						</li>
 						<li class="style5">
 							<span class="icon fa-user"></span>
-							<strong>9</strong>
+							<strong>10</strong>
 
 
 							<!-- ENGLISH -->
