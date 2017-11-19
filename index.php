@@ -197,7 +197,6 @@
 				<!-- SPANISH -->
 				<p lang="es">El toolkit se enfoca en proporcionar material educativo de gran calidad en forma de ejemplos, cursos y evaluaciones que puedes, con total libertad, utilizar en tu enseñanza o quizás durante la organización de talleres o cursos de verano.</p>
 
-				<p lang="es">El toolkit esta especialmente dedicado a conectar los campos de la astronomía y la ciencia de datos y no persigue competir con cursos on-line como por ejemplo <a href="https://www.edx.org/" target="_blank">edX</a> o <a href="https://www.coursera.org/" target="_blank">Coursera</a>.</p>		
 				<p lang="es">El toolkit está especialmente dedicado a conectar los campos de la astronomía y la ciencia de datos y no persigue competir con cursos on-line como por ejemplo <a href="https://www.edx.org/" target="_blank">edX</a> o <a href="https://www.coursera.org/" target="_blank">Coursera</a>.</p>		
 
 				<!-- FRENCH -->
