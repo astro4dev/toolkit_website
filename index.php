@@ -69,13 +69,8 @@
 			</ul>
 		</nav>
 
-
-
 		<!-- Main -->
 		<div id="main">
-
-
-
 
 			<!-- Introduction -->
 			<section id="intro" class="main">
@@ -99,16 +94,20 @@
 						<!-- ENGLISH -->
 						<p lang="en">The overall objective of this toolkit is to provide a foundation for a “common language” between data science and astronomy communities. The toolkit should help astronomers get a sense of the breadth of data science (as a field and in its applications) and to see where their skills and knowledge fit into this wider view; it should help data scientists and those in need of data scientists (e.g. companies, NGOs) see what astronomers can contribute.</p>
 
-						<a href="toolkit.php" class="button special">View toolkit</a>
+						<a lang="en" href="toolkit.php" class="button special">View toolkit</a>
+						<a lang="en" href="https://github.com/astro4dev/OAD-Data-Science-Toolkit/archive/master.zip" class="button special icon fa-download">Download toolkit</a>
 
 						<!-- SPANISH -->
-						<p lang="en">El objectivo principal de este toolkit es proporcionar la base para un "lenguaje común" entre las comunidades astronómica y de ciencia de datos. El toolkit ayuda a astrónomos a comprender la amplitud del campo de la ciencia de datos y sus aplicaciones, y a determinar dónde sus conocimentos y habilidades mejor cuadran en estas miras más amplias. Al mismo tiempo, ayuda a científicos de datos o entidades necesitadas de estos (p. ej. empresas, ONGs) a entender la posible contribución de astrónomos.</p>
+						<p lang="es">El objectivo principal de este toolkit es proporcionar la base para un "lenguaje común" entre las comunidades astronómica y de ciencia de datos. El toolkit ayuda a astrónomos a comprender la amplitud del campo de la ciencia de datos y sus aplicaciones, y a determinar dónde sus conocimentos y habilidades mejor cuadran en estas miras más amplias. Al mismo tiempo, ayuda a científicos de datos o entidades necesitadas de estos (p. ej. empresas, ONGs) a entender la posible contribución de astrónomos.</p>
 
-						<a href="toolkit.php" class="button special">Ver toolkit</a>
+						<a lang="es" href="toolkit.php" class="button special">Ver toolkit</a>
+						<a lang="es" href="https://github.com/astro4dev/OAD-Data-Science-Toolkit/archive/master.zip" class="button special icon fa-download">Descargar toolkit</a>
 						
 						<!-- FRENCH -->
 						<p lang="fr">Nous avons besoin d'aide avec les traductions. S'il vous plaît jeter un oeil à la façon dont vous pouvez aider <a href="https://github.com/astro4dev/OAD-Data-Science-Toolkit/blob/master/CONTRIBUTING.md" target="_blank">ici</a></p>
 
+						<a lang="fr" href="toolkit.php" class="button special">Voir toolkit</a>
+						<a lang="fr" href="https://github.com/astro4dev/OAD-Data-Science-Toolkit/archive/master.zip" class="button special icon fa-download">Télécharger toolkit</a>
 
 					</div>
 
@@ -273,7 +272,7 @@
 						</li>
 						<li class="style3">
 							<span class="icon fa-graduation-cap"></span>
-							<strong>4</strong>
+							<strong>6</strong>
 
 
 							<!-- ENGLISH -->
@@ -289,7 +288,7 @@
 						</li>
 						<li class="style4">
 							<span class="icon fa-code-fork"></span>
-							<strong>8</strong>
+							<strong>11</strong>
 
 
 							<!-- ENGLISH -->
@@ -305,7 +304,7 @@
 						</li>
 						<li class="style5">
 							<span class="icon fa-user"></span>
-							<strong>9</strong>
+							<strong>10</strong>
 
 
 							<!-- ENGLISH -->
