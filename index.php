@@ -197,7 +197,7 @@
 				<!-- SPANISH -->
 				<p lang="es">El toolkit se enfoca en proporcionar material educativo de gran calidad en forma de ejemplos, cursos y evaluaciones que puedes, con total libertad, utilizar en tu enseñanza o quizás durante la organización de talleres o cursos de verano.</p>
 
-				<p lang="es">El toolkit esta especialmente dedicado a conectar los campos de la astronomía y la ciencia de datos y no persigue competir con cursos on-line como por ejemplo <a href="https://www.edx.org/" target="_blank">edX</a> o <a href="https://www.coursera.org/" target="_blank">Coursera</a>.</p>		
+				<p lang="es">El toolkit está especialmente dedicado a conectar los campos de la astronomía y la ciencia de datos y no persigue competir con cursos on-line como por ejemplo <a href="https://www.edx.org/" target="_blank">edX</a> o <a href="https://www.coursera.org/" target="_blank">Coursera</a>.</p>		
 
 				<!-- FRENCH -->
 				<p lang="fr">The focus of the toolkit is to provide high quality teaching materials in the form of examples, courses and assessments which you are welcome to use for your teaching or perhaps when organising a workshop or a summer school.</p>
@@ -362,7 +362,7 @@
 					<!-- SPANISH -->
 					<h3 lang="es">Código y Contenido</h3>
 					<!-- <img src="images/logo.svg" alt="" /> -->
-					<p class="content" lang="es">Este sitio web ha sido creado utilizando múltiples herramientas de programación: HTML5, CSS3, PHP, MySQL, AJAX, jQuery, Shell, JavaScript y Python. Si posees experiencia en cualquiera de estas herramientas o quizás desees mejorar el contenido del sitio web, no dudes en contribuir. El sitio web al completo esta disponible <a href="https://github.com/astro4dev/toolkit_website" target="_blank">aquí</a>.</p>
+					<p class="content" lang="es">Este sitio web ha sido creado utilizando múltiples herramientas de programación: HTML5, CSS3, PHP, MySQL, AJAX, jQuery, Shell, JavaScript y Python. Si posees experiencia en cualquiera de estas herramientas o quizás desees mejorar el contenido del sitio web, no dudes en contribuir. El sitio web al completo está disponible <a href="https://github.com/astro4dev/toolkit_website" target="_blank">aquí</a>.</p>
 
 					<!-- FRENCH -->
 					<h3 lang="fr">Coding and Content</h3>
