@@ -220,7 +220,7 @@
 					<!-- ENGLISH -->
 					<h2 lang="en">Help contribute</h2>								
 					
-					<p lang="en">The toolkit is in its infancy and for it to be a success we need people to help us create and share content. We are always looking for people keen on contributing.</p>
+					<p lang="en">The toolkit is still growing and for it to be a success we need people to help us create and share content. We are always looking for people keen on contributing.</p>
 
 
 					<!-- SPANISH -->
@@ -232,7 +232,7 @@
 					<!-- FRENCH -->
 					<h2 lang="fr">Help contribute</h2>								
 					
-					<p lang="fr">The toolkit is in its infancy and for it to be a success we need people to help us create and share content. We are always looking for people keen on contributing.</p>
+					<p lang="fr">The toolkit is still growing and for it to be a success we need people to help us create and share content. We are always looking for people keen on contributing.</p>
 
 
 					<ul class="statistics">
@@ -271,7 +271,7 @@
 						</li>
 						<li class="style3">
 							<span class="icon fa-graduation-cap"></span>
-							<strong>6</strong>
+							<strong>7</strong>
 
 
 							<!-- ENGLISH -->
@@ -287,7 +287,7 @@
 						</li>
 						<li class="style4">
 							<span class="icon fa-code-fork"></span>
-							<strong>11</strong>
+							<strong>14</strong>
 
 
 							<!-- ENGLISH -->
@@ -303,7 +303,7 @@
 						</li>
 						<li class="style5">
 							<span class="icon fa-user"></span>
-							<strong>10</strong>
+							<strong>12</strong>
 
 
 							<!-- ENGLISH -->
